@@ -17,8 +17,120 @@
       "slug": "swift",
       "children": [
         {
-          "name": "Here is where the github content will go",
-          "slug": "swift/here-is-where-the-github-content-will-go",
+          "name": "System Requirements",
+          "slug": "swift/system-requirements",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Get Started",
+          "slug": "swift/get-started",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "SDK Distribution",
+          "slug": "swift/sdk-distribution",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Configure Your Project",
+          "slug": "swift/configure-your-project",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "API Requests",
+          "slug": "swift/api-requests",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Handling Responses and Errors",
+          "slug": "swift/handling-responses-and-errors",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Customizing Network Calls",
+          "slug": "swift/customizing-network-calls",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Background Networking",
+          "slug": "swift/background-networking",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "DropboxClientsManager",
+          "slug": "swift/dropboxclientsmanager",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Objective-C",
+          "slug": "swift/objective-c",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Version 10.0.0 Changes",
+          "slug": "swift/version-10-changes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Examples and Documentation",
+          "slug": "swift/examples-and-documentation",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Modifications",
+          "slug": "swift/modifications",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "App Store Privacy Labels",
+          "slug": "swift/app-store-privacy-labels",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Bugs",
+          "slug": "swift/bugs",
           "children": [],
           "isHeader": false,
           "externalPageLink": "",
