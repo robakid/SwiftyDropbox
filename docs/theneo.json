@@ -135,6 +135,262 @@
           "isHeader": false,
           "externalPageLink": "",
           "isNewTab": false
+        },
+        {
+          "name": "Routes",
+          "slug": "",
+          "children": [],
+          "isHeader": true,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "AccountRoutes",
+          "slug": "swift/account-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "AuthRoutes",
+          "slug": "swift/auth-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "CheckRoutes",
+          "slug": "swift/check-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "ContactsRoutes",
+          "slug": "swift/contacts-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "FilePropertiesRoutes",
+          "slug": "swift/file-properties-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "FileRequestsRoutes",
+          "slug": "swift/file-requests-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "FilesRoutes",
+          "slug": "swift/files-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "OpenidRoutes",
+          "slug": "swift/openid-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "PaperRoutes",
+          "slug": "swift/paper-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "SharingRoutes",
+          "slug": "swift/sharing-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "TeamRoutes",
+          "slug": "swift/team-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "TeamLogRoutes",
+          "slug": "swift/team-log-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "UsersRoutes",
+          "slug": "swift/users-routes",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Data Types",
+          "slug": "",
+          "children": [],
+          "isHeader": true,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Account",
+          "slug": "swift/account-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Async",
+          "slug": "swift/async-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Auth",
+          "slug": "swift/auth-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Check",
+          "slug": "swift/check-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Common",
+          "slug": "swift/common-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Contacts",
+          "slug": "swift/contacts-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "FileProperties",
+          "slug": "swift/file-properties-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "FileRequests",
+          "slug": "swift/file-requests-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Files",
+          "slug": "swift/files-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Openid",
+          "slug": "swift/openid-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Paper",
+          "slug": "swift/paper-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "SeenState",
+          "slug": "swift/seen-state-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Sharing",
+          "slug": "swift/sharing-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Team",
+          "slug": "swift/team-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "TeamCommon",
+          "slug": "swift/team-common-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "TeamLog",
+          "slug": "swift/team-log-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        },
+        {
+          "name": "Users",
+          "slug": "swift/users-data-types",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
         }
       ],
       "icon": "https://d24lr4zqs1tgqh.cloudfront.net/6499968e-d520-4d21-ba49-ded05d91e720.png",
