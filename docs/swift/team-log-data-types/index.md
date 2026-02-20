@@ -1,6 +1,6 @@
 # TeamLog Data Types
 
-Data types for the team_log namespace. This namespace contains an extensive set of types for team event logging and auditing.
+Data types for the `team_log` namespace. This namespace contains an extensive set of types for team event logging and auditing.
 
 The `TeamLog` namespace encompasses over 1,100 public data types (classes and enums) organized into categories covering every aspect of Dropbox team activity logging. These types are auto-generated from the Dropbox Stone API specification and are used to represent team audit log events, their details, the actors and contexts involved, and the various policy settings that can be changed.
 
@@ -8,56 +8,55 @@ The `TeamLog` namespace encompasses over 1,100 public data types (classes and en
 
 ## Table of Contents
 
-- [Core Event & API Types](#core-event-api-types)
-- [Actor, Context & Origin Log Info](#actor-context-origin-log-info)
-- [Access & Session Log Info](#access-session-log-info)
-- [Account & Account Capture](#account-account-capture)
-- [Admin Alerting](#admin-alerting)
-- [Admin Console & Roles](#admin-console-roles)
-- [App Management](#app-management)
-- [Asset & Path Log Info](#asset-path-log-info)
-- [Backup & Computer Backup](#backup-computer-backup)
-- [Binder Operations](#binder-operations)
-- [Camera & Capture](#camera-capture)
-- [Classification & Content](#classification-content)
-- [Collection & Naming](#collection-naming)
-- [Common Supporting Types](#common-supporting-types)
-- [Data Governance & Retention](#data-governance-retention)
-- [Device & Session Management](#device-session-management)
-- [Domain & DNS](#domain-dns)
-- [Domain & Feature Settings](#domain-feature-settings)
-- [Dropbox Passwords](#dropbox-passwords)
-- [Email Ingest](#email-ingest)
-- [EMM & Mobile Device Management](#emm-mobile-device-management)
-- [Enterprise & Federation](#enterprise-federation)
-- [Export & Reporting](#export-reporting)
-- [External Sharing & Users](#external-sharing-users)
-- [Feature Settings](#feature-settings)
-- [File & Folder Operations](#file-folder-operations)
-- [Group Management](#group-management)
-- [Integration & Third-Party](#integration-third-party)
-- [Legal Holds](#legal-holds)
-- [Login & Authentication](#login-authentication)
-- [Member Management](#member-management)
-- [Namespace](#namespace)
-- [Network & Geo](#network-geo)
-- [Paper & Notes](#paper-notes)
-- [Password & Security](#password-security)
-- [Policy Types](#policy-types)
-- [Ransomware & Threat](#ransomware-threat)
-- [Reseller & Support](#reseller-support)
-- [Shared Folder Operations](#shared-folder-operations)
-- [Shared Links](#shared-links)
-- [Sharing & Permissions](#sharing-permissions)
-- [Showcase](#showcase)
-- [Smart Sync](#smart-sync)
-- [SSO & Certificate](#sso-certificate)
-- [Team Invite Links](#team-invite-links)
-- [Team Settings & Operations](#team-settings-operations)
-- [Trusted Teams](#trusted-teams)
-- [User & Member Log Info](#user-member-log-info)
-- [Web Sessions](#web-sessions)
-- [Other Types](#other-types)
+- [Core Event & API Types (9)](#core-event-api-types)
+- [Actor, Context & Origin Log Info (4)](#actor-context-origin-log-info)
+- [Access & Session Log Info (11)](#access-session-log-info)
+- [Account & Account Capture (16)](#account-account-capture)
+- [Admin Alerting (14)](#admin-alerting)
+- [Admin Console & Roles (6)](#admin-console-roles)
+- [App Management (15)](#app-management)
+- [Asset & Path Log Info (4)](#asset-path-log-info)
+- [Backup & Computer Backup (8)](#backup-computer-backup)
+- [Binder Operations (16)](#binder-operations)
+- [Camera & Capture (6)](#camera-capture)
+- [Classification & Content (11)](#classification-content)
+- [Collections & Albums (2)](#collections-albums)
+- [Common Supporting Types (6)](#common-supporting-types)
+- [Data Governance & Retention (5)](#data-governance-retention)
+- [Device & Session Management (38)](#device-session-management)
+- [Domain & DNS (18)](#domain-dns)
+- [Dropbox Passwords (7)](#dropbox-passwords)
+- [Email Ingest (5)](#email-ingest)
+- [EMM & Mobile Device Management (14)](#emm-mobile-device-management)
+- [Enterprise & Federation (17)](#enterprise-federation)
+- [Export & Reporting (4)](#export-reporting)
+- [External Sharing & Users (20)](#external-sharing-users)
+- [Feature Settings (20)](#feature-settings)
+- [File & Folder Operations (112)](#file-folder-operations)
+- [Group Management (30)](#group-management)
+- [Integration & Third-Party (10)](#integration-third-party)
+- [Legal Holds (22)](#legal-holds)
+- [Login & Authentication (11)](#login-authentication)
+- [Member Management (114)](#member-management)
+- [Namespace (1)](#namespace)
+- [Network & Geo (4)](#network-geo)
+- [Paper & Notes (117)](#paper-notes)
+- [Password & Security (29)](#password-security)
+- [Policy Types (93)](#policy-types)
+- [Ransomware & Threat (8)](#ransomware-threat)
+- [Reseller & Support (6)](#reseller-support)
+- [Shared Folder & Link Model Operations (32)](#shared-folder-link-model-operations)
+- [Shared Links (40)](#shared-links)
+- [Sharing & Permissions (84)](#sharing-permissions)
+- [Showcase (49)](#showcase)
+- [Smart Sync (6)](#smart-sync)
+- [SSO & Certificate (23)](#sso-certificate)
+- [Team Invite Links (4)](#team-invite-links)
+- [Team Settings & Operations (55)](#team-settings-operations)
+- [Trusted Teams (4)](#trusted-teams)
+- [User & Member Log Info (9)](#user-member-log-info)
+- [Web Sessions (2)](#web-sessions)
+- [Other Types (44)](#other-types)
 
 ---
 
@@ -65,57 +64,187 @@ The `TeamLog` namespace encompasses over 1,100 public data types (classes and en
 
 ### EventCategory
 
-`enum` 
+`enum`
 
 Category of events in event audit log.
 
+**Cases:**
+
+- `adminAlerting` - Events that involve team related alerts.
+- `apps` - Events that apply to management of linked apps.
+- `comments` - Events that have to do with comments on files and Paper documents.
+- `dataGovernance` - Events that involve data governance actions
+- `devices` - Events that apply to linked devices on mobile, desktop and Web platforms.
+- `domains` - Events that involve domain management feature: domain verification, invite enforcement and account capture.
+- `encryption` - Events that involve encryption.
+- `fileOperations` - Events that have to do with filesystem operations on files and folders: copy, move, delete, etc.
+- `fileRequests` - Events that apply to the file requests feature.
+- `groups` - Events that involve group management.
+- `logins` - Events that involve users signing in to or out of Dropbox.
+- `members` - Events that involve team member management.
+- `paper` - Events that apply to Dropbox Paper.
+- `passwords` - Events that involve using, changing or resetting passwords.
+- `reports` - Events that concern generation of admin reports, including team activity and device usage.
+- `sharing` - Events that apply to all types of sharing and collaboration.
+- `showcase` - Events that apply to Dropbox Showcase.
+- `sso` - sign-on.
+- `teamFolders` - Events that involve team folder management.
+- `teamPolicies` - Events that involve a change in team-wide policies.
+- `teamProfile` - Events that involve a change in the team profile.
+- `tfa` - concerning two factor authentication.
+- `trustedTeams` - Events that apply to cross-team trust establishment.
+- `other`
+
 ### EventDetails
 
-`enum` 
+`enum`
 
 Additional fields depending on the event type.
 
+This enum has **505 cases** covering a wide range of event types. A representative sample:
+
+- `adminAlertingAlertStateChangedDetails`
+- `adminAlertingChangedAlertConfigDetails`
+- `adminAlertingTriggeredAlertDetails`
+- `ransomwareRestoreProcessCompletedDetails`
+- `ransomwareRestoreProcessStartedDetails`
+- `appBlockedByPermissionsDetails`
+- `appLinkTeamDetails`
+- `appLinkUserDetails`
+- `appUnlinkTeamDetails`
+- `appUnlinkUserDetails`
+- `integrationConnectedDetails`
+- `integrationDisconnectedDetails`
+- `fileAddCommentDetails`
+- `fileChangeCommentSubscriptionDetails`
+- `fileDeleteCommentDetails`
+- ... (485 more cases)
+- `teamMergeRequestRevokedDetails`
+- `teamMergeRequestSentShownToPrimaryTeamDetails`
+- `teamMergeRequestSentShownToSecondaryTeamDetails`
+- `missingDetails` - Hints that this event was returned with missing details due to an internal error.
+- `other`
+
 ### EventType
 
-`enum` 
+`enum`
 
 The type of the event with description.
 
+This enum has **504 cases** covering a wide range of event types. A representative sample:
+
+- `adminAlertingAlertStateChanged` - (admin_alerting) Changed an alert state
+- `adminAlertingChangedAlertConfig` - (admin_alerting) Changed an alert setting
+- `adminAlertingTriggeredAlert` - (admin_alerting) Triggered security alert
+- `ransomwareRestoreProcessCompleted` - (admin_alerting) Completed ransomware restore process
+- `ransomwareRestoreProcessStarted` - (admin_alerting) Started ransomware restore process
+- `appBlockedByPermissions` - (apps) Failed to connect app for member
+- `appLinkTeam` - (apps) Linked app for team
+- `appLinkUser` - (apps) Linked app for member
+- `appUnlinkTeam` - (apps) Unlinked app for team
+- `appUnlinkUser` - (apps) Unlinked app for member
+- `integrationConnected` - (apps) Connected integration for member
+- `integrationDisconnected` - (apps) Disconnected integration for member
+- `fileAddComment` - (comments) Added file comment
+- `fileChangeCommentSubscription` - (comments) Subscribed to or unsubscribed from comment notifications for file
+- `fileDeleteComment` - (comments) Deleted file comment
+- ... (484 more cases)
+- `teamMergeRequestReminderShownToSecondaryTeam` - reminder')
+- `teamMergeRequestRevoked` - (trusted_teams) Canceled the team merge
+- `teamMergeRequestSentShownToPrimaryTeam` - (trusted_teams) Requested to merge their Dropbox team into yours
+- `teamMergeRequestSentShownToSecondaryTeam` - (trusted_teams) Requested to merge your team into another Dropbox team
+- `other`
+
 ### EventTypeArg
 
-`enum` 
+`enum`
 
 The type of the event.
 
+This enum has **504 cases** covering a wide range of event types. A representative sample:
+
+- `adminAlertingAlertStateChanged` - (admin_alerting) Changed an alert state
+- `adminAlertingChangedAlertConfig` - (admin_alerting) Changed an alert setting
+- `adminAlertingTriggeredAlert` - (admin_alerting) Triggered security alert
+- `ransomwareRestoreProcessCompleted` - (admin_alerting) Completed ransomware restore process
+- `ransomwareRestoreProcessStarted` - (admin_alerting) Started ransomware restore process
+- `appBlockedByPermissions` - (apps) Failed to connect app for member
+- `appLinkTeam` - (apps) Linked app for team
+- `appLinkUser` - (apps) Linked app for member
+- `appUnlinkTeam` - (apps) Unlinked app for team
+- `appUnlinkUser` - (apps) Unlinked app for member
+- `integrationConnected` - (apps) Connected integration for member
+- `integrationDisconnected` - (apps) Disconnected integration for member
+- `fileAddComment` - (comments) Added file comment
+- `fileChangeCommentSubscription` - (comments) Subscribed to or unsubscribed from comment notifications for file
+- `fileDeleteComment` - (comments) Deleted file comment
+- ... (484 more cases)
+- `teamMergeRequestReminderShownToSecondaryTeam` - reminder')
+- `teamMergeRequestRevoked` - (trusted_teams) Canceled the team merge
+- `teamMergeRequestSentShownToPrimaryTeam` - (trusted_teams) Requested to merge their Dropbox team into yours
+- `teamMergeRequestSentShownToSecondaryTeam` - (trusted_teams) Requested to merge your team into another Dropbox team
+- `other`
+
 ### GetTeamEventsArg
 
-`class` 
+`class`
 
 Type for get team events arg.
 
+**Properties:**
+
+- `limit`: `UInt32` - should fetch again using getEventsContinue.
+- `accountId`: `String?` - Participants.
+- `time`: `TeamCommon.TimeRange?` - Filter by time range.
+- `category`: `TeamLog.EventCategory?` - event_type.
+- `eventType`: `TeamLog.EventTypeArg?` - category.
+
 ### GetTeamEventsContinueArg
 
-`class` 
+`class`
 
 Type for get team events continue arg.
 
+**Properties:**
+
+- `cursor`: `String` - Indicates from what point to get the next set of events.
+
 ### GetTeamEventsContinueError
 
-`enum` 
+`enum`
 
 Errors that can be raised when calling getEventsContinue.
 
+**Cases:**
+
+- `badCursor` - Bad cursor.
+- `reset` - the cursor. This should be used as a resumption point when calling getEvents to obtain a new cursor.
+- `other`
+
 ### GetTeamEventsError
 
-`enum` 
+`enum`
 
 Errors that can be raised when calling getEvents.
 
+**Cases:**
+
+- `accountIdNotFound` - No user found matching the provided account_id.
+- `invalidTimeRange` - Invalid time range.
+- `invalidFilters` - Invalid filters. Do not specify both event_type and category parameters for the same call.
+- `other`
+
 ### GetTeamEventsResult
 
-`class` 
+`class`
 
 Type for get team events result.
+
+**Properties:**
+
+- `events`: `[TeamLog.TeamEvent]` - List of events. Note that events are not guaranteed to be sorted by their timestamp value.
+- `cursor`: `String` - handle reset exceptions for expired cursors.
+- `hasMore`: `Bool` - getEventsContinue can retrieve them. Note that hasMore may be true, even if events is empty.
 
 ---
 
@@ -123,27 +252,59 @@ Type for get team events result.
 
 ### ActionDetails
 
-`enum` 
+`enum`
 
 Additional information indicating the action taken that caused status change.
 
+**Cases:**
+
+- `removeAction` - Define how the user was removed from the team.
+- `teamInviteDetails` - Additional information relevant when someone is invited to the team.
+- `teamJoinDetails` - Additional information relevant when a new member joins the team.
+- `other`
+
 ### ActorLogInfo
 
-`enum` 
+`enum`
 
 The entity who performed the action.
 
+**Cases:**
+
+- `admin` - The admin who did the action.
+- `anonymous` - Anonymous actor.
+- `app` - The application who did the action.
+- `dropbox` - Action done by Dropbox.
+- `reseller` - Action done by reseller.
+- `user` - The user who did the action.
+- `other`
+
 ### ContextLogInfo
 
-`enum` 
+`enum`
 
 The primary entity on which the action was done.
 
+**Cases:**
+
+- `anonymous` - Anonymous context.
+- `nonTeamMember` - Action was done on behalf of a non team member.
+- `organizationTeam` - Action was done on behalf of a team that's part of an organization.
+- `team` - Action was done on behalf of the team.
+- `teamMember` - Action was done on behalf of a team member.
+- `trustedNonTeamMember` - Action was done on behalf of a trusted non team member.
+- `other`
+
 ### OriginLogInfo
 
-`class` 
+`class`
 
 The origin from which the actor performed the action.
+
+**Properties:**
+
+- `geoLocation`: `TeamLog.GeoLocationLogInfo?` - Geographic location details.
+- `accessMethod`: `TeamLog.AccessMethodLogInfo` - The method that was used to perform the action.
 
 ---
 
@@ -151,67 +312,128 @@ The origin from which the actor performed the action.
 
 ### AccessMethodLogInfo
 
-`enum` 
+`enum`
 
 Indicates the method in which the action was performed.
 
+**Cases:**
+
+- `adminConsole` - Admin console session details.
+- `api` - Api session details.
+- `contentManager` - Content manager session details.
+- `endUser` - End user session details.
+- `enterpriseConsole` - Enterprise console session details.
+- `signInAs` - Sign in as session details.
+- `other`
+
 ### ApiSessionLogInfo
 
-`class` 
+`class`
 
 Api session.
 
+**Properties:**
+
+- `requestId`: `String` - Api request ID.
+
 ### DeviceSessionLogInfo
 
-`class` 
+`class`
 
 Device's session logged information.
 
+**Properties:**
+
+- `ipAddress`: `String?` - The IP address of the last activity from this session.
+- `created`: `Date?` - The time this session was created.
+- `updated`: `Date?` - The time of the last activity from this session.
+
 ### DesktopDeviceSessionLogInfo
 
-`class` 
+`class`
 
 Information about linked Dropbox desktop client sessions
 
+**Properties:**
+
+- `sessionInfo`: `TeamLog.DesktopSessionLogInfo?` - Desktop session unique id.
+- `hostName`: `String` - Name of the hosting desktop.
+- `clientType`: `Team.DesktopPlatform` - The Dropbox desktop client type.
+- `clientVersion`: `String?` - The Dropbox client version.
+- `platform`: `String` - Information on the hosting platform.
+- `isDeleteOnUnlinkSupported`: `Bool` - Whether itu2019s possible to delete all of the account files upon unlinking.
+
 ### SessionLogInfo
 
-`class` 
+`class`
 
 Session's logged information.
 
+**Properties:**
+
+- `sessionId`: `String?` - Session ID.
+
 ### DesktopSessionLogInfo
 
-`class` 
+`class`
 
 Desktop session.
 
 ### LegacyDeviceSessionLogInfo
 
-`class` 
+`class`
 
 Information on sessions, in legacy format
 
+**Properties:**
+
+- `sessionInfo`: `TeamLog.SessionLogInfo?` - Session unique id.
+- `displayName`: `String?` - The device name. Might be missing due to historical data gap.
+- `isEmmManaged`: `Bool?` - Is device managed by emm. Might be missing due to historical data gap.
+- `platform`: `String?` - Information on the hosting platform. Might be missing due to historical data gap.
+- `macAddress`: `String?` - The mac address of the last activity from this session. Might be missing due to historical data gap.
+- `osVersion`: `String?` - The hosting OS version. Might be missing due to historical data gap.
+- `deviceType`: `String?` - Information on the hosting device type. Might be missing due to historical data gap.
+- `clientVersion`: `String?` - The Dropbox client version. Might be missing due to historical data gap.
+- `legacyUniqId`: `String?` - gap.
+
 ### MobileDeviceSessionLogInfo
 
-`class` 
+`class`
 
 Information about linked Dropbox mobile client sessions
 
+**Properties:**
+
+- `sessionInfo`: `TeamLog.MobileSessionLogInfo?` - Mobile session unique id.
+- `deviceName`: `String` - The device name.
+- `clientType`: `Team.MobileClientPlatform` - The mobile application type.
+- `clientVersion`: `String?` - The Dropbox client version.
+- `osVersion`: `String?` - The hosting OS version.
+- `lastCarrier`: `String?` - last carrier used by the device.
+
 ### MobileSessionLogInfo
 
-`class` 
+`class`
 
 Mobile session.
 
 ### WebDeviceSessionLogInfo
 
-`class` 
+`class`
 
 Information on active web sessions
 
+**Properties:**
+
+- `sessionInfo`: `TeamLog.WebSessionLogInfo?` - Web session unique id.
+- `userAgent`: `String` - Information on the hosting device.
+- `os`: `String` - Information on the hosting operating system.
+- `browser`: `String` - Information on the browser used for this web session.
+
 ### WebSessionLogInfo
 
-`class` 
+`class`
 
 Web session.
 
@@ -221,99 +443,177 @@ Web session.
 
 ### AccountCaptureAvailability
 
-`enum` 
+`enum`
 
 Type for account capture availability.
 
+**Cases:**
+
+- `available`
+- `unavailable`
+- `other`
+
 ### AccountCaptureChangeAvailabilityDetails
 
-`class` 
+`class`
 
 Granted/revoked option to enable account capture on team domains.
 
+**Properties:**
+
+- `newValue`: `TeamLog.AccountCaptureAvailability` - New account capture availabilty value.
+- `previousValue`: `TeamLog.AccountCaptureAvailability?` - Previous account capture availabilty value. Might be missing due to historical data gap.
+
 ### AccountCaptureChangeAvailabilityType
 
-`class` 
+`class`
 
 Type for account capture change availability type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AccountCaptureChangePolicyDetails
 
-`class` 
+`class`
 
 Changed account capture setting on team domain.
 
+**Properties:**
+
+- `newValue`: `TeamLog.AccountCapturePolicy` - New account capture policy.
+- `previousValue`: `TeamLog.AccountCapturePolicy?` - Previous account capture policy. Might be missing due to historical data gap.
+
 ### AccountCaptureChangePolicyType
 
-`class` 
+`class`
 
 Type for account capture change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AccountCaptureMigrateAccountDetails
 
-`class` 
+`class`
 
 Account-captured user migrated account to team.
 
+**Properties:**
+
+- `domainName`: `String` - Domain name.
+
 ### AccountCaptureMigrateAccountType
 
-`class` 
+`class`
 
 Type for account capture migrate account type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AccountCaptureNotificationEmailsSentDetails
 
-`class` 
+`class`
 
 Sent account capture email to all unmanaged members.
 
+**Properties:**
+
+- `domainName`: `String` - Domain name.
+- `notificationType`: `TeamLog.AccountCaptureNotificationType?` - Account-capture email notification type.
+
 ### AccountCaptureNotificationEmailsSentType
 
-`class` 
+`class`
 
 Type for account capture notification emails sent type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AccountCaptureNotificationType
 
-`enum` 
+`enum`
 
 Type for account capture notification type.
 
+**Cases:**
+
+- `actionableNotification`
+- `proactiveWarningNotification`
+- `other`
+
 ### AccountCapturePolicy
 
-`enum` 
+`enum`
 
 Type for account capture policy.
 
+**Cases:**
+
+- `allUsers`
+- `disabled`
+- `invitedUsers`
+- `preventPersonalCreation`
+- `other`
+
 ### AccountCaptureRelinquishAccountDetails
 
-`class` 
+`class`
 
 Account-captured user changed account email to personal email.
 
+**Properties:**
+
+- `domainName`: `String` - Domain name.
+
 ### AccountCaptureRelinquishAccountType
 
-`class` 
+`class`
 
 Type for account capture relinquish account type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AccountLockOrUnlockedDetails
 
-`class` 
+`class`
 
 Unlocked/locked account after failed sign in attempts.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.AccountState` - The previous account status.
+- `newValue`: `TeamLog.AccountState` - The new account status.
+
 ### AccountLockOrUnlockedType
 
-`class` 
+`class`
 
 Type for account lock or unlocked type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AccountState
 
-`enum` 
+`enum`
 
 Type for account state.
+
+**Cases:**
+
+- `locked`
+- `unlocked`
+- `other`
 
 ---
 
@@ -321,87 +621,188 @@ Type for account state.
 
 ### AdminAlertCategoryEnum
 
-`enum` 
+`enum`
 
 Alert category
 
+**Cases:**
+
+- `accountTakeover`
+- `dataLossProtection`
+- `informationGovernance`
+- `malwareSharing`
+- `massiveFileOperation`
+- `na`
+- `threatManagement`
+- `other`
+
 ### AdminAlertGeneralStateEnum
 
-`enum` 
+`enum`
 
 Alert state
 
+**Cases:**
+
+- `active`
+- `dismissed`
+- `inProgress`
+- `na`
+- `resolved`
+- `other`
+
 ### AdminAlertSeverityEnum
 
-`enum` 
+`enum`
 
 Alert severity
 
+**Cases:**
+
+- `high`
+- `info`
+- `low`
+- `medium`
+- `na`
+- `other`
+
 ### AdminAlertingAlertConfiguration
 
-`class` 
+`class`
 
 Alert configurations
 
+**Properties:**
+
+- `alertState`: `TeamLog.AdminAlertingAlertStatePolicy?` - Alert state.
+- `sensitivityLevel`: `TeamLog.AdminAlertingAlertSensitivity?` - Sensitivity level.
+- `recipientsSettings`: `TeamLog.RecipientsConfiguration?` - Recipient settings.
+- `text`: `String?` - Text.
+- `excludedFileExtensions`: `String?` - Excluded file extensions.
+
 ### AdminAlertingAlertSensitivity
 
-`enum` 
+`enum`
 
 Alert sensitivity
 
+**Cases:**
+
+- `high`
+- `highest`
+- `invalid`
+- `low`
+- `lowest`
+- `medium`
+- `other`
+
 ### AdminAlertingAlertStateChangedDetails
 
-`class` 
+`class`
 
 Changed an alert state.
 
+**Properties:**
+
+- `alertName`: `String` - Alert name.
+- `alertSeverity`: `TeamLog.AdminAlertSeverityEnum` - Alert severity.
+- `alertCategory`: `TeamLog.AdminAlertCategoryEnum` - Alert category.
+- `alertInstanceId`: `String` - Alert ID.
+- `previousValue`: `TeamLog.AdminAlertGeneralStateEnum` - Alert state before the change.
+- `newValue`: `TeamLog.AdminAlertGeneralStateEnum` - Alert state after the change.
+
 ### AdminAlertingAlertStateChangedType
 
-`class` 
+`class`
 
 Type for admin alerting alert state changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AdminAlertingAlertStatePolicy
 
-`enum` 
+`enum`
 
 Policy for controlling whether an alert can be triggered or not
 
+**Cases:**
+
+- `off`
+- `on`
+- `other`
+
 ### AdminAlertingChangedAlertConfigDetails
 
-`class` 
+`class`
 
 Changed an alert setting.
 
+**Properties:**
+
+- `alertName`: `String` - Alert Name.
+- `previousAlertConfig`: `TeamLog.AdminAlertingAlertConfiguration` - Previous alert configuration.
+- `newAlertConfig`: `TeamLog.AdminAlertingAlertConfiguration` - New alert configuration.
+
 ### AdminAlertingChangedAlertConfigType
 
-`class` 
+`class`
 
 Type for admin alerting changed alert config type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AdminAlertingTriggeredAlertDetails
 
-`class` 
+`class`
 
 Triggered security alert.
 
+**Properties:**
+
+- `alertName`: `String` - Alert name.
+- `alertSeverity`: `TeamLog.AdminAlertSeverityEnum` - Alert severity.
+- `alertCategory`: `TeamLog.AdminAlertCategoryEnum` - Alert category.
+- `alertInstanceId`: `String` - Alert ID.
+
 ### AdminAlertingTriggeredAlertType
 
-`class` 
+`class`
 
 Type for admin alerting triggered alert type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AlertRecipientsSettingType
 
-`enum` 
+`enum`
 
 Alert recipients setting type
 
+**Cases:**
+
+- `customList`
+- `invalid`
+- `none`
+- `teamAdmins`
+- `other`
+
 ### RecipientsConfiguration
 
-`class` 
+`class`
 
 Recipients Configuration
+
+**Properties:**
+
+- `recipientSettingType`: `TeamLog.AlertRecipientsSettingType?` - Recipients setting type.
+- `emails`: `[String]?` - A list of user emails to notify.
+- `groups`: `[String]?` - A list of groups to notify.
 
 ---
 
@@ -409,39 +810,82 @@ Recipients Configuration
 
 ### AdminConsoleAppPermission
 
-`enum` 
+`enum`
 
 Type for admin console app permission.
 
+**Cases:**
+
+- `defaultForListedApps`
+- `defaultForUnlistedApps`
+- `other`
+
 ### AdminConsoleAppPolicy
 
-`enum` 
+`enum`
 
 Type for admin console app policy.
 
+**Cases:**
+
+- `allow`
+- `block`
+- `default_`
+- `other`
+
 ### AdminEmailRemindersChangedDetails
 
-`class` 
+`class`
 
 Changed admin reminder settings for requests to join the team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.AdminEmailRemindersPolicy` - To.
+- `previousValue`: `TeamLog.AdminEmailRemindersPolicy` - From.
+
 ### AdminEmailRemindersChangedType
 
-`class` 
+`class`
 
 Type for admin email reminders changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AdminEmailRemindersPolicy
 
-`enum` 
+`enum`
 
 Policy for deciding whether team admins receive reminder emails for requests to join the team
 
+**Cases:**
+
+- `default_`
+- `disabled`
+- `enabled`
+- `other`
+
 ### AdminRole
 
-`enum` 
+`enum`
 
 Type for admin role.
+
+**Cases:**
+
+- `billingAdmin`
+- `complianceAdmin`
+- `contentAdmin`
+- `limitedAdmin`
+- `memberOnly`
+- `reportingAdmin`
+- `securityAdmin`
+- `supportAdmin`
+- `teamAdmin`
+- `userManagementAdmin`
+- `other`
 
 ---
 
@@ -449,93 +893,153 @@ Type for admin role.
 
 ### AppBlockedByPermissionsDetails
 
-`class` 
+`class`
 
 Failed to connect app for member.
 
+**Properties:**
+
+- `appInfo`: `TeamLog.AppLogInfo` - Relevant application details.
+
 ### AppBlockedByPermissionsType
 
-`class` 
+`class`
 
 Type for app blocked by permissions type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AppLinkTeamDetails
 
-`class` 
+`class`
 
 Linked app for team.
 
+**Properties:**
+
+- `appInfo`: `TeamLog.AppLogInfo` - Relevant application details.
+
 ### AppLinkTeamType
 
-`class` 
+`class`
 
 Type for app link team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AppLinkUserDetails
 
-`class` 
+`class`
 
 Linked app for member.
 
+**Properties:**
+
+- `appInfo`: `TeamLog.AppLogInfo` - Relevant application details.
+
 ### AppLinkUserType
 
-`class` 
+`class`
 
 Type for app link user type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AppLogInfo
 
-`class` 
+`class`
 
 App's logged information.
 
+**Properties:**
+
+- `appId`: `String?` - App unique ID.
+- `displayName`: `String?` - App display name.
+
 ### AppPermissionsChangedDetails
 
-`class` 
+`class`
 
 Changed app permissions.
 
+**Properties:**
+
+- `appName`: `String?` - Name of the app.
+- `permission`: `TeamLog.AdminConsoleAppPermission?` - Permission that was changed.
+- `previousValue`: `TeamLog.AdminConsoleAppPolicy` - Previous policy.
+- `newValue`: `TeamLog.AdminConsoleAppPolicy` - New policy.
+
 ### AppPermissionsChangedType
 
-`class` 
+`class`
 
 Type for app permissions changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AppUnlinkTeamDetails
 
-`class` 
+`class`
 
 Unlinked app for team.
 
+**Properties:**
+
+- `appInfo`: `TeamLog.AppLogInfo` - Relevant application details.
+
 ### AppUnlinkTeamType
 
-`class` 
+`class`
 
 Type for app unlink team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AppUnlinkUserDetails
 
-`class` 
+`class`
 
 Unlinked app for member.
 
+**Properties:**
+
+- `appInfo`: `TeamLog.AppLogInfo` - Relevant application details.
+
 ### AppUnlinkUserType
 
-`class` 
+`class`
 
 Type for app unlink user type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ApplyNamingConventionDetails
 
-`class` 
+`class`
 
 Applied naming convention.
 
 ### ApplyNamingConventionType
 
-`class` 
+`class`
 
 Type for apply naming convention type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -543,27 +1047,45 @@ Type for apply naming convention type.
 
 ### AssetLogInfo
 
-`enum` 
+`enum`
 
 Asset details.
 
+**Cases:**
+
+- `file` - File's details.
+- `folder` - Folder's details.
+- `paperDocument` - Paper document's details.
+- `paperFolder` - Paper folder's details.
+- `showcaseDocument` - Showcase document's details.
+- `other`
+
 ### FileLogInfo
 
-`class` 
+`class`
 
 File's logged information.
 
 ### FolderLogInfo
 
-`class` 
+`class`
 
 Folder's logged information.
 
+**Properties:**
+
+- `fileCount`: `UInt64?` - Number of files within the folder.
+
 ### PathLogInfo
 
-`class` 
+`class`
 
 Path's details.
+
+**Properties:**
+
+- `contextual`: `String?` - Fully qualified path relative to event's context.
+- `namespaceRelative`: `TeamLog.NamespaceRelativePathLogInfo` - Path relative to the namespace containing the content.
 
 ---
 
@@ -571,51 +1093,81 @@ Path's details.
 
 ### BackupAdminInvitationSentDetails
 
-`class` 
+`class`
 
 Invited members to activate Backup.
 
 ### BackupAdminInvitationSentType
 
-`class` 
+`class`
 
 Type for backup admin invitation sent type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BackupInvitationOpenedDetails
 
-`class` 
+`class`
 
 Opened Backup invite.
 
 ### BackupInvitationOpenedType
 
-`class` 
+`class`
 
 Type for backup invitation opened type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BackupStatus
 
-`enum` 
+`enum`
 
 Backup status
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### ComputerBackupPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling team access to computer backup feature
 
+**Cases:**
+
+- `default_`
+- `disabled`
+- `enabled`
+- `other`
+
 ### ComputerBackupPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed computer backup policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ComputerBackupPolicy` - New computer backup policy.
+- `previousValue`: `TeamLog.ComputerBackupPolicy` - Previous computer backup policy.
+
 ### ComputerBackupPolicyChangedType
 
-`class` 
+`class`
 
 Type for computer backup policy changed type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -623,99 +1175,181 @@ Type for computer backup policy changed type.
 
 ### BinderAddPageDetails
 
-`class` 
+`class`
 
 Added Binder page.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `docTitle`: `String` - Title of the Binder doc.
+- `binderItemName`: `String` - Name of the Binder page/section.
+
 ### BinderAddPageType
 
-`class` 
+`class`
 
 Type for binder add page type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BinderAddSectionDetails
 
-`class` 
+`class`
 
 Added Binder section.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `docTitle`: `String` - Title of the Binder doc.
+- `binderItemName`: `String` - Name of the Binder page/section.
+
 ### BinderAddSectionType
 
-`class` 
+`class`
 
 Type for binder add section type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BinderRemovePageDetails
 
-`class` 
+`class`
 
 Removed Binder page.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `docTitle`: `String` - Title of the Binder doc.
+- `binderItemName`: `String` - Name of the Binder page/section.
+
 ### BinderRemovePageType
 
-`class` 
+`class`
 
 Type for binder remove page type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BinderRemoveSectionDetails
 
-`class` 
+`class`
 
 Removed Binder section.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `docTitle`: `String` - Title of the Binder doc.
+- `binderItemName`: `String` - Name of the Binder page/section.
+
 ### BinderRemoveSectionType
 
-`class` 
+`class`
 
 Type for binder remove section type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BinderRenamePageDetails
 
-`class` 
+`class`
 
 Renamed Binder page.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `docTitle`: `String` - Title of the Binder doc.
+- `binderItemName`: `String` - Name of the Binder page/section.
+- `previousBinderItemName`: `String?` - Previous name of the Binder page/section.
+
 ### BinderRenamePageType
 
-`class` 
+`class`
 
 Type for binder rename page type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BinderRenameSectionDetails
 
-`class` 
+`class`
 
 Renamed Binder section.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `docTitle`: `String` - Title of the Binder doc.
+- `binderItemName`: `String` - Name of the Binder page/section.
+- `previousBinderItemName`: `String?` - Previous name of the Binder page/section.
+
 ### BinderRenameSectionType
 
-`class` 
+`class`
 
 Type for binder rename section type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BinderReorderPageDetails
 
-`class` 
+`class`
 
 Reordered Binder page.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `docTitle`: `String` - Title of the Binder doc.
+- `binderItemName`: `String` - Name of the Binder page/section.
+
 ### BinderReorderPageType
 
-`class` 
+`class`
 
 Type for binder reorder page type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### BinderReorderSectionDetails
 
-`class` 
+`class`
 
 Reordered Binder section.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `docTitle`: `String` - Title of the Binder doc.
+- `binderItemName`: `String` - Name of the Binder page/section.
+
 ### BinderReorderSectionType
 
-`class` 
+`class`
 
 Type for binder reorder section type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -723,39 +1357,70 @@ Type for binder reorder section type.
 
 ### CameraUploadsPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling if team members can activate camera uploads
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### CameraUploadsPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed camera uploads setting for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.CameraUploadsPolicy` - New camera uploads setting.
+- `previousValue`: `TeamLog.CameraUploadsPolicy` - Previous camera uploads setting.
+
 ### CameraUploadsPolicyChangedType
 
-`class` 
+`class`
 
 Type for camera uploads policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### CaptureTranscriptPolicy
 
-`enum` 
+`enum`
 
 Policy for deciding whether team users can transcription in Capture
 
+**Cases:**
+
+- `default_`
+- `disabled`
+- `enabled`
+- `other`
+
 ### CaptureTranscriptPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed Capture transcription policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.CaptureTranscriptPolicy` - To.
+- `previousValue`: `TeamLog.CaptureTranscriptPolicy` - From.
+
 ### CaptureTranscriptPolicyChangedType
 
-`class` 
+`class`
 
 Type for capture transcript policy changed type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -763,85 +1428,144 @@ Type for capture transcript policy changed type.
 
 ### ClassificationChangePolicyDetails
 
-`class` 
+`class`
 
 Changed classification policy for team.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.ClassificationPolicyEnumWrapper` - Previous classification policy.
+- `newValue`: `TeamLog.ClassificationPolicyEnumWrapper` - New classification policy.
+- `classificationType`: `TeamLog.ClassificationType` - Policy type.
+
 ### ClassificationChangePolicyType
 
-`class` 
+`class`
 
 Type for classification change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ClassificationCreateReportDetails
 
-`class` 
+`class`
 
 Created Classification report.
 
 ### ClassificationCreateReportFailDetails
 
-`class` 
+`class`
 
 Couldn't create Classification report.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### ClassificationCreateReportFailType
 
-`class` 
+`class`
 
 Type for classification create report fail type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ClassificationCreateReportType
 
-`class` 
+`class`
 
 Type for classification create report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ClassificationPolicyEnumWrapper
 
-`enum` 
+`enum`
 
 Policy for controlling team access to the classification feature
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `memberAndTeamFolders`
+- `teamFolders`
+- `other`
+
 ### ClassificationType
 
-`enum` 
+`enum`
 
 The type of classification (currently only personal information)
 
+**Cases:**
+
+- `personalInformation`
+- `pii`
+- `other`
+
 ### ContentAdministrationPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed content management setting.
 
+**Properties:**
+
+- `newValue`: `String` - New content administration policy.
+- `previousValue`: `String` - Previous content administration policy.
+
 ### ContentAdministrationPolicyChangedType
 
-`class` 
+`class`
 
 Type for content administration policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ContentPermanentDeletePolicy
 
-`enum` 
+`enum`
 
 Policy for pemanent content deletion
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ---
 
-## Collection & Naming
+## Collections & Albums
 
 ### CollectionShareDetails
 
-`class` 
+`class`
 
 Shared album.
 
+**Properties:**
+
+- `albumName`: `String` - Album name.
+
 ### CollectionShareType
 
-`class` 
+`class`
 
 Type for collection share type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -849,21 +1573,85 @@ Type for collection share type.
 
 ### DurationLogInfo
 
-`class` 
+`class`
 
 Represents a time duration: unit and amount
 
+**Properties:**
+
+- `unit`: `TeamLog.TimeUnit` - Time unit.
+- `amount`: `UInt64` - Amount of time.
+
 ### FailureDetailsLogInfo
 
-`class` 
+`class`
 
 Provides details about a failure
 
+**Properties:**
+
+- `userFriendlyMessage`: `String?` - A user friendly explanation of the error.
+- `technicalErrorMessage`: `String?` - A technical explanation of the error. This is relevant for some errors.
+
 ### PlacementRestriction
 
-`enum` 
+`enum`
 
 Type for placement restriction.
+
+**Cases:**
+
+- `australiaOnly`
+- `europeOnly`
+- `japanOnly`
+- `none`
+- `ukOnly`
+- `usS3Only`
+- `other`
+
+### SpaceCapsType
+
+`enum`
+
+Space limit alert policy
+
+**Cases:**
+
+- `hard`
+- `off`
+- `soft`
+- `other`
+
+### SpaceLimitsStatus
+
+`enum`
+
+Type for space limits status.
+
+**Cases:**
+
+- `nearQuota`
+- `overQuota`
+- `withinQuota`
+- `other`
+
+### TimeUnit
+
+`enum`
+
+Type for time unit.
+
+**Cases:**
+
+- `days`
+- `hours`
+- `milliseconds`
+- `minutes`
+- `months`
+- `seconds`
+- `weeks`
+- `years`
+- `other`
 
 ---
 
@@ -871,33 +1659,47 @@ Type for placement restriction.
 
 ### DataResidencyMigrationRequestSuccessfulDetails
 
-`class` 
+`class`
 
 Requested data residency migration for team data.
 
 ### DataResidencyMigrationRequestSuccessfulType
 
-`class` 
+`class`
 
 Type for data residency migration request successful type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DataResidencyMigrationRequestUnsuccessfulDetails
 
-`class` 
+`class`
 
 Request for data residency migration for team data has failed.
 
 ### DataResidencyMigrationRequestUnsuccessfulType
 
-`class` 
+`class`
 
 Type for data residency migration request unsuccessful type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DispositionActionType
 
-`enum` 
+`enum`
 
 Type for disposition action type.
+
+**Cases:**
+
+- `automaticDelete`
+- `automaticPermanentlyDelete`
+- `other`
 
 ---
 
@@ -905,231 +1707,389 @@ Type for disposition action type.
 
 ### DeviceApprovalsAddExceptionDetails
 
-`class` 
+`class`
 
 Added members to device approvals exception list.
 
 ### DeviceApprovalsAddExceptionType
 
-`class` 
+`class`
 
 Type for device approvals add exception type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceApprovalsChangeDesktopPolicyDetails
 
-`class` 
+`class`
 
 Set/removed limit on number of computers member can link to team Dropbox account.
 
+**Properties:**
+
+- `newValue`: `TeamLog.DeviceApprovalsPolicy?` - New desktop device approvals policy. Might be missing due to historical data gap.
+- `previousValue`: `TeamLog.DeviceApprovalsPolicy?` - Previous desktop device approvals policy. Might be missing due to historical data gap.
+
 ### DeviceApprovalsChangeDesktopPolicyType
 
-`class` 
+`class`
 
 Type for device approvals change desktop policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceApprovalsChangeMobilePolicyDetails
 
-`class` 
+`class`
 
 Set/removed limit on number of mobile devices member can link to team Dropbox account.
 
+**Properties:**
+
+- `newValue`: `TeamLog.DeviceApprovalsPolicy?` - New mobile device approvals policy. Might be missing due to historical data gap.
+- `previousValue`: `TeamLog.DeviceApprovalsPolicy?` - Previous mobile device approvals policy. Might be missing due to historical data gap.
+
 ### DeviceApprovalsChangeMobilePolicyType
 
-`class` 
+`class`
 
 Type for device approvals change mobile policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceApprovalsChangeOverageActionDetails
 
-`class` 
+`class`
 
 Changed device approvals setting when member is over limit.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.RolloutMethod?` - New over the limits policy. Might be missing due to historical data gap.
+- `previousValue`: `TeamPolicies.RolloutMethod?` - Previous over the limit policy. Might be missing due to historical data gap.
+
 ### DeviceApprovalsChangeOverageActionType
 
-`class` 
+`class`
 
 Type for device approvals change overage action type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceApprovalsChangeUnlinkActionDetails
 
-`class` 
+`class`
 
 Changed device approvals setting when member unlinks approved device.
 
+**Properties:**
+
+- `newValue`: `TeamLog.DeviceUnlinkPolicy?` - New device unlink policy. Might be missing due to historical data gap.
+- `previousValue`: `TeamLog.DeviceUnlinkPolicy?` - Previous device unlink policy. Might be missing due to historical data gap.
+
 ### DeviceApprovalsChangeUnlinkActionType
 
-`class` 
+`class`
 
 Type for device approvals change unlink action type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceApprovalsPolicy
 
-`enum` 
+`enum`
 
 Type for device approvals policy.
 
+**Cases:**
+
+- `limited`
+- `unlimited`
+- `other`
+
 ### DeviceApprovalsRemoveExceptionDetails
 
-`class` 
+`class`
 
 Removed members from device approvals exception list.
 
 ### DeviceApprovalsRemoveExceptionType
 
-`class` 
+`class`
 
 Type for device approvals remove exception type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceChangeIpDesktopDetails
 
-`class` 
+`class`
 
 Changed IP address associated with active desktop session.
 
+**Properties:**
+
+- `deviceSessionInfo`: `TeamLog.DeviceSessionLogInfo` - Device's session logged information.
+
 ### DeviceChangeIpDesktopType
 
-`class` 
+`class`
 
 Type for device change ip desktop type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceChangeIpMobileDetails
 
-`class` 
+`class`
 
 Changed IP address associated with active mobile session.
 
+**Properties:**
+
+- `deviceSessionInfo`: `TeamLog.DeviceSessionLogInfo?` - Device's session logged information.
+
 ### DeviceChangeIpMobileType
 
-`class` 
+`class`
 
 Type for device change ip mobile type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceChangeIpWebDetails
 
-`class` 
+`class`
 
 Changed IP address associated with active web session.
 
+**Properties:**
+
+- `userAgent`: `String` - Web browser name.
+
 ### DeviceChangeIpWebType
 
-`class` 
+`class`
 
 Type for device change ip web type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceDeleteOnUnlinkFailDetails
 
-`class` 
+`class`
 
 Failed to delete all files from unlinked device.
 
+**Properties:**
+
+- `sessionInfo`: `TeamLog.SessionLogInfo?` - Session unique id.
+- `displayName`: `String?` - The device name. Might be missing due to historical data gap.
+- `numFailures`: `Int64` - The number of times that remote file deletion failed.
+
 ### DeviceDeleteOnUnlinkFailType
 
-`class` 
+`class`
 
 Type for device delete on unlink fail type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceDeleteOnUnlinkSuccessDetails
 
-`class` 
+`class`
 
 Deleted all files from unlinked device.
 
+**Properties:**
+
+- `sessionInfo`: `TeamLog.SessionLogInfo?` - Session unique id.
+- `displayName`: `String?` - The device name. Might be missing due to historical data gap.
+
 ### DeviceDeleteOnUnlinkSuccessType
 
-`class` 
+`class`
 
 Type for device delete on unlink success type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceLinkFailDetails
 
-`class` 
+`class`
 
 Failed to link device.
 
+**Properties:**
+
+- `ipAddress`: `String?` - IP address. Might be missing due to historical data gap.
+- `deviceType`: `TeamLog.DeviceType` - A description of the device used while user approval blocked.
+
 ### DeviceLinkFailType
 
-`class` 
+`class`
 
 Type for device link fail type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceLinkSuccessDetails
 
-`class` 
+`class`
 
 Linked device.
 
+**Properties:**
+
+- `deviceSessionInfo`: `TeamLog.DeviceSessionLogInfo?` - Device's session logged information.
+
 ### DeviceLinkSuccessType
 
-`class` 
+`class`
 
 Type for device link success type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceManagementDisabledDetails
 
-`class` 
+`class`
 
 Disabled device management.
 
 ### DeviceManagementDisabledType
 
-`class` 
+`class`
 
 Type for device management disabled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceManagementEnabledDetails
 
-`class` 
+`class`
 
 Enabled device management.
 
 ### DeviceManagementEnabledType
 
-`class` 
+`class`
 
 Type for device management enabled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceSyncBackupStatusChangedDetails
 
-`class` 
+`class`
 
 Enabled/disabled backup for computer.
 
+**Properties:**
+
+- `desktopDeviceSessionInfo`: `TeamLog.DesktopDeviceSessionLogInfo` - Device's session logged information.
+- `previousValue`: `TeamLog.BackupStatus` - Previous status of computer backup on the device.
+- `newValue`: `TeamLog.BackupStatus` - Next status of computer backup on the device.
+
 ### DeviceSyncBackupStatusChangedType
 
-`class` 
+`class`
 
 Type for device sync backup status changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeviceType
 
-`enum` 
+`enum`
 
 Type for device type.
 
+**Cases:**
+
+- `desktop`
+- `mobile`
+- `other`
+
 ### DeviceUnlinkDetails
 
-`class` 
+`class`
 
 Disconnected device.
 
+**Properties:**
+
+- `sessionInfo`: `TeamLog.SessionLogInfo?` - Session unique id.
+- `displayName`: `String?` - The device name. Might be missing due to historical data gap.
+- `deleteData`: `Bool` - True if the user requested to delete data after device unlink, false otherwise.
+
 ### DeviceUnlinkPolicy
 
-`enum` 
+`enum`
 
 Type for device unlink policy.
 
+**Cases:**
+
+- `keep`
+- `remove`
+- `other`
+
 ### DeviceUnlinkType
 
-`class` 
+`class`
 
 Type for device unlink type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LinkedDeviceLogInfo
 
-`enum` 
+`enum`
 
 The device sessions that user is linked to.
+
+**Cases:**
+
+- `desktopDeviceSession` - desktop device session's details.
+- `legacyDeviceSession` - legacy device session's details.
+- `mobileDeviceSession` - mobile device session's details.
+- `webDeviceSession` - web device session's details.
+- `other`
 
 ---
 
@@ -1137,139 +2097,166 @@ The device sessions that user is linked to.
 
 ### DomainInvitesApproveRequestToJoinTeamDetails
 
-`class` 
+`class`
 
 Approved user's request to join team.
 
 ### DomainInvitesApproveRequestToJoinTeamType
 
-`class` 
+`class`
 
 Type for domain invites approve request to join team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DomainInvitesDeclineRequestToJoinTeamDetails
 
-`class` 
+`class`
 
 Declined user's request to join team.
 
 ### DomainInvitesDeclineRequestToJoinTeamType
 
-`class` 
+`class`
 
 Type for domain invites decline request to join team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DomainInvitesEmailExistingUsersDetails
 
-`class` 
+`class`
 
 Sent domain invites to existing domain accounts.
 
+**Properties:**
+
+- `domainName`: `String` - Domain names.
+- `numRecipients`: `UInt64` - Number of recipients.
+
 ### DomainInvitesEmailExistingUsersType
 
-`class` 
+`class`
 
 Type for domain invites email existing users type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DomainInvitesRequestToJoinTeamDetails
 
-`class` 
+`class`
 
 Requested to join team.
 
 ### DomainInvitesRequestToJoinTeamType
 
-`class` 
+`class`
 
 Type for domain invites request to join team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DomainInvitesSetInviteNewUserPrefToNoDetails
 
-`class` 
+`class`
 
 Disabled "Automatically invite new users".
 
 ### DomainInvitesSetInviteNewUserPrefToNoType
 
-`class` 
+`class`
 
 Type for domain invites set invite new user pref to no type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DomainInvitesSetInviteNewUserPrefToYesDetails
 
-`class` 
+`class`
 
 Enabled "Automatically invite new users".
 
 ### DomainInvitesSetInviteNewUserPrefToYesType
 
-`class` 
+`class`
 
 Type for domain invites set invite new user pref to yes type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DomainVerificationAddDomainFailDetails
 
-`class` 
+`class`
 
 Failed to verify team domain.
 
+**Properties:**
+
+- `domainName`: `String` - Domain name.
+- `verificationMethod`: `String?` - Domain name verification method. Might be missing due to historical data gap.
+
 ### DomainVerificationAddDomainFailType
 
-`class` 
+`class`
 
 Type for domain verification add domain fail type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DomainVerificationAddDomainSuccessDetails
 
-`class` 
+`class`
 
 Verified team domain.
 
+**Properties:**
+
+- `domainNames`: `[String]` - Domain names.
+- `verificationMethod`: `String?` - Domain name verification method. Might be missing due to historical data gap.
+
 ### DomainVerificationAddDomainSuccessType
 
-`class` 
+`class`
 
 Type for domain verification add domain success type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DomainVerificationRemoveDomainDetails
 
-`class` 
+`class`
 
 Removed domain from list of verified team domains.
 
+**Properties:**
+
+- `domainNames`: `[String]` - Domain names.
+
 ### DomainVerificationRemoveDomainType
 
-`class` 
+`class`
 
 Type for domain verification remove domain type.
 
----
+**Properties:**
 
-## Domain & Feature Settings
-
-### DisabledDomainInvitesDetails
-
-`class` 
-
-Disabled domain invites.
-
-### DisabledDomainInvitesType
-
-`class` 
-
-Type for disabled domain invites type.
-
-### EnabledDomainInvitesDetails
-
-`class` 
-
-Enabled domain invites.
-
-### EnabledDomainInvitesType
-
-`class` 
-
-Type for enabled domain invites type.
+- `description_`: `String`
 
 ---
 
@@ -1277,45 +2264,78 @@ Type for enabled domain invites type.
 
 ### DropboxPasswordsExportedDetails
 
-`class` 
+`class`
 
 Exported passwords.
 
+**Properties:**
+
+- `platform`: `String` - The platform the device runs export.
+
 ### DropboxPasswordsExportedType
 
-`class` 
+`class`
 
 Type for dropbox passwords exported type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DropboxPasswordsNewDeviceEnrolledDetails
 
-`class` 
+`class`
 
 Enrolled new Dropbox Passwords device.
 
+**Properties:**
+
+- `isFirstDevice`: `Bool` - Whether it's a first device enrolled.
+- `platform`: `String` - The platform the device is enrolled.
+
 ### DropboxPasswordsNewDeviceEnrolledType
 
-`class` 
+`class`
 
 Type for dropbox passwords new device enrolled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DropboxPasswordsPolicy
 
-`enum` 
+`enum`
 
 Policy for deciding whether team users can use Dropbox Passwords
 
+**Cases:**
+
+- `default_`
+- `disabled`
+- `enabled`
+- `other`
+
 ### DropboxPasswordsPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed Dropbox Passwords policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.DropboxPasswordsPolicy` - To.
+- `previousValue`: `TeamLog.DropboxPasswordsPolicy` - From.
+
 ### DropboxPasswordsPolicyChangedType
 
-`class` 
+`class`
 
 Type for dropbox passwords policy changed type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -1323,33 +2343,60 @@ Type for dropbox passwords policy changed type.
 
 ### EmailIngestPolicy
 
-`enum` 
+`enum`
 
 Policy for deciding whether a team can use Email to Dropbox feature
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### EmailIngestPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed email to Dropbox policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.EmailIngestPolicy` - To.
+- `previousValue`: `TeamLog.EmailIngestPolicy` - From.
+
 ### EmailIngestPolicyChangedType
 
-`class` 
+`class`
 
 Type for email ingest policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EmailIngestReceiveFileDetails
 
-`class` 
+`class`
 
 Received files via Email to Dropbox.
 
+**Properties:**
+
+- `inboxName`: `String` - Inbox name.
+- `attachmentNames`: `[String]` - Submitted file names.
+- `subject`: `String?` - Subject of the email.
+- `fromName`: `String?` - The name as provided by the submitter.
+- `fromEmail`: `String?` - The email as provided by the submitter.
+
 ### EmailIngestReceiveFileType
 
-`class` 
+`class`
 
 Type for email ingest receive file type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -1357,87 +2404,124 @@ Type for email ingest receive file type.
 
 ### EmmAddExceptionDetails
 
-`class` 
+`class`
 
 Added members to EMM exception list.
 
 ### EmmAddExceptionType
 
-`class` 
+`class`
 
 Type for emm add exception type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EmmChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled enterprise mobility management for members.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.EmmState` - New enterprise mobility management policy.
+- `previousValue`: `TeamPolicies.EmmState?` - Previous enterprise mobility management policy. Might be missing due to historical data gap.
+
 ### EmmChangePolicyType
 
-`class` 
+`class`
 
 Type for emm change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EmmCreateExceptionsReportDetails
 
-`class` 
+`class`
 
 Created EMM-excluded users report.
 
 ### EmmCreateExceptionsReportType
 
-`class` 
+`class`
 
 Type for emm create exceptions report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EmmCreateUsageReportDetails
 
-`class` 
+`class`
 
 Created EMM mobile app usage report.
 
 ### EmmCreateUsageReportType
 
-`class` 
+`class`
 
 Type for emm create usage report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EmmErrorDetails
 
-`class` 
+`class`
 
 Failed to sign in via EMM.
 
+**Properties:**
+
+- `errorDetails`: `TeamLog.FailureDetailsLogInfo` - Error details.
+
 ### EmmErrorType
 
-`class` 
+`class`
 
 Type for emm error type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EmmRefreshAuthTokenDetails
 
-`class` 
+`class`
 
 Refreshed auth token used for setting up EMM.
 
 ### EmmRefreshAuthTokenType
 
-`class` 
+`class`
 
 Type for emm refresh auth token type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EmmRemoveExceptionDetails
 
-`class` 
+`class`
 
 Removed members from EMM exception list.
 
 ### EmmRemoveExceptionType
 
-`class` 
+`class`
 
 Type for emm remove exception type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -1445,105 +2529,190 @@ Type for emm remove exception type.
 
 ### ChangedEnterpriseAdminRoleDetails
 
-`class` 
+`class`
 
 Changed enterprise admin role.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.FedAdminRole` - The member&#x2019s previous enterprise admin role.
+- `newValue`: `TeamLog.FedAdminRole` - The member&#x2019s new enterprise admin role.
+- `teamName`: `String` - The name of the member&#x2019s team.
+
 ### ChangedEnterpriseAdminRoleType
 
-`class` 
+`class`
 
 Type for changed enterprise admin role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ChangedEnterpriseConnectedTeamStatusDetails
 
-`class` 
+`class`
 
 Changed enterprise-connected team status.
 
+**Properties:**
+
+- `action`: `TeamLog.FedHandshakeAction` - The preformed change in the team&#x2019s connection status.
+- `additionalInfo`: `TeamLog.FederationStatusChangeAdditionalInfo` - Additional information about the organization or team.
+- `previousValue`: `TeamLog.TrustedTeamsRequestState` - Previous request state.
+- `newValue`: `TeamLog.TrustedTeamsRequestState` - New request state.
+
 ### ChangedEnterpriseConnectedTeamStatusType
 
-`class` 
+`class`
 
 Type for changed enterprise connected team status type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ConnectedTeamName
 
-`class` 
+`class`
 
 The name of the team
 
+**Properties:**
+
+- `team`: `String` - The name of the team.
+
 ### EndedEnterpriseAdminSessionDeprecatedDetails
 
-`class` 
+`class`
 
 Ended enterprise admin session.
 
+**Properties:**
+
+- `federationExtraDetails`: `TeamLog.FedExtraDetails` - More information about the organization or team.
+
 ### EndedEnterpriseAdminSessionDeprecatedType
 
-`class` 
+`class`
 
 Type for ended enterprise admin session deprecated type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EndedEnterpriseAdminSessionDetails
 
-`class` 
+`class`
 
 Ended enterprise admin session.
 
 ### EndedEnterpriseAdminSessionType
 
-`class` 
+`class`
 
 Type for ended enterprise admin session type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### EnterpriseSettingsLockingDetails
 
-`class` 
+`class`
 
 Changed who can update a setting.
 
+**Properties:**
+
+- `teamName`: `String` - The secondary team name.
+- `settingsPageName`: `String` - Settings page name.
+- `previousSettingsPageLockingState`: `String` - Previous locked settings page state.
+- `newSettingsPageLockingState`: `String` - New locked settings page state.
+
 ### EnterpriseSettingsLockingType
 
-`class` 
+`class`
 
 Type for enterprise settings locking type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FedAdminRole
 
-`enum` 
+`enum`
 
 Type for fed admin role.
 
+**Cases:**
+
+- `enterpriseAdmin`
+- `notEnterpriseAdmin`
+- `other`
+
 ### FedExtraDetails
 
-`enum` 
+`enum`
 
 More details about the organization or team.
 
+**Cases:**
+
+- `organization` - More details about the organization.
+- `team` - More details about the team.
+- `other`
+
 ### FedHandshakeAction
 
-`enum` 
+`enum`
 
 Type for fed handshake action.
 
+**Cases:**
+
+- `acceptedInvite`
+- `canceledInvite`
+- `inviteExpired`
+- `invited`
+- `rejectedInvite`
+- `removedTeam`
+- `other`
+
 ### FederationStatusChangeAdditionalInfo
 
-`enum` 
+`enum`
 
 Additional information about the organization or connected team
 
+**Cases:**
+
+- `connectedTeamName` - The name of the team.
+- `nonTrustedTeamDetails` - The email to which the request was sent.
+- `organizationName` - The name of the organization.
+- `other`
+
 ### StartedEnterpriseAdminSessionDetails
 
-`class` 
+`class`
 
 Started enterprise admin session.
 
+**Properties:**
+
+- `federationExtraDetails`: `TeamLog.FedExtraDetails` - More information about the organization or team.
+
 ### StartedEnterpriseAdminSessionType
 
-`class` 
+`class`
 
 Type for started enterprise admin session type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -1551,27 +2720,39 @@ Type for started enterprise admin session type.
 
 ### ExportMembersReportDetails
 
-`class` 
+`class`
 
 Created member data report.
 
 ### ExportMembersReportFailDetails
 
-`class` 
+`class`
 
 Failed to create members data report.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### ExportMembersReportFailType
 
-`class` 
+`class`
 
 Type for export members report fail type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ExportMembersReportType
 
-`class` 
+`class`
 
 Type for export members report type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -1579,123 +2760,223 @@ Type for export members report type.
 
 ### ExternalDriveBackupEligibilityStatus
 
-`enum` 
+`enum`
 
 External Drive Backup eligibility status
 
+**Cases:**
+
+- `exceedLicenseCap`
+- `success`
+- `other`
+
 ### ExternalDriveBackupEligibilityStatusCheckedDetails
 
-`class` 
+`class`
 
 Checked external drive backup eligibility status.
 
+**Properties:**
+
+- `desktopDeviceSessionInfo`: `TeamLog.DesktopDeviceSessionLogInfo` - Device's session logged information.
+- `status`: `TeamLog.ExternalDriveBackupEligibilityStatus` - Current eligibility status of external drive backup.
+- `numberOfExternalDriveBackup`: `UInt64` - Total number of valid external drive backup for all the team members.
+
 ### ExternalDriveBackupEligibilityStatusCheckedType
 
-`class` 
+`class`
 
 Type for external drive backup eligibility status checked type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ExternalDriveBackupPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling team access to external drive backup feature
 
+**Cases:**
+
+- `default_`
+- `disabled`
+- `enabled`
+- `other`
+
 ### ExternalDriveBackupPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed external drive backup policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ExternalDriveBackupPolicy` - New external drive backup policy.
+- `previousValue`: `TeamLog.ExternalDriveBackupPolicy` - Previous external drive backup policy.
+
 ### ExternalDriveBackupPolicyChangedType
 
-`class` 
+`class`
 
 Type for external drive backup policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ExternalDriveBackupStatus
 
-`enum` 
+`enum`
 
 External Drive Backup status
 
+**Cases:**
+
+- `broken`
+- `created`
+- `createdOrBroken`
+- `deleted`
+- `empty`
+- `unknown`
+- `other`
+
 ### ExternalDriveBackupStatusChangedDetails
 
-`class` 
+`class`
 
 Modified external drive backup.
 
+**Properties:**
+
+- `desktopDeviceSessionInfo`: `TeamLog.DesktopDeviceSessionLogInfo` - Device's session logged information.
+- `previousValue`: `TeamLog.ExternalDriveBackupStatus` - Previous status of this external drive backup.
+- `newValue`: `TeamLog.ExternalDriveBackupStatus` - Next status of this external drive backup.
+
 ### ExternalDriveBackupStatusChangedType
 
-`class` 
+`class`
 
 Type for external drive backup status changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ExternalSharingCreateReportDetails
 
-`class` 
+`class`
 
 Created External sharing report.
 
 ### ExternalSharingCreateReportType
 
-`class` 
+`class`
 
 Type for external sharing create report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ExternalSharingReportFailedDetails
 
-`class` 
+`class`
 
 Couldn't create External sharing report.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### ExternalSharingReportFailedType
 
-`class` 
+`class`
 
 Type for external sharing report failed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ExternalUserLogInfo
 
-`class` 
+`class`
 
 A user without a Dropbox account.
 
+**Properties:**
+
+- `userIdentifier`: `String` - An external user identifier.
+- `identifierType`: `TeamLog.IdentifierType` - Identifier type.
+
 ### GuestAdminChangeStatusDetails
 
-`class` 
+`class`
 
 Changed guest team admin status.
 
+**Properties:**
+
+- `isGuest`: `Bool` - True for guest, false for host.
+- `guestTeamName`: `String?` - The name of the guest team.
+- `hostTeamName`: `String?` - The name of the host team.
+- `previousValue`: `TeamLog.TrustedTeamsRequestState` - Previous request state.
+- `newValue`: `TeamLog.TrustedTeamsRequestState` - New request state.
+- `actionDetails`: `TeamLog.TrustedTeamsRequestAction` - Action details.
+
 ### GuestAdminChangeStatusType
 
-`class` 
+`class`
 
 Type for guest admin change status type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GuestAdminSignedInViaTrustedTeamsDetails
 
-`class` 
+`class`
 
 Started trusted team admin session.
 
+**Properties:**
+
+- `teamName`: `String?` - Host team name.
+- `trustedTeamName`: `String?` - Trusted team name.
+
 ### GuestAdminSignedInViaTrustedTeamsType
 
-`class` 
+`class`
 
 Type for guest admin signed in via trusted teams type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GuestAdminSignedOutViaTrustedTeamsDetails
 
-`class` 
+`class`
 
 Ended trusted team admin session.
 
+**Properties:**
+
+- `teamName`: `String?` - Host team name.
+- `trustedTeamName`: `String?` - Trusted team name.
+
 ### GuestAdminSignedOutViaTrustedTeamsType
 
-`class` 
+`class`
 
 Type for guest admin signed out via trusted teams type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -1703,75 +2984,181 @@ Type for guest admin signed out via trusted teams type.
 
 ### AllowDownloadDisabledDetails
 
-`class` 
+`class`
 
 Disabled downloads.
 
 ### AllowDownloadDisabledType
 
-`class` 
+`class`
 
 Type for allow download disabled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### AllowDownloadEnabledDetails
 
-`class` 
+`class`
 
 Enabled downloads.
 
 ### AllowDownloadEnabledType
 
-`class` 
+`class`
 
 Type for allow download enabled type.
 
+**Properties:**
+
+- `description_`: `String`
+
+### DirectoryRestrictionsAddMembersDetails
+
+`class`
+
+Added members to directory restrictions list.
+
+### DirectoryRestrictionsAddMembersType
+
+`class`
+
+Type for directory restrictions add members type.
+
+**Properties:**
+
+- `description_`: `String`
+
+### DirectoryRestrictionsRemoveMembersDetails
+
+`class`
+
+Removed members from directory restrictions list.
+
+### DirectoryRestrictionsRemoveMembersType
+
+`class`
+
+Type for directory restrictions remove members type.
+
+**Properties:**
+
+- `description_`: `String`
+
+### DisabledDomainInvitesDetails
+
+`class`
+
+Disabled domain invites.
+
+### DisabledDomainInvitesType
+
+`class`
+
+Type for disabled domain invites type.
+
+**Properties:**
+
+- `description_`: `String`
+
+### EnabledDomainInvitesDetails
+
+`class`
+
+Enabled domain invites.
+
+### EnabledDomainInvitesType
+
+`class`
+
+Type for enabled domain invites type.
+
+**Properties:**
+
+- `description_`: `String`
+
 ### NoPasswordLinkGenCreateReportDetails
 
-`class` 
+`class`
 
 Report created: Links created without passwords.
 
+**Properties:**
+
+- `startDate`: `Date` - Report start date.
+- `endDate`: `Date` - Report end date.
+
 ### NoPasswordLinkGenCreateReportType
 
-`class` 
+`class`
 
 Type for no password link gen create report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NoPasswordLinkGenReportFailedDetails
 
-`class` 
+`class`
 
 Couldn't create report: Links created without passwords.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### NoPasswordLinkGenReportFailedType
 
-`class` 
+`class`
 
 Type for no password link gen report failed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NoPasswordLinkViewCreateReportDetails
 
-`class` 
+`class`
 
 Report created: Views of links without passwords.
 
+**Properties:**
+
+- `startDate`: `Date` - Report start date.
+- `endDate`: `Date` - Report end date.
+
 ### NoPasswordLinkViewCreateReportType
 
-`class` 
+`class`
 
 Type for no password link view create report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NoPasswordLinkViewReportFailedDetails
 
-`class` 
+`class`
 
 Couldn't create report: Views of links without passwords.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### NoPasswordLinkViewReportFailedType
 
-`class` 
+`class`
 
 Type for no password link view report failed type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -1779,699 +3166,1094 @@ Type for no password link view report failed type.
 
 ### CreateFolderDetails
 
-`class` 
+`class`
 
 Created folders.
 
 ### CreateFolderType
 
-`class` 
+`class`
 
 Type for create folder type.
 
-### DirectoryRestrictionsAddMembersDetails
+**Properties:**
 
-`class` 
-
-Added members to directory restrictions list.
-
-### DirectoryRestrictionsAddMembersType
-
-`class` 
-
-Type for directory restrictions add members type.
-
-### DirectoryRestrictionsRemoveMembersDetails
-
-`class` 
-
-Removed members from directory restrictions list.
-
-### DirectoryRestrictionsRemoveMembersType
-
-`class` 
-
-Type for directory restrictions remove members type.
+- `description_`: `String`
 
 ### FileAddCommentDetails
 
-`class` 
+`class`
 
 Added file comment.
 
+**Properties:**
+
+- `commentText`: `String?` - Comment text.
+
 ### FileAddCommentType
 
-`class` 
+`class`
 
 Type for file add comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileAddDetails
 
-`class` 
+`class`
 
 Added files and/or folders.
 
 ### FileAddFromAutomationDetails
 
-`class` 
+`class`
 
 Added files and/or folders from automation.
 
 ### FileAddFromAutomationType
 
-`class` 
+`class`
 
 Type for file add from automation type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileAddType
 
-`class` 
+`class`
 
 Type for file add type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileChangeCommentSubscriptionDetails
 
-`class` 
+`class`
 
 Subscribed to or unsubscribed from comment notifications for file.
 
+**Properties:**
+
+- `newValue`: `TeamLog.FileCommentNotificationPolicy` - New file comment subscription.
+- `previousValue`: `TeamLog.FileCommentNotificationPolicy?` - Previous file comment subscription. Might be missing due to historical data gap.
+
 ### FileChangeCommentSubscriptionType
 
-`class` 
+`class`
 
 Type for file change comment subscription type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileCommentNotificationPolicy
 
-`enum` 
+`enum`
 
 Enable or disable file comments notifications
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### FileCommentsChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled commenting on team files.
 
+**Properties:**
+
+- `newValue`: `TeamLog.FileCommentsPolicy` - New commenting on team files policy.
+- `previousValue`: `TeamLog.FileCommentsPolicy?` - Previous commenting on team files policy. Might be missing due to historical data gap.
+
 ### FileCommentsChangePolicyType
 
-`class` 
+`class`
 
 Type for file comments change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileCommentsPolicy
 
-`enum` 
+`enum`
 
 File comments policy
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### FileCopyDetails
 
-`class` 
+`class`
 
 Copied files and/or folders.
 
+**Properties:**
+
+- `relocateActionDetails`: `[TeamLog.RelocateAssetReferencesLogInfo]` - Relocate action details.
+
 ### FileCopyType
 
-`class` 
+`class`
 
 Type for file copy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileDeleteCommentDetails
 
-`class` 
+`class`
 
 Deleted file comment.
 
+**Properties:**
+
+- `commentText`: `String?` - Comment text.
+
 ### FileDeleteCommentType
 
-`class` 
+`class`
 
 Type for file delete comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileDeleteDetails
 
-`class` 
+`class`
 
 Deleted files and/or folders.
 
 ### FileDeleteType
 
-`class` 
+`class`
 
 Type for file delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileDownloadDetails
 
-`class` 
+`class`
 
 Downloaded files and/or folders.
 
 ### FileDownloadType
 
-`class` 
+`class`
 
 Type for file download type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileEditCommentDetails
 
-`class` 
+`class`
 
 Edited file comment.
 
+**Properties:**
+
+- `commentText`: `String?` - Comment text.
+- `previousCommentText`: `String` - Previous comment text.
+
 ### FileEditCommentType
 
-`class` 
+`class`
 
 Type for file edit comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileEditDetails
 
-`class` 
+`class`
 
 Edited files.
 
 ### FileEditType
 
-`class` 
+`class`
 
 Type for file edit type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileGetCopyReferenceDetails
 
-`class` 
+`class`
 
 Created copy reference to file/folder.
 
 ### FileGetCopyReferenceType
 
-`class` 
+`class`
 
 Type for file get copy reference type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileLikeCommentDetails
 
-`class` 
+`class`
 
 Liked file comment.
 
+**Properties:**
+
+- `commentText`: `String?` - Comment text.
+
 ### FileLikeCommentType
 
-`class` 
+`class`
 
 Type for file like comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileLockingLockStatusChangedDetails
 
-`class` 
+`class`
 
 Locked/unlocked editing for a file.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.LockStatus` - Previous lock status of the file.
+- `newValue`: `TeamLog.LockStatus` - New lock status of the file.
+
 ### FileLockingLockStatusChangedType
 
-`class` 
+`class`
 
 Type for file locking lock status changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileLockingPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed file locking policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.FileLockingPolicyState` - New file locking policy.
+- `previousValue`: `TeamPolicies.FileLockingPolicyState` - Previous file locking policy.
+
 ### FileLockingPolicyChangedType
 
-`class` 
+`class`
 
 Type for file locking policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileOrFolderLogInfo
 
-`class` 
+`class`
 
 Generic information relevant both for files and folders
 
+**Properties:**
+
+- `path`: `TeamLog.PathLogInfo` - Path relative to event context.
+- `displayName`: `String?` - Display name.
+- `fileId`: `String?` - Unique ID.
+- `fileSize`: `UInt64?` - File or folder size in bytes.
+
 ### FileMoveDetails
 
-`class` 
+`class`
 
 Moved files and/or folders.
 
+**Properties:**
+
+- `relocateActionDetails`: `[TeamLog.RelocateAssetReferencesLogInfo]` - Relocate action details.
+
 ### FileMoveType
 
-`class` 
+`class`
 
 Type for file move type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FilePermanentlyDeleteDetails
 
-`class` 
+`class`
 
 Permanently deleted files and/or folders.
 
 ### FilePermanentlyDeleteType
 
-`class` 
+`class`
 
 Type for file permanently delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FilePreviewDetails
 
-`class` 
+`class`
 
 Previewed files and/or folders.
 
 ### FilePreviewType
 
-`class` 
+`class`
 
 Type for file preview type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileProviderMigrationPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed File Provider Migration policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.FileProviderMigrationPolicyState` - To.
+- `previousValue`: `TeamPolicies.FileProviderMigrationPolicyState` - From.
+
 ### FileProviderMigrationPolicyChangedType
 
-`class` 
+`class`
 
 Type for file provider migration policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRenameDetails
 
-`class` 
+`class`
 
 Renamed files and/or folders.
 
+**Properties:**
+
+- `relocateActionDetails`: `[TeamLog.RelocateAssetReferencesLogInfo]` - Relocate action details.
+
 ### FileRenameType
 
-`class` 
+`class`
 
 Type for file rename type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestChangeDetails
 
-`class` 
+`class`
 
 Changed file request.
 
+**Properties:**
+
+- `fileRequestId`: `String?` - File request id. Might be missing due to historical data gap.
+- `previousDetails`: `TeamLog.FileRequestDetails?` - Previous file request details. Might be missing due to historical data gap.
+- `newDetails`: `TeamLog.FileRequestDetails` - New file request details.
+
 ### FileRequestChangeType
 
-`class` 
+`class`
 
 Type for file request change type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestCloseDetails
 
-`class` 
+`class`
 
 Closed file request.
 
+**Properties:**
+
+- `fileRequestId`: `String?` - File request id. Might be missing due to historical data gap.
+- `previousDetails`: `TeamLog.FileRequestDetails?` - Previous file request details. Might be missing due to historical data gap.
+
 ### FileRequestCloseType
 
-`class` 
+`class`
 
 Type for file request close type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestCreateDetails
 
-`class` 
+`class`
 
 Created file request.
 
+**Properties:**
+
+- `fileRequestId`: `String?` - File request id. Might be missing due to historical data gap.
+- `requestDetails`: `TeamLog.FileRequestDetails?` - File request details. Might be missing due to historical data gap.
+
 ### FileRequestCreateType
 
-`class` 
+`class`
 
 Type for file request create type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestDeadline
 
-`class` 
+`class`
 
 File request deadline
 
+**Properties:**
+
+- `deadline`: `Date?` - The deadline for this file request. Might be missing due to historical data gap.
+- `allowLateUploads`: `String?` - If set, allow uploads after the deadline has passed.
+
 ### FileRequestDeleteDetails
 
-`class` 
+`class`
 
 Delete file request.
 
+**Properties:**
+
+- `fileRequestId`: `String?` - File request id. Might be missing due to historical data gap.
+- `previousDetails`: `TeamLog.FileRequestDetails?` - Previous file request details. Might be missing due to historical data gap.
+
 ### FileRequestDeleteType
 
-`class` 
+`class`
 
 Type for file request delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestDetails
 
-`class` 
+`class`
 
 File request details
 
+**Properties:**
+
+- `assetIndex`: `UInt64` - Asset position in the Assets list.
+- `deadline`: `TeamLog.FileRequestDeadline?` - File request deadline.
+
 ### FileRequestReceiveFileDetails
 
-`class` 
+`class`
 
 Received files for file request.
 
+**Properties:**
+
+- `fileRequestId`: `String?` - File request id. Might be missing due to historical data gap.
+- `fileRequestDetails`: `TeamLog.FileRequestDetails?` - File request details. Might be missing due to historical data gap.
+- `submittedFileNames`: `[String]` - Submitted file names.
+- `submitterName`: `String?` - The name as provided by the submitter.
+- `submitterEmail`: `String?` - The email as provided by the submitter.
+
 ### FileRequestReceiveFileType
 
-`class` 
+`class`
 
 Type for file request receive file type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestsChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled file requests.
 
+**Properties:**
+
+- `newValue`: `TeamLog.FileRequestsPolicy` - New file requests policy.
+- `previousValue`: `TeamLog.FileRequestsPolicy?` - Previous file requests policy. Might be missing due to historical data gap.
+
 ### FileRequestsChangePolicyType
 
-`class` 
+`class`
 
 Type for file requests change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestsEmailsEnabledDetails
 
-`class` 
+`class`
 
 Enabled file request emails for everyone.
 
 ### FileRequestsEmailsEnabledType
 
-`class` 
+`class`
 
 Type for file requests emails enabled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestsEmailsRestrictedToTeamOnlyDetails
 
-`class` 
+`class`
 
 Enabled file request emails for team.
 
 ### FileRequestsEmailsRestrictedToTeamOnlyType
 
-`class` 
+`class`
 
 Type for file requests emails restricted to team only type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRequestsPolicy
 
-`enum` 
+`enum`
 
 File requests policy
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### FileResolveCommentDetails
 
-`class` 
+`class`
 
 Resolved file comment.
 
+**Properties:**
+
+- `commentText`: `String?` - Comment text.
+
 ### FileResolveCommentType
 
-`class` 
+`class`
 
 Type for file resolve comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRestoreDetails
 
-`class` 
+`class`
 
 Restored deleted files and/or folders.
 
 ### FileRestoreType
 
-`class` 
+`class`
 
 Type for file restore type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRevertDetails
 
-`class` 
+`class`
 
 Reverted files to previous version.
 
 ### FileRevertType
 
-`class` 
+`class`
 
 Type for file revert type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileRollbackChangesDetails
 
-`class` 
+`class`
 
 Rolled back file actions.
 
 ### FileRollbackChangesType
 
-`class` 
+`class`
 
 Type for file rollback changes type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileSaveCopyReferenceDetails
 
-`class` 
+`class`
 
 Saved file/folder using copy reference.
 
+**Properties:**
+
+- `relocateActionDetails`: `[TeamLog.RelocateAssetReferencesLogInfo]` - Relocate action details.
+
 ### FileSaveCopyReferenceType
 
-`class` 
+`class`
 
 Type for file save copy reference type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileTransfersFileAddDetails
 
-`class` 
+`class`
 
 Transfer files added.
 
+**Properties:**
+
+- `fileTransferId`: `String` - Transfer id.
+
 ### FileTransfersFileAddType
 
-`class` 
+`class`
 
 Type for file transfers file add type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileTransfersPolicy
 
-`enum` 
+`enum`
 
 File transfers policy
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### FileTransfersPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed file transfers policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.FileTransfersPolicy` - New file transfers policy.
+- `previousValue`: `TeamLog.FileTransfersPolicy` - Previous file transfers policy.
+
 ### FileTransfersPolicyChangedType
 
-`class` 
+`class`
 
 Type for file transfers policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileTransfersTransferDeleteDetails
 
-`class` 
+`class`
 
 Deleted transfer.
 
+**Properties:**
+
+- `fileTransferId`: `String` - Transfer id.
+
 ### FileTransfersTransferDeleteType
 
-`class` 
+`class`
 
 Type for file transfers transfer delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileTransfersTransferDownloadDetails
 
-`class` 
+`class`
 
 Transfer downloaded.
 
+**Properties:**
+
+- `fileTransferId`: `String` - Transfer id.
+
 ### FileTransfersTransferDownloadType
 
-`class` 
+`class`
 
 Type for file transfers transfer download type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileTransfersTransferSendDetails
 
-`class` 
+`class`
 
 Sent transfer.
 
+**Properties:**
+
+- `fileTransferId`: `String` - Transfer id.
+
 ### FileTransfersTransferSendType
 
-`class` 
+`class`
 
 Type for file transfers transfer send type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileTransfersTransferViewDetails
 
-`class` 
+`class`
 
 Viewed transfer.
 
+**Properties:**
+
+- `fileTransferId`: `String` - Transfer id.
+
 ### FileTransfersTransferViewType
 
-`class` 
+`class`
 
 Type for file transfers transfer view type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileUnlikeCommentDetails
 
-`class` 
+`class`
 
 Unliked file comment.
 
+**Properties:**
+
+- `commentText`: `String?` - Comment text.
+
 ### FileUnlikeCommentType
 
-`class` 
+`class`
 
 Type for file unlike comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FileUnresolveCommentDetails
 
-`class` 
+`class`
 
 Unresolved file comment.
 
+**Properties:**
+
+- `commentText`: `String?` - Comment text.
+
 ### FileUnresolveCommentType
 
-`class` 
+`class`
 
 Type for file unresolve comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FolderLinkRestrictionPolicy
 
-`enum` 
+`enum`
 
 Policy for deciding whether applying link restrictions on all team owned folders
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### FolderLinkRestrictionPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed folder link restrictions policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.FolderLinkRestrictionPolicy` - To.
+- `previousValue`: `TeamLog.FolderLinkRestrictionPolicy` - From.
+
 ### FolderLinkRestrictionPolicyChangedType
 
-`class` 
+`class`
 
 Type for folder link restriction policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FolderOverviewDescriptionChangedDetails
 
-`class` 
+`class`
 
 Updated folder overview.
 
+**Properties:**
+
+- `folderOverviewLocationAsset`: `UInt64` - Folder Overview location position in the Assets list.
+
 ### FolderOverviewDescriptionChangedType
 
-`class` 
+`class`
 
 Type for folder overview description changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FolderOverviewItemPinnedDetails
 
-`class` 
+`class`
 
 Pinned item to folder overview.
 
+**Properties:**
+
+- `folderOverviewLocationAsset`: `UInt64` - Folder Overview location position in the Assets list.
+- `pinnedItemsAssetIndices`: `[UInt64]` - Pinned items positions in the Assets list.
+
 ### FolderOverviewItemPinnedType
 
-`class` 
+`class`
 
 Type for folder overview item pinned type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### FolderOverviewItemUnpinnedDetails
 
-`class` 
+`class`
 
 Unpinned item from folder overview.
 
+**Properties:**
+
+- `folderOverviewLocationAsset`: `UInt64` - Folder Overview location position in the Assets list.
+- `pinnedItemsAssetIndices`: `[UInt64]` - Pinned items positions in the Assets list.
+
 ### FolderOverviewItemUnpinnedType
 
-`class` 
+`class`
 
 Type for folder overview item unpinned type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ObjectLabelAddedDetails
 
-`class` 
+`class`
 
 Added a label.
 
+**Properties:**
+
+- `labelType`: `TeamLog.LabelType` - Labels mark a file or folder.
+
 ### ObjectLabelAddedType
 
-`class` 
+`class`
 
 Type for object label added type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ObjectLabelRemovedDetails
 
-`class` 
+`class`
 
 Removed a label.
 
+**Properties:**
+
+- `labelType`: `TeamLog.LabelType` - Labels mark a file or folder.
+
 ### ObjectLabelRemovedType
 
-`class` 
+`class`
 
 Type for object label removed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ObjectLabelUpdatedValueDetails
 
-`class` 
+`class`
 
 Updated a label's value.
 
+**Properties:**
+
+- `labelType`: `TeamLog.LabelType` - Labels mark a file or folder.
+
 ### ObjectLabelUpdatedValueType
 
-`class` 
+`class`
 
 Type for object label updated value type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### RewindFolderDetails
 
-`class` 
+`class`
 
 Rewound a folder.
 
+**Properties:**
+
+- `rewindFolderTargetTsMs`: `Date` - Folder was Rewound to this date.
+
 ### RewindFolderType
 
-`class` 
+`class`
 
 Type for rewind folder type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### UndoNamingConventionDetails
 
-`class` 
+`class`
 
 Reverted naming convention.
 
 ### UndoNamingConventionType
 
-`class` 
+`class`
 
 Type for undo naming convention type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### UndoOrganizeFolderWithTidyDetails
 
-`class` 
+`class`
 
 Removed multi-file organize.
 
 ### UndoOrganizeFolderWithTidyType
 
-`class` 
+`class`
 
 Type for undo organize folder with tidy type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -2479,183 +4261,301 @@ Type for undo organize folder with tidy type.
 
 ### GroupAddExternalIdDetails
 
-`class` 
+`class`
 
 Added external ID for group.
 
+**Properties:**
+
+- `newValue`: `String` - Current external id.
+
 ### GroupAddExternalIdType
 
-`class` 
+`class`
 
 Type for group add external id type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupAddMemberDetails
 
-`class` 
+`class`
 
 Added team members to group.
 
+**Properties:**
+
+- `isGroupOwner`: `Bool` - Is group owner.
+
 ### GroupAddMemberType
 
-`class` 
+`class`
 
 Type for group add member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupChangeExternalIdDetails
 
-`class` 
+`class`
 
 Changed external ID for group.
 
+**Properties:**
+
+- `newValue`: `String` - Current external id.
+- `previousValue`: `String` - Old external id.
+
 ### GroupChangeExternalIdType
 
-`class` 
+`class`
 
 Type for group change external id type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupChangeManagementTypeDetails
 
-`class` 
+`class`
 
 Changed group management type.
 
+**Properties:**
+
+- `newValue`: `TeamCommon.GroupManagementType` - New group management type.
+- `previousValue`: `TeamCommon.GroupManagementType?` - Previous group management type. Might be missing due to historical data gap.
+
 ### GroupChangeManagementTypeType
 
-`class` 
+`class`
 
 Type for group change management type type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupChangeMemberRoleDetails
 
-`class` 
+`class`
 
 Changed manager permissions of group member.
 
+**Properties:**
+
+- `isGroupOwner`: `Bool` - Is group owner.
+
 ### GroupChangeMemberRoleType
 
-`class` 
+`class`
 
 Type for group change member role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupCreateDetails
 
-`class` 
+`class`
 
 Created group.
 
+**Properties:**
+
+- `isCompanyManaged`: `Bool?` - Is company managed group.
+- `joinPolicy`: `TeamLog.GroupJoinPolicy?` - Group join policy.
+
 ### GroupCreateType
 
-`class` 
+`class`
 
 Type for group create type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupDeleteDetails
 
-`class` 
+`class`
 
 Deleted group.
 
+**Properties:**
+
+- `isCompanyManaged`: `Bool?` - Is company managed group.
+
 ### GroupDeleteType
 
-`class` 
+`class`
 
 Type for group delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupDescriptionUpdatedDetails
 
-`class` 
+`class`
 
 Updated group.
 
 ### GroupDescriptionUpdatedType
 
-`class` 
+`class`
 
 Type for group description updated type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupJoinPolicy
 
-`enum` 
+`enum`
 
 Type for group join policy.
 
+**Cases:**
+
+- `open`
+- `requestToJoin`
+- `other`
+
 ### GroupJoinPolicyUpdatedDetails
 
-`class` 
+`class`
 
 Updated group join policy.
 
+**Properties:**
+
+- `isCompanyManaged`: `Bool?` - Is company managed group.
+- `joinPolicy`: `TeamLog.GroupJoinPolicy?` - Group join policy.
+
 ### GroupJoinPolicyUpdatedType
 
-`class` 
+`class`
 
 Type for group join policy updated type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupLogInfo
 
-`class` 
+`class`
 
 Group's logged information.
 
+**Properties:**
+
+- `groupId`: `String?` - The unique id of this group.
+- `displayName`: `String` - The name of this group.
+- `externalId`: `String?` - External group ID.
+
 ### GroupMovedDetails
 
-`class` 
+`class`
 
 Moved group.
 
 ### GroupMovedType
 
-`class` 
+`class`
 
 Type for group moved type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupRemoveExternalIdDetails
 
-`class` 
+`class`
 
 Removed external ID for group.
 
+**Properties:**
+
+- `previousValue`: `String` - Old external id.
+
 ### GroupRemoveExternalIdType
 
-`class` 
+`class`
 
 Type for group remove external id type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupRemoveMemberDetails
 
-`class` 
+`class`
 
 Removed team members from group.
 
 ### GroupRemoveMemberType
 
-`class` 
+`class`
 
 Type for group remove member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupRenameDetails
 
-`class` 
+`class`
 
 Renamed group.
 
+**Properties:**
+
+- `previousValue`: `String` - Previous display name.
+- `newValue`: `String` - New display name.
+
 ### GroupRenameType
 
-`class` 
+`class`
 
 Type for group rename type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GroupUserManagementChangePolicyDetails
 
-`class` 
+`class`
 
 Changed who can create groups.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.GroupCreation` - New group users management policy.
+- `previousValue`: `TeamPolicies.GroupCreation?` - Previous group users management policy. Might be missing due to historical data gap.
+
 ### GroupUserManagementChangePolicyType
 
-`class` 
+`class`
 
 Type for group user management change policy type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -2663,63 +4563,110 @@ Type for group user management change policy type.
 
 ### GoogleSsoChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled Google single sign-on for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.GoogleSsoPolicy` - New Google single sign-on policy.
+- `previousValue`: `TeamLog.GoogleSsoPolicy?` - Previous Google single sign-on policy. Might be missing due to historical data gap.
+
 ### GoogleSsoChangePolicyType
 
-`class` 
+`class`
 
 Type for google sso change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GoogleSsoPolicy
 
-`enum` 
+`enum`
 
 Google SSO policy
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### IntegrationConnectedDetails
 
-`class` 
+`class`
 
 Connected integration for member.
 
+**Properties:**
+
+- `integrationName`: `String` - Name of the third-party integration.
+
 ### IntegrationConnectedType
 
-`class` 
+`class`
 
 Type for integration connected type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### IntegrationDisconnectedDetails
 
-`class` 
+`class`
 
 Disconnected integration for member.
 
+**Properties:**
+
+- `integrationName`: `String` - Name of the third-party integration.
+
 ### IntegrationDisconnectedType
 
-`class` 
+`class`
 
 Type for integration disconnected type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### IntegrationPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling whether a service integration is enabled for the team.
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### IntegrationPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed integration policy for team.
 
+**Properties:**
+
+- `integrationName`: `String` - Name of the third-party integration.
+- `newValue`: `TeamLog.IntegrationPolicy` - New integration policy.
+- `previousValue`: `TeamLog.IntegrationPolicy` - Previous integration policy.
+
 ### IntegrationPolicyChangedType
 
-`class` 
+`class`
 
 Type for integration policy changed type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -2727,135 +4674,245 @@ Type for integration policy changed type.
 
 ### LegalHoldsActivateAHoldDetails
 
-`class` 
+`class`
 
 Activated a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+- `startDate`: `Date` - Hold start date.
+- `endDate`: `Date?` - Hold end date.
+
 ### LegalHoldsActivateAHoldType
 
-`class` 
+`class`
 
 Type for legal holds activate a hold type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsAddMembersDetails
 
-`class` 
+`class`
 
 Added members to a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+
 ### LegalHoldsAddMembersType
 
-`class` 
+`class`
 
 Type for legal holds add members type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsChangeHoldDetailsDetails
 
-`class` 
+`class`
 
 Edited details for a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+- `previousValue`: `String` - Previous details.
+- `newValue`: `String` - New details.
+
 ### LegalHoldsChangeHoldDetailsType
 
-`class` 
+`class`
 
 Type for legal holds change hold details type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsChangeHoldNameDetails
 
-`class` 
+`class`
 
 Renamed a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `previousValue`: `String` - Previous Name.
+- `newValue`: `String` - New Name.
+
 ### LegalHoldsChangeHoldNameType
 
-`class` 
+`class`
 
 Type for legal holds change hold name type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsExportAHoldDetails
 
-`class` 
+`class`
 
 Exported hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+- `exportName`: `String?` - Export name.
+
 ### LegalHoldsExportAHoldType
 
-`class` 
+`class`
 
 Type for legal holds export a hold type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsExportCancelledDetails
 
-`class` 
+`class`
 
 Canceled export for a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+- `exportName`: `String` - Export name.
+
 ### LegalHoldsExportCancelledType
 
-`class` 
+`class`
 
 Type for legal holds export cancelled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsExportDownloadedDetails
 
-`class` 
+`class`
 
 Downloaded export for a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+- `exportName`: `String` - Export name.
+- `part`: `String?` - Part.
+- `fileName`: `String?` - Filename.
+
 ### LegalHoldsExportDownloadedType
 
-`class` 
+`class`
 
 Type for legal holds export downloaded type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsExportRemovedDetails
 
-`class` 
+`class`
 
 Removed export for a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+- `exportName`: `String` - Export name.
+
 ### LegalHoldsExportRemovedType
 
-`class` 
+`class`
 
 Type for legal holds export removed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsReleaseAHoldDetails
 
-`class` 
+`class`
 
 Released a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+
 ### LegalHoldsReleaseAHoldType
 
-`class` 
+`class`
 
 Type for legal holds release a hold type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsRemoveMembersDetails
 
-`class` 
+`class`
 
 Removed members from a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+
 ### LegalHoldsRemoveMembersType
 
-`class` 
+`class`
 
 Type for legal holds remove members type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LegalHoldsReportAHoldDetails
 
-`class` 
+`class`
 
 Created a summary report for a hold.
 
+**Properties:**
+
+- `legalHoldId`: `String` - Hold ID.
+- `name`: `String` - Hold name.
+
 ### LegalHoldsReportAHoldType
 
-`class` 
+`class`
 
 Type for legal holds report a hold type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -2863,69 +4920,117 @@ Type for legal holds report a hold type.
 
 ### LoginFailDetails
 
-`class` 
+`class`
 
 Failed to sign in.
 
+**Properties:**
+
+- `isEmmManaged`: `Bool?` - Tells if the login device is EMM managed. Might be missing due to historical data gap.
+- `loginMethod`: `TeamLog.LoginMethod` - Login method.
+- `errorDetails`: `TeamLog.FailureDetailsLogInfo` - Error details.
+
 ### LoginFailType
 
-`class` 
+`class`
 
 Type for login fail type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LoginMethod
 
-`enum` 
+`enum`
 
 Type for login method.
 
+**Cases:**
+
+- `appleOauth`
+- `firstPartyTokenExchange`
+- `googleOauth`
+- `lenovoOauth`
+- `password`
+- `qrCode`
+- `saml`
+- `twoFactorAuthentication`
+- `webSession`
+- `other`
+
 ### LoginSuccessDetails
 
-`class` 
+`class`
 
 Signed in.
 
+**Properties:**
+
+- `isEmmManaged`: `Bool?` - Tells if the login device is EMM managed. Might be missing due to historical data gap.
+- `loginMethod`: `TeamLog.LoginMethod` - Login method.
+
 ### LoginSuccessType
 
-`class` 
+`class`
 
 Type for login success type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### LogoutDetails
 
-`class` 
+`class`
 
 Signed out.
 
+**Properties:**
+
+- `loginId`: `String?` - Login session id.
+
 ### LogoutType
 
-`class` 
+`class`
 
 Type for logout type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SignInAsSessionEndDetails
 
-`class` 
+`class`
 
 Ended admin sign-in-as session.
 
 ### SignInAsSessionEndType
 
-`class` 
+`class`
 
 Type for sign in as session end type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SignInAsSessionStartDetails
 
-`class` 
+`class`
 
 Started admin sign-in-as session.
 
 ### SignInAsSessionStartType
 
-`class` 
+`class`
 
 Type for sign in as session start type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -2933,687 +5038,1179 @@ Type for sign in as session start type.
 
 ### InviteAcceptanceEmailPolicy
 
-`enum` 
+`enum`
 
 Policy for deciding whether team admins receive email when an invitation to join the team is accepted
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### InviteAcceptanceEmailPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed invite accept email policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.InviteAcceptanceEmailPolicy` - To.
+- `previousValue`: `TeamLog.InviteAcceptanceEmailPolicy` - From.
+
 ### InviteAcceptanceEmailPolicyChangedType
 
-`class` 
+`class`
 
 Type for invite acceptance email policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### InviteMethod
 
-`enum` 
+`enum`
 
 Type for invite method.
 
+**Cases:**
+
+- `autoApprove`
+- `inviteLink`
+- `memberInvite`
+- `movedFromAnotherTeam`
+- `other`
+
 ### JoinTeamDetails
 
-`class` 
+`class`
 
 Additional information relevant when a new member joins the team.
 
+**Properties:**
+
+- `linkedApps`: `[TeamLog.UserLinkedAppLogInfo]` - Linked applications. (Deprecated) Please use has_linked_apps boolean field instead.
+- `linkedDevices`: `[TeamLog.LinkedDeviceLogInfo]` - Linked devices. (Deprecated) Please use has_linked_devices boolean field instead.
+- `linkedSharedFolders`: `[TeamLog.FolderLogInfo]` - Linked shared folders. (Deprecated) Please use has_linked_shared_folders boolean field instead.
+- `wasLinkedAppsTruncated`: `Bool?` - (Deprecated) True if the linked_apps list was truncated to the maximum supported length (50).
+- `wasLinkedDevicesTruncated`: `Bool?` - (Deprecated) True if the linked_devices list was truncated to the maximum supported length (50).
+- `wasLinkedSharedFoldersTruncated`: `Bool?` - (Deprecated) True if the linked_shared_folders list was truncated to the maximum supported length (50).
+- `hasLinkedApps`: `Bool?` - True if the user had linked apps at event time.
+- `hasLinkedDevices`: `Bool?` - True if the user had linked apps at event time.
+- `hasLinkedSharedFolders`: `Bool?` - True if the user had linked shared folders at event time.
+
 ### MemberAddExternalIdDetails
 
-`class` 
+`class`
 
 Added an external ID for team member.
 
+**Properties:**
+
+- `newValue`: `String` - Current external id.
+
 ### MemberAddExternalIdType
 
-`class` 
+`class`
 
 Type for member add external id type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberAddNameDetails
 
-`class` 
+`class`
 
 Added team member name.
 
+**Properties:**
+
+- `newValue`: `TeamLog.UserNameLogInfo` - New user's name.
+
 ### MemberAddNameType
 
-`class` 
+`class`
 
 Type for member add name type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberChangeAdminRoleDetails
 
-`class` 
+`class`
 
 Changed team member admin role.
 
+**Properties:**
+
+- `newValue`: `TeamLog.AdminRole?` - admin rights to with admin rights.
+- `previousValue`: `TeamLog.AdminRole?` - removed.
+
 ### MemberChangeAdminRoleType
 
-`class` 
+`class`
 
 Type for member change admin role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberChangeEmailDetails
 
-`class` 
+`class`
 
 Changed team member email.
 
+**Properties:**
+
+- `newValue`: `String` - New email.
+- `previousValue`: `String?` - Previous email. Might be missing due to historical data gap.
+
 ### MemberChangeEmailType
 
-`class` 
+`class`
 
 Type for member change email type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberChangeExternalIdDetails
 
-`class` 
+`class`
 
 Changed the external ID for team member.
 
+**Properties:**
+
+- `newValue`: `String` - Current external id.
+- `previousValue`: `String` - Old external id.
+
 ### MemberChangeExternalIdType
 
-`class` 
+`class`
 
 Type for member change external id type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberChangeMembershipTypeDetails
 
-`class` 
+`class`
 
 Changed membership type (limited/full) of member.
 
+**Properties:**
+
+- `prevValue`: `TeamLog.TeamMembershipType` - Previous membership type.
+- `newValue`: `TeamLog.TeamMembershipType` - New membership type.
+
 ### MemberChangeMembershipTypeType
 
-`class` 
+`class`
 
 Type for member change membership type type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberChangeNameDetails
 
-`class` 
+`class`
 
 Changed team member name.
 
+**Properties:**
+
+- `newValue`: `TeamLog.UserNameLogInfo` - New user's name.
+- `previousValue`: `TeamLog.UserNameLogInfo?` - Previous user's name. Might be missing due to historical data gap.
+
 ### MemberChangeNameType
 
-`class` 
+`class`
 
 Type for member change name type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberChangeResellerRoleDetails
 
-`class` 
+`class`
 
 Changed team member reseller role.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ResellerRole` - New reseller role. This field is relevant when the reseller role is changed.
+- `previousValue`: `TeamLog.ResellerRole` - is removed.
+
 ### MemberChangeResellerRoleType
 
-`class` 
+`class`
 
 Type for member change reseller role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberChangeStatusDetails
 
-`class` 
+`class`
 
 Changed member status (invited, joined, suspended, etc.).
 
+**Properties:**
+
+- `previousValue`: `TeamLog.MemberStatus?` - Previous member status. Might be missing due to historical data gap.
+- `newValue`: `TeamLog.MemberStatus` - New member status.
+- `action`: `TeamLog.ActionDetails?` - Additional information indicating the action taken that caused status change.
+- `newTeam`: `String?` - The user's new team name. This field is relevant when the user is transferred off the team.
+- `previousTeam`: `String?` - The user's previous team name. This field is relevant when the user is transferred onto the team.
+
 ### MemberChangeStatusType
 
-`class` 
+`class`
 
 Type for member change status type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberDeleteManualContactsDetails
 
-`class` 
+`class`
 
 Cleared manually added contacts.
 
 ### MemberDeleteManualContactsType
 
-`class` 
+`class`
 
 Type for member delete manual contacts type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberDeleteProfilePhotoDetails
 
-`class` 
+`class`
 
 Deleted team member profile photo.
 
 ### MemberDeleteProfilePhotoType
 
-`class` 
+`class`
 
 Type for member delete profile photo type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberPermanentlyDeleteAccountContentsDetails
 
-`class` 
+`class`
 
 Permanently deleted contents of deleted team member account.
 
 ### MemberPermanentlyDeleteAccountContentsType
 
-`class` 
+`class`
 
 Type for member permanently delete account contents type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberRemoveActionType
 
-`enum` 
+`enum`
 
 Type for member remove action type.
 
+**Cases:**
+
+- `delete`
+- `leave`
+- `offboard`
+- `offboardAndRetainTeamFolders`
+- `other`
+
 ### MemberRemoveExternalIdDetails
 
-`class` 
+`class`
 
 Removed the external ID for team member.
 
+**Properties:**
+
+- `previousValue`: `String` - Old external id.
+
 ### MemberRemoveExternalIdType
 
-`class` 
+`class`
 
 Type for member remove external id type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberRequestsChangePolicyDetails
 
-`class` 
+`class`
 
 Changed whether users can find team when not invited.
 
+**Properties:**
+
+- `newValue`: `TeamLog.MemberRequestsPolicy` - New member change requests policy.
+- `previousValue`: `TeamLog.MemberRequestsPolicy?` - Previous member change requests policy. Might be missing due to historical data gap.
+
 ### MemberRequestsChangePolicyType
 
-`class` 
+`class`
 
 Type for member requests change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberRequestsPolicy
 
-`enum` 
+`enum`
 
 Type for member requests policy.
 
+**Cases:**
+
+- `autoAccept`
+- `disabled`
+- `requireApproval`
+- `other`
+
 ### MemberSendInvitePolicy
 
-`enum` 
+`enum`
 
 Policy for controlling whether team members can send team invites
 
+**Cases:**
+
+- `disabled`
+- `everyone`
+- `specificMembers`
+- `other`
+
 ### MemberSendInvitePolicyChangedDetails
 
-`class` 
+`class`
 
 Changed member send invite policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.MemberSendInvitePolicy` - New team member send invite policy.
+- `previousValue`: `TeamLog.MemberSendInvitePolicy` - Previous team member send invite policy.
+
 ### MemberSendInvitePolicyChangedType
 
-`class` 
+`class`
 
 Type for member send invite policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSetProfilePhotoDetails
 
-`class` 
+`class`
 
 Set team member profile photo.
 
 ### MemberSetProfilePhotoType
 
-`class` 
+`class`
 
 Type for member set profile photo type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSpaceLimitsAddCustomQuotaDetails
 
-`class` 
+`class`
 
 Set custom member space limit.
 
+**Properties:**
+
+- `newValue`: `UInt64` - New custom quota value in bytes.
+
 ### MemberSpaceLimitsAddCustomQuotaType
 
-`class` 
+`class`
 
 Type for member space limits add custom quota type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSpaceLimitsAddExceptionDetails
 
-`class` 
+`class`
 
 Added members to member space limit exception list.
 
 ### MemberSpaceLimitsAddExceptionType
 
-`class` 
+`class`
 
 Type for member space limits add exception type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSpaceLimitsChangeCapsTypePolicyDetails
 
-`class` 
+`class`
 
 Changed member space limit type for team.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.SpaceCapsType` - Previous space limit type.
+- `newValue`: `TeamLog.SpaceCapsType` - New space limit type.
+
 ### MemberSpaceLimitsChangeCapsTypePolicyType
 
-`class` 
+`class`
 
 Type for member space limits change caps type policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSpaceLimitsChangeCustomQuotaDetails
 
-`class` 
+`class`
 
 Changed custom member space limit.
 
+**Properties:**
+
+- `previousValue`: `UInt64` - Previous custom quota value in bytes.
+- `newValue`: `UInt64` - New custom quota value in bytes.
+
 ### MemberSpaceLimitsChangeCustomQuotaType
 
-`class` 
+`class`
 
 Type for member space limits change custom quota type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSpaceLimitsChangePolicyDetails
 
-`class` 
+`class`
 
 Changed team default member space limit.
 
+**Properties:**
+
+- `previousValue`: `UInt64?` - Previous team default limit value in bytes. Might be missing due to historical data gap.
+- `newValue`: `UInt64?` - New team default limit value in bytes. Might be missing due to historical data gap.
+
 ### MemberSpaceLimitsChangePolicyType
 
-`class` 
+`class`
 
 Type for member space limits change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSpaceLimitsChangeStatusDetails
 
-`class` 
+`class`
 
 Changed space limit status.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.SpaceLimitsStatus` - Previous storage quota status.
+- `newValue`: `TeamLog.SpaceLimitsStatus` - New storage quota status.
+
 ### MemberSpaceLimitsChangeStatusType
 
-`class` 
+`class`
 
 Type for member space limits change status type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSpaceLimitsRemoveCustomQuotaDetails
 
-`class` 
+`class`
 
 Removed custom member space limit.
 
 ### MemberSpaceLimitsRemoveCustomQuotaType
 
-`class` 
+`class`
 
 Type for member space limits remove custom quota type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSpaceLimitsRemoveExceptionDetails
 
-`class` 
+`class`
 
 Removed members from member space limit exception list.
 
 ### MemberSpaceLimitsRemoveExceptionType
 
-`class` 
+`class`
 
 Type for member space limits remove exception type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberStatus
 
-`enum` 
+`enum`
 
 Type for member status.
 
+**Cases:**
+
+- `active`
+- `invited`
+- `movedToAnotherTeam`
+- `notJoined`
+- `removed`
+- `suspended`
+- `other`
+
 ### MemberSuggestDetails
 
-`class` 
+`class`
 
 Suggested person to add to team.
 
+**Properties:**
+
+- `suggestedMembers`: `[String]` - suggested users emails.
+
 ### MemberSuggestType
 
-`class` 
+`class`
 
 Type for member suggest type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSuggestionsChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled option for team members to suggest people to add to team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.MemberSuggestionsPolicy` - New team member suggestions policy.
+- `previousValue`: `TeamLog.MemberSuggestionsPolicy?` - Previous team member suggestions policy. Might be missing due to historical data gap.
+
 ### MemberSuggestionsChangePolicyType
 
-`class` 
+`class`
 
 Type for member suggestions change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberSuggestionsPolicy
 
-`enum` 
+`enum`
 
 Member suggestions policy
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### MemberTransferAccountContentsDetails
 
-`class` 
+`class`
 
 Transferred contents of deleted member account to another member.
 
 ### MemberTransferAccountContentsType
 
-`class` 
+`class`
 
 Type for member transfer account contents type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MemberTransferredInternalFields
 
-`class` 
+`class`
 
 Internal only - fields for target team computations
 
+**Properties:**
+
+- `sourceTeamId`: `String` - Internal only - team user was moved from.
+- `targetTeamId`: `String` - Internal only - team user was moved to.
+
 ### SecondaryEmailDeletedDetails
 
-`class` 
+`class`
 
 Deleted secondary email.
 
+**Properties:**
+
+- `secondaryEmail`: `String` - Deleted secondary email.
+
 ### SecondaryEmailDeletedType
 
-`class` 
+`class`
 
 Type for secondary email deleted type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SecondaryEmailVerifiedDetails
 
-`class` 
+`class`
 
 Verified secondary email.
 
+**Properties:**
+
+- `secondaryEmail`: `String` - Verified secondary email.
+
 ### SecondaryEmailVerifiedType
 
-`class` 
+`class`
 
 Type for secondary email verified type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamInviteDetails
 
-`class` 
+`class`
 
 Details about team invites
 
+**Properties:**
+
+- `inviteMethod`: `TeamLog.InviteMethod` - How the user was invited to the team.
+- `additionalLicensePurchase`: `Bool?` - True if the invitation incurred an additional license purchase.
+
 ### TeamMergeFromDetails
 
-`class` 
+`class`
 
 Merged another team into this team.
 
+**Properties:**
+
+- `teamName`: `String` - The name of the team that was merged into this team.
+
 ### TeamMergeFromType
 
-`class` 
+`class`
 
 Type for team merge from type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestAcceptedDetails
 
-`class` 
+`class`
 
 Accepted a team merge request.
+
+**Properties:**
+
+- `requestAcceptedDetails`: `TeamLog.TeamMergeRequestAcceptedExtraDetails` - Team merge request acceptance details.
 
 ### TeamMergeRequestAcceptedExtraDetails
 
-`enum` 
+`enum`
 
 Team merge request acceptance details
 
+**Cases:**
+
+- `primaryTeam` - Team merge request accepted details shown to the primary team.
+- `secondaryTeam` - Team merge request accepted details shown to the secondary team.
+- `other`
+
 ### TeamMergeRequestAcceptedShownToPrimaryTeamDetails
 
-`class` 
+`class`
 
 Accepted a team merge request.
+
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
 
 ### TeamMergeRequestAcceptedShownToPrimaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request accepted shown to primary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestAcceptedShownToSecondaryTeamDetails
 
-`class` 
+`class`
 
 Accepted a team merge request.
 
+**Properties:**
+
+- `primaryTeam`: `String` - The primary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
+
 ### TeamMergeRequestAcceptedShownToSecondaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request accepted shown to secondary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestAcceptedType
 
-`class` 
+`class`
 
 Type for team merge request accepted type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestAutoCanceledDetails
 
-`class` 
+`class`
 
 Automatically canceled team merge request.
 
+**Properties:**
+
+- `details`: `String?` - The cancellation reason.
+
 ### TeamMergeRequestAutoCanceledType
 
-`class` 
+`class`
 
 Type for team merge request auto canceled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestCanceledDetails
 
-`class` 
+`class`
 
 Canceled a team merge request.
+
+**Properties:**
+
+- `requestCanceledDetails`: `TeamLog.TeamMergeRequestCanceledExtraDetails` - Team merge request cancellation details.
 
 ### TeamMergeRequestCanceledExtraDetails
 
-`enum` 
+`enum`
 
 Team merge request cancellation details
 
+**Cases:**
+
+- `primaryTeam` - Team merge request cancellation details shown to the primary team.
+- `secondaryTeam` - Team merge request cancellation details shown to the secondary team.
+- `other`
+
 ### TeamMergeRequestCanceledShownToPrimaryTeamDetails
 
-`class` 
+`class`
 
 Canceled a team merge request.
+
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
 
 ### TeamMergeRequestCanceledShownToPrimaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request canceled shown to primary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestCanceledShownToSecondaryTeamDetails
 
-`class` 
+`class`
 
 Canceled a team merge request.
 
+**Properties:**
+
+- `sentTo`: `String` - The email of the primary team admin that the request was sent to.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
+
 ### TeamMergeRequestCanceledShownToSecondaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request canceled shown to secondary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestCanceledType
 
-`class` 
+`class`
 
 Type for team merge request canceled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestExpiredDetails
 
-`class` 
+`class`
 
 Team merge request expired.
+
+**Properties:**
+
+- `requestExpiredDetails`: `TeamLog.TeamMergeRequestExpiredExtraDetails` - Team merge request expiration details.
 
 ### TeamMergeRequestExpiredExtraDetails
 
-`enum` 
+`enum`
 
 Team merge request expiration details
 
+**Cases:**
+
+- `primaryTeam` - Team merge request canceled details shown to the primary team.
+- `secondaryTeam` - Team merge request canceled details shown to the secondary team.
+- `other`
+
 ### TeamMergeRequestExpiredShownToPrimaryTeamDetails
 
-`class` 
+`class`
 
 Team merge request expired.
+
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
 
 ### TeamMergeRequestExpiredShownToPrimaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request expired shown to primary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestExpiredShownToSecondaryTeamDetails
 
-`class` 
+`class`
 
 Team merge request expired.
 
+**Properties:**
+
+- `sentTo`: `String` - The email of the primary team admin the request was sent to.
+
 ### TeamMergeRequestExpiredShownToSecondaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request expired shown to secondary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestExpiredType
 
-`class` 
+`class`
 
 Type for team merge request expired type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestRejectedShownToPrimaryTeamDetails
 
-`class` 
+`class`
 
 Rejected a team merge request.
+
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
 
 ### TeamMergeRequestRejectedShownToPrimaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request rejected shown to primary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestRejectedShownToSecondaryTeamDetails
 
-`class` 
+`class`
 
 Rejected a team merge request.
 
+**Properties:**
+
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
+
 ### TeamMergeRequestRejectedShownToSecondaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request rejected shown to secondary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestReminderDetails
 
-`class` 
+`class`
 
 Sent a team merge request reminder.
+
+**Properties:**
+
+- `requestReminderDetails`: `TeamLog.TeamMergeRequestReminderExtraDetails` - Team merge request reminder details.
 
 ### TeamMergeRequestReminderExtraDetails
 
-`enum` 
+`enum`
 
 Team merge request reminder details
 
+**Cases:**
+
+- `primaryTeam` - Team merge request reminder details shown to the primary team.
+- `secondaryTeam` - Team merge request reminder details shown to the secondary team.
+- `other`
+
 ### TeamMergeRequestReminderShownToPrimaryTeamDetails
 
-`class` 
+`class`
 
 Sent a team merge request reminder.
+
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentTo`: `String` - The name of the primary team admin the request was sent to.
 
 ### TeamMergeRequestReminderShownToPrimaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request reminder shown to primary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestReminderShownToSecondaryTeamDetails
 
-`class` 
+`class`
 
 Sent a team merge request reminder.
 
+**Properties:**
+
+- `sentTo`: `String` - The email of the primary team admin the request was sent to.
+
 ### TeamMergeRequestReminderShownToSecondaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request reminder shown to secondary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestReminderType
 
-`class` 
+`class`
 
 Type for team merge request reminder type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestRevokedDetails
 
-`class` 
+`class`
 
 Canceled the team merge.
 
+**Properties:**
+
+- `team`: `String` - The name of the other team.
+
 ### TeamMergeRequestRevokedType
 
-`class` 
+`class`
 
 Type for team merge request revoked type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestSentShownToPrimaryTeamDetails
 
-`class` 
+`class`
 
 Requested to merge their Dropbox team into yours.
 
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentTo`: `String` - The name of the primary team admin the request was sent to.
+
 ### TeamMergeRequestSentShownToPrimaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request sent shown to primary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeRequestSentShownToSecondaryTeamDetails
 
-`class` 
+`class`
 
 Requested to merge your team into another Dropbox team.
 
+**Properties:**
+
+- `sentTo`: `String` - The email of the primary team admin the request was sent to.
+
 ### TeamMergeRequestSentShownToSecondaryTeamType
 
-`class` 
+`class`
 
 Type for team merge request sent shown to secondary team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamMergeToDetails
 
-`class` 
+`class`
 
 Merged this team into another team.
 
+**Properties:**
+
+- `teamName`: `String` - The name of the team that this team was merged into.
+
 ### TeamMergeToType
 
-`class` 
+`class`
 
 Type for team merge to type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -3621,9 +6218,15 @@ Type for team merge to type.
 
 ### NamespaceRelativePathLogInfo
 
-`class` 
+`class`
 
 Namespace relative path details.
+
+**Properties:**
+
+- `nsId`: `String?` - Namespace ID.
+- `relativePath`: `String?` - A path relative to the specified namespace ID.
+- `isSharedNamespace`: `Bool?` - True if the namespace is shared.
 
 ---
 
@@ -3631,27 +6234,49 @@ Namespace relative path details.
 
 ### GeoLocationLogInfo
 
-`class` 
+`class`
 
 Geographic location details.
 
+**Properties:**
+
+- `city`: `String?` - City name.
+- `region`: `String?` - Region name.
+- `country`: `String?` - Country code.
+- `ipAddress`: `String` - IP address.
+
 ### NetworkControlChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled network control.
 
+**Properties:**
+
+- `newValue`: `TeamLog.NetworkControlPolicy` - New network control policy.
+- `previousValue`: `TeamLog.NetworkControlPolicy?` - Previous network control policy. Might be missing due to historical data gap.
+
 ### NetworkControlChangePolicyType
 
-`class` 
+`class`
 
 Type for network control change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NetworkControlPolicy
 
-`enum` 
+`enum`
 
 Network control policy
+
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
 
 ---
 
@@ -3659,705 +6284,1183 @@ Network control policy
 
 ### NoteAclInviteOnlyDetails
 
-`class` 
+`class`
 
 Changed Paper doc to invite-only.
 
 ### NoteAclInviteOnlyType
 
-`class` 
+`class`
 
 Type for note acl invite only type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NoteAclLinkDetails
 
-`class` 
+`class`
 
 Changed Paper doc to link-accessible.
 
 ### NoteAclLinkType
 
-`class` 
+`class`
 
 Type for note acl link type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NoteAclTeamLinkDetails
 
-`class` 
+`class`
 
 Changed Paper doc to link-accessible for team.
 
 ### NoteAclTeamLinkType
 
-`class` 
+`class`
 
 Type for note acl team link type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NoteShareReceiveDetails
 
-`class` 
+`class`
 
 Shared received Paper doc.
 
 ### NoteShareReceiveType
 
-`class` 
+`class`
 
 Type for note share receive type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NoteSharedDetails
 
-`class` 
+`class`
 
 Shared Paper doc.
 
 ### NoteSharedType
 
-`class` 
+`class`
 
 Type for note shared type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperAccessType
 
-`enum` 
+`enum`
 
 Type for paper access type.
 
+**Cases:**
+
+- `commenter`
+- `editor`
+- `viewer`
+- `other`
+
 ### PaperAdminExportStartDetails
 
-`class` 
+`class`
 
 Exported all team Paper docs.
 
 ### PaperAdminExportStartType
 
-`class` 
+`class`
 
 Type for paper admin export start type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperChangeDeploymentPolicyDetails
 
-`class` 
+`class`
 
 Changed whether Dropbox Paper, when enabled, is deployed to all members or to specific members.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.PaperDeploymentPolicy` - New Dropbox Paper deployment policy.
+- `previousValue`: `TeamPolicies.PaperDeploymentPolicy?` - Previous Dropbox Paper deployment policy. Might be missing due to historical data gap.
+
 ### PaperChangeDeploymentPolicyType
 
-`class` 
+`class`
 
 Type for paper change deployment policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperChangeMemberLinkPolicyDetails
 
-`class` 
+`class`
 
 Changed whether non-members can view Paper docs with link.
 
+**Properties:**
+
+- `newValue`: `TeamLog.PaperMemberPolicy` - New paper external link accessibility policy.
+
 ### PaperChangeMemberLinkPolicyType
 
-`class` 
+`class`
 
 Type for paper change member link policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperChangeMemberPolicyDetails
 
-`class` 
+`class`
 
 anyone by default.
 
+**Properties:**
+
+- `newValue`: `TeamLog.PaperMemberPolicy` - New paper external accessibility policy.
+- `previousValue`: `TeamLog.PaperMemberPolicy?` - Previous paper external accessibility policy. Might be missing due to historical data gap.
+
 ### PaperChangeMemberPolicyType
 
-`class` 
+`class`
 
 Type for paper change member policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled Dropbox Paper for team.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.PaperEnabledPolicy` - New Dropbox Paper policy.
+- `previousValue`: `TeamPolicies.PaperEnabledPolicy?` - Previous Dropbox Paper policy. Might be missing due to historical data gap.
+
 ### PaperChangePolicyType
 
-`class` 
+`class`
 
 Type for paper change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentAddMemberDetails
 
-`class` 
+`class`
 
 Added users and/or groups to Paper doc/folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperContentAddMemberType
 
-`class` 
+`class`
 
 Type for paper content add member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentAddToFolderDetails
 
-`class` 
+`class`
 
 Added Paper doc/folder to folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `parentAssetIndex`: `UInt64` - Parent asset position in the Assets list.
+
 ### PaperContentAddToFolderType
 
-`class` 
+`class`
 
 Type for paper content add to folder type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentArchiveDetails
 
-`class` 
+`class`
 
 Archived Paper doc/folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperContentArchiveType
 
-`class` 
+`class`
 
 Type for paper content archive type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentCreateDetails
 
-`class` 
+`class`
 
 Created Paper doc/folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperContentCreateType
 
-`class` 
+`class`
 
 Type for paper content create type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentPermanentlyDeleteDetails
 
-`class` 
+`class`
 
 Permanently deleted Paper doc/folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperContentPermanentlyDeleteType
 
-`class` 
+`class`
 
 Type for paper content permanently delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentRemoveFromFolderDetails
 
-`class` 
+`class`
 
 Removed Paper doc/folder from folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `targetAssetIndex`: `UInt64?` - Target asset position in the Assets list.
+- `parentAssetIndex`: `UInt64?` - Parent asset position in the Assets list.
+
 ### PaperContentRemoveFromFolderType
 
-`class` 
+`class`
 
 Type for paper content remove from folder type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentRemoveMemberDetails
 
-`class` 
+`class`
 
 Removed users and/or groups from Paper doc/folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperContentRemoveMemberType
 
-`class` 
+`class`
 
 Type for paper content remove member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentRenameDetails
 
-`class` 
+`class`
 
 Renamed Paper doc/folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperContentRenameType
 
-`class` 
+`class`
 
 Type for paper content rename type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperContentRestoreDetails
 
-`class` 
+`class`
 
 Restored archived Paper doc/folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperContentRestoreType
 
-`class` 
+`class`
 
 Type for paper content restore type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDefaultFolderPolicy
 
-`enum` 
+`enum`
 
 Policy to set default access for newly created Paper folders.
 
+**Cases:**
+
+- `everyoneInTeam`
+- `inviteOnly`
+- `other`
+
 ### PaperDefaultFolderPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed Paper Default Folder Policy setting for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.PaperDefaultFolderPolicy` - New Paper Default Folder Policy.
+- `previousValue`: `TeamLog.PaperDefaultFolderPolicy` - Previous Paper Default Folder Policy.
+
 ### PaperDefaultFolderPolicyChangedType
 
-`class` 
+`class`
 
 Type for paper default folder policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDesktopPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling if team members can use Paper Desktop
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### PaperDesktopPolicyChangedDetails
 
-`class` 
+`class`
 
 Enabled/disabled Paper Desktop for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.PaperDesktopPolicy` - New Paper Desktop policy.
+- `previousValue`: `TeamLog.PaperDesktopPolicy` - Previous Paper Desktop policy.
+
 ### PaperDesktopPolicyChangedType
 
-`class` 
+`class`
 
 Type for paper desktop policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocAddCommentDetails
 
-`class` 
+`class`
 
 Added Paper doc comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### PaperDocAddCommentType
 
-`class` 
+`class`
 
 Type for paper doc add comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocChangeMemberRoleDetails
 
-`class` 
+`class`
 
 Changed member permissions for Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `accessType`: `TeamLog.PaperAccessType` - Paper doc access type.
+
 ### PaperDocChangeMemberRoleType
 
-`class` 
+`class`
 
 Type for paper doc change member role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocChangeSharingPolicyDetails
 
-`class` 
+`class`
 
 Changed sharing setting for Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `publicSharingPolicy`: `String?` - Sharing policy with external users.
+- `teamSharingPolicy`: `String?` - Sharing policy with team.
+
 ### PaperDocChangeSharingPolicyType
 
-`class` 
+`class`
 
 Type for paper doc change sharing policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocChangeSubscriptionDetails
 
-`class` 
+`class`
 
 Followed/unfollowed Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `newSubscriptionLevel`: `String` - New doc subscription level.
+- `previousSubscriptionLevel`: `String?` - Previous doc subscription level. Might be missing due to historical data gap.
+
 ### PaperDocChangeSubscriptionType
 
-`class` 
+`class`
 
 Type for paper doc change subscription type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocDeleteCommentDetails
 
-`class` 
+`class`
 
 Deleted Paper doc comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### PaperDocDeleteCommentType
 
-`class` 
+`class`
 
 Type for paper doc delete comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocDeletedDetails
 
-`class` 
+`class`
 
 Archived Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocDeletedType
 
-`class` 
+`class`
 
 Type for paper doc deleted type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocDownloadDetails
 
-`class` 
+`class`
 
 Downloaded Paper doc in specific format.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `exportFileFormat`: `TeamLog.PaperDownloadFormat` - Export file format.
+
 ### PaperDocDownloadType
 
-`class` 
+`class`
 
 Type for paper doc download type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocEditCommentDetails
 
-`class` 
+`class`
 
 Edited Paper doc comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### PaperDocEditCommentType
 
-`class` 
+`class`
 
 Type for paper doc edit comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocEditDetails
 
-`class` 
+`class`
 
 Edited Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocEditType
 
-`class` 
+`class`
 
 Type for paper doc edit type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocFollowedDetails
 
-`class` 
+`class`
 
 Followed Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocFollowedType
 
-`class` 
+`class`
 
 Type for paper doc followed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocMentionDetails
 
-`class` 
+`class`
 
 Mentioned user in Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocMentionType
 
-`class` 
+`class`
 
 Type for paper doc mention type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocOwnershipChangedDetails
 
-`class` 
+`class`
 
 Transferred ownership of Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `oldOwnerUserId`: `String?` - Previous owner.
+- `newOwnerUserId`: `String` - New owner.
+
 ### PaperDocOwnershipChangedType
 
-`class` 
+`class`
 
 Type for paper doc ownership changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocRequestAccessDetails
 
-`class` 
+`class`
 
 Requested access to Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocRequestAccessType
 
-`class` 
+`class`
 
 Type for paper doc request access type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocResolveCommentDetails
 
-`class` 
+`class`
 
 Resolved Paper doc comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### PaperDocResolveCommentType
 
-`class` 
+`class`
 
 Type for paper doc resolve comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocRevertDetails
 
-`class` 
+`class`
 
 Restored Paper doc to previous version.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocRevertType
 
-`class` 
+`class`
 
 Type for paper doc revert type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocSlackShareDetails
 
-`class` 
+`class`
 
 Shared Paper doc via Slack.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocSlackShareType
 
-`class` 
+`class`
 
 Type for paper doc slack share type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocTeamInviteDetails
 
-`class` 
+`class`
 
 Shared Paper doc with users and/or groups.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocTeamInviteType
 
-`class` 
+`class`
 
 Type for paper doc team invite type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocTrashedDetails
 
-`class` 
+`class`
 
 Deleted Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocTrashedType
 
-`class` 
+`class`
 
 Type for paper doc trashed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocUnresolveCommentDetails
 
-`class` 
+`class`
 
 Unresolved Paper doc comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### PaperDocUnresolveCommentType
 
-`class` 
+`class`
 
 Type for paper doc unresolve comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocUntrashedDetails
 
-`class` 
+`class`
 
 Restored Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocUntrashedType
 
-`class` 
+`class`
 
 Type for paper doc untrashed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocViewDetails
 
-`class` 
+`class`
 
 Viewed Paper doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperDocViewType
 
-`class` 
+`class`
 
 Type for paper doc view type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperDocumentLogInfo
 
-`class` 
+`class`
 
 Paper document's logged information.
 
+**Properties:**
+
+- `docId`: `String` - Papers document Id.
+- `docTitle`: `String` - Paper document title.
+
 ### PaperDownloadFormat
 
-`enum` 
+`enum`
 
 Type for paper download format.
 
+**Cases:**
+
+- `docx`
+- `html`
+- `markdown`
+- `pdf`
+- `other`
+
 ### PaperEnabledUsersGroupAdditionDetails
 
-`class` 
+`class`
 
 Added users to Paper-enabled users list.
 
 ### PaperEnabledUsersGroupAdditionType
 
-`class` 
+`class`
 
 Type for paper enabled users group addition type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperEnabledUsersGroupRemovalDetails
 
-`class` 
+`class`
 
 Removed users from Paper-enabled users list.
 
 ### PaperEnabledUsersGroupRemovalType
 
-`class` 
+`class`
 
 Type for paper enabled users group removal type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperExternalViewAllowDetails
 
-`class` 
+`class`
 
 Changed Paper external sharing setting to anyone.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperExternalViewAllowType
 
-`class` 
+`class`
 
 Type for paper external view allow type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperExternalViewDefaultTeamDetails
 
-`class` 
+`class`
 
 Changed Paper external sharing setting to default team.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperExternalViewDefaultTeamType
 
-`class` 
+`class`
 
 Type for paper external view default team type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperExternalViewForbidDetails
 
-`class` 
+`class`
 
 Changed Paper external sharing setting to team-only.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperExternalViewForbidType
 
-`class` 
+`class`
 
 Type for paper external view forbid type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperFolderChangeSubscriptionDetails
 
-`class` 
+`class`
 
 Followed/unfollowed Paper folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `newSubscriptionLevel`: `String` - New folder subscription level.
+- `previousSubscriptionLevel`: `String?` - Previous folder subscription level. Might be missing due to historical data gap.
+
 ### PaperFolderChangeSubscriptionType
 
-`class` 
+`class`
 
 Type for paper folder change subscription type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperFolderDeletedDetails
 
-`class` 
+`class`
 
 Archived Paper folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperFolderDeletedType
 
-`class` 
+`class`
 
 Type for paper folder deleted type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperFolderFollowedDetails
 
-`class` 
+`class`
 
 Followed Paper folder.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperFolderFollowedType
 
-`class` 
+`class`
 
 Type for paper folder followed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperFolderLogInfo
 
-`class` 
+`class`
 
 Paper folder's logged information.
 
+**Properties:**
+
+- `folderId`: `String` - Papers folder Id.
+- `folderName`: `String` - Paper folder name.
+
 ### PaperFolderTeamInviteDetails
 
-`class` 
+`class`
 
 Shared Paper folder with users and/or groups.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperFolderTeamInviteType
 
-`class` 
+`class`
 
 Type for paper folder team invite type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperMemberPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling if team members can share Paper documents externally.
 
+**Cases:**
+
+- `anyoneWithLink`
+- `onlyTeam`
+- `teamAndExplicitlyShared`
+- `other`
+
 ### PaperPublishedLinkChangePermissionDetails
 
-`class` 
+`class`
 
 Changed permissions for published doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `newPermissionLevel`: `String` - New permission level.
+- `previousPermissionLevel`: `String` - Previous permission level.
+
 ### PaperPublishedLinkChangePermissionType
 
-`class` 
+`class`
 
 Type for paper published link change permission type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperPublishedLinkCreateDetails
 
-`class` 
+`class`
 
 Published doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperPublishedLinkCreateType
 
-`class` 
+`class`
 
 Type for paper published link create type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperPublishedLinkDisabledDetails
 
-`class` 
+`class`
 
 Unpublished doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperPublishedLinkDisabledType
 
-`class` 
+`class`
 
 Type for paper published link disabled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PaperPublishedLinkViewDetails
 
-`class` 
+`class`
 
 Viewed published doc.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### PaperPublishedLinkViewType
 
-`class` 
+`class`
 
 Type for paper published link view type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -4365,177 +7468,257 @@ Type for paper published link view type.
 
 ### PasswordChangeDetails
 
-`class` 
+`class`
 
 Changed password.
 
 ### PasswordChangeType
 
-`class` 
+`class`
 
 Type for password change type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PasswordResetAllDetails
 
-`class` 
+`class`
 
 Reset all team member passwords.
 
 ### PasswordResetAllType
 
-`class` 
+`class`
 
 Type for password reset all type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PasswordResetDetails
 
-`class` 
+`class`
 
 Reset password.
 
 ### PasswordResetType
 
-`class` 
+`class`
 
 Type for password reset type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PasswordStrengthRequirementsChangePolicyDetails
 
-`class` 
+`class`
 
 Changed team password strength requirements.
 
+**Properties:**
+
+- `previousValue`: `TeamPolicies.PasswordStrengthPolicy` - Old password strength policy.
+- `newValue`: `TeamPolicies.PasswordStrengthPolicy` - New password strength policy.
+
 ### PasswordStrengthRequirementsChangePolicyType
 
-`class` 
+`class`
 
 Type for password strength requirements change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaAddBackupPhoneDetails
 
-`class` 
+`class`
 
 Added backup phone for two-step verification.
 
 ### TfaAddBackupPhoneType
 
-`class` 
+`class`
 
 Type for tfa add backup phone type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaAddExceptionDetails
 
-`class` 
+`class`
 
 Added members to two factor authentication exception list.
 
 ### TfaAddExceptionType
 
-`class` 
+`class`
 
 Type for tfa add exception type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaAddSecurityKeyDetails
 
-`class` 
+`class`
 
 Added security key for two-step verification.
 
 ### TfaAddSecurityKeyType
 
-`class` 
+`class`
 
 Type for tfa add security key type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaChangeBackupPhoneDetails
 
-`class` 
+`class`
 
 Changed backup phone for two-step verification.
 
 ### TfaChangeBackupPhoneType
 
-`class` 
+`class`
 
 Type for tfa change backup phone type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaChangePolicyDetails
 
-`class` 
+`class`
 
 Changed two-step verification setting for team.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.TwoStepVerificationPolicy` - New change policy.
+- `previousValue`: `TeamPolicies.TwoStepVerificationPolicy?` - Previous change policy. Might be missing due to historical data gap.
+
 ### TfaChangePolicyType
 
-`class` 
+`class`
 
 Type for tfa change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaChangeStatusDetails
 
-`class` 
+`class`
 
 Enabled/disabled/changed two-step verification setting.
 
+**Properties:**
+
+- `newValue`: `TeamLog.TfaConfiguration` - The new two factor authentication configuration.
+- `previousValue`: `TeamLog.TfaConfiguration?` - The previous two factor authentication configuration. Might be missing due to historical data gap.
+- `usedRescueCode`: `Bool?` - configuration is disabled.
+
 ### TfaChangeStatusType
 
-`class` 
+`class`
 
 Type for tfa change status type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaConfiguration
 
-`enum` 
+`enum`
 
 Two factor authentication configuration. Note: the enabled option is deprecated.
 
+**Cases:**
+
+- `authenticator`
+- `disabled`
+- `enabled`
+- `sms`
+- `other`
+
 ### TfaRemoveBackupPhoneDetails
 
-`class` 
+`class`
 
 Removed backup phone for two-step verification.
 
 ### TfaRemoveBackupPhoneType
 
-`class` 
+`class`
 
 Type for tfa remove backup phone type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaRemoveExceptionDetails
 
-`class` 
+`class`
 
 Removed members from two factor authentication exception list.
 
 ### TfaRemoveExceptionType
 
-`class` 
+`class`
 
 Type for tfa remove exception type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaRemoveSecurityKeyDetails
 
-`class` 
+`class`
 
 Removed security key for two-step verification.
 
 ### TfaRemoveSecurityKeyType
 
-`class` 
+`class`
 
 Type for tfa remove security key type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TfaResetDetails
 
-`class` 
+`class`
 
 Reset two-step verification for team member.
 
 ### TfaResetType
 
-`class` 
+`class`
 
 Type for tfa reset type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -4543,561 +7726,1051 @@ Type for tfa reset type.
 
 ### ChangeLinkExpirationPolicy
 
-`enum` 
+`enum`
 
 link is updated
 
+**Cases:**
+
+- `allowed`
+- `notAllowed`
+- `other`
+
 ### DataPlacementRestrictionChangePolicyDetails
 
-`class` 
+`class`
 
 Set restrictions on data center locations where team data resides.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.PlacementRestriction` - Previous placement restriction.
+- `newValue`: `TeamLog.PlacementRestriction` - New placement restriction.
+
 ### DataPlacementRestrictionChangePolicyType
 
-`class` 
+`class`
 
 Type for data placement restriction change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DataPlacementRestrictionSatisfyPolicyDetails
 
-`class` 
+`class`
 
 Completed restrictions on data center locations where team data resides.
 
+**Properties:**
+
+- `placementRestriction`: `TeamLog.PlacementRestriction` - Placement restriction.
+
 ### DataPlacementRestrictionSatisfyPolicyType
 
-`class` 
+`class`
 
 Type for data placement restriction satisfy policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DefaultLinkExpirationDaysPolicy
 
-`enum` 
+`enum`
 
 Policy for the default number of days until an externally shared link expires
 
+**Cases:**
+
+- `day1`
+- `day180`
+- `day3`
+- `day30`
+- `day7`
+- `day90`
+- `none`
+- `year1`
+- `other`
+
 ### DownloadPolicyType
 
-`enum` 
+`enum`
 
 Shared content downloads policy
 
+**Cases:**
+
+- `allow`
+- `disallow`
+- `other`
+
 ### EnforceLinkPasswordPolicy
 
-`enum` 
+`enum`
 
 Policy for deciding whether password must be enforced when an externally shared link is updated
 
+**Cases:**
+
+- `optional`
+- `required`
+- `other`
+
 ### ExtendedVersionHistoryChangePolicyDetails
 
-`class` 
+`class`
 
 Accepted/opted out of extended version history.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ExtendedVersionHistoryPolicy` - New extended version history policy.
+- `previousValue`: `TeamLog.ExtendedVersionHistoryPolicy?` - Previous extended version history policy. Might be missing due to historical data gap.
+
 ### ExtendedVersionHistoryChangePolicyType
 
-`class` 
+`class`
 
 Type for extended version history change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ExtendedVersionHistoryPolicy
 
-`enum` 
+`enum`
 
 Type for extended version history policy.
 
+**Cases:**
+
+- `explicitlyLimited`
+- `explicitlyUnlimited`
+- `implicitlyLimited`
+- `implicitlyUnlimited`
+- `other`
+
 ### GovernancePolicyAddFolderFailedDetails
 
-`class` 
+`class`
 
 Couldn't add a folder to a policy.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `folder`: `String` - Folder.
+- `reason`: `String?` - Reason.
+
 ### GovernancePolicyAddFolderFailedType
 
-`class` 
+`class`
 
 Type for governance policy add folder failed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyAddFoldersDetails
 
-`class` 
+`class`
 
 Added folders to policy.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `folders`: `[String]?` - Folders.
+
 ### GovernancePolicyAddFoldersType
 
-`class` 
+`class`
 
 Type for governance policy add folders type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyContentDisposedDetails
 
-`class` 
+`class`
 
 Content disposed.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `dispositionType`: `TeamLog.DispositionActionType` - Disposition type.
+
 ### GovernancePolicyContentDisposedType
 
-`class` 
+`class`
 
 Type for governance policy content disposed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyCreateDetails
 
-`class` 
+`class`
 
 Activated a new policy.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `duration`: `TeamLog.DurationLogInfo` - Duration in days.
+- `folders`: `[String]?` - Folders.
+
 ### GovernancePolicyCreateType
 
-`class` 
+`class`
 
 Type for governance policy create type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyDeleteDetails
 
-`class` 
+`class`
 
 Deleted a policy.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+
 ### GovernancePolicyDeleteType
 
-`class` 
+`class`
 
 Type for governance policy delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyEditDetailsDetails
 
-`class` 
+`class`
 
 Edited policy.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `attribute`: `String` - Attribute.
+- `previousValue`: `String` - From.
+- `newValue`: `String` - To.
+
 ### GovernancePolicyEditDetailsType
 
-`class` 
+`class`
 
 Type for governance policy edit details type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyEditDurationDetails
 
-`class` 
+`class`
 
 Changed policy duration.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `previousValue`: `TeamLog.DurationLogInfo` - From.
+- `newValue`: `TeamLog.DurationLogInfo` - To.
+
 ### GovernancePolicyEditDurationType
 
-`class` 
+`class`
 
 Type for governance policy edit duration type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyExportCreatedDetails
 
-`class` 
+`class`
 
 Created a policy download.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `exportName`: `String` - Export name.
+
 ### GovernancePolicyExportCreatedType
 
-`class` 
+`class`
 
 Type for governance policy export created type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyExportRemovedDetails
 
-`class` 
+`class`
 
 Removed a policy download.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `exportName`: `String` - Export name.
+
 ### GovernancePolicyExportRemovedType
 
-`class` 
+`class`
 
 Type for governance policy export removed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyRemoveFoldersDetails
 
-`class` 
+`class`
 
 Removed folders from policy.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `folders`: `[String]?` - Folders.
+- `reason`: `String?` - Reason.
+
 ### GovernancePolicyRemoveFoldersType
 
-`class` 
+`class`
 
 Type for governance policy remove folders type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyReportCreatedDetails
 
-`class` 
+`class`
 
 Created a summary report for a policy.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+
 ### GovernancePolicyReportCreatedType
 
-`class` 
+`class`
 
 Type for governance policy report created type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### GovernancePolicyZipPartDownloadedDetails
 
-`class` 
+`class`
 
 Downloaded content from a policy.
 
+**Properties:**
+
+- `governancePolicyId`: `String` - Policy ID.
+- `name`: `String` - Policy name.
+- `policyType`: `TeamLog.PolicyType?` - Policy type.
+- `exportName`: `String` - Export name.
+- `part`: `String?` - Part.
+
 ### GovernancePolicyZipPartDownloadedType
 
-`class` 
+`class`
 
 Type for governance policy zip part downloaded type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MicrosoftOfficeAddinChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled Microsoft Office add-in.
 
+**Properties:**
+
+- `newValue`: `TeamLog.MicrosoftOfficeAddinPolicy` - New Microsoft Office addin policy.
+- `previousValue`: `TeamLog.MicrosoftOfficeAddinPolicy?` - Previous Microsoft Office addin policy. Might be missing due to historical data gap.
+
 ### MicrosoftOfficeAddinChangePolicyType
 
-`class` 
+`class`
 
 Type for microsoft office addin change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### MicrosoftOfficeAddinPolicy
 
-`enum` 
+`enum`
 
 Microsoft Office addin policy
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### PassPolicy
 
-`enum` 
+`enum`
 
 Type for pass policy.
 
+**Cases:**
+
+- `allow`
+- `disabled`
+- `enabled`
+- `other`
+
 ### PermanentDeleteChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled ability of team members to permanently delete content.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ContentPermanentDeletePolicy` - New permanent delete content policy.
+- `previousValue`: `TeamLog.ContentPermanentDeletePolicy?` - Previous permanent delete content policy. Might be missing due to historical data gap.
+
 ### PermanentDeleteChangePolicyType
 
-`class` 
+`class`
 
 Type for permanent delete change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PolicyType
 
-`enum` 
+`enum`
 
 Type for policy type.
 
+**Cases:**
+
+- `disposition`
+- `retention`
+- `other`
+
 ### ResellerSupportChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled reseller support.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ResellerSupportPolicy` - New Reseller support policy.
+- `previousValue`: `TeamLog.ResellerSupportPolicy` - Previous Reseller support policy.
+
 ### ResellerSupportChangePolicyType
 
-`class` 
+`class`
 
 Type for reseller support change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ResellerSupportPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling if reseller can access the admin console as administrator
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### RewindPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling whether team members can rewind
 
+**Cases:**
+
+- `adminsOnly`
+- `everyone`
+- `other`
+
 ### RewindPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed Rewind policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.RewindPolicy` - New Dropbox Rewind policy.
+- `previousValue`: `TeamLog.RewindPolicy` - Previous Dropbox Rewind policy.
+
 ### RewindPolicyChangedType
 
-`class` 
+`class`
 
 Type for rewind policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SecondaryMailsPolicy
 
-`enum` 
+`enum`
 
 Type for secondary mails policy.
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### SecondaryMailsPolicyChangedDetails
 
-`class` 
+`class`
 
 Secondary mails policy changed.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.SecondaryMailsPolicy` - Previous secondary mails policy.
+- `newValue`: `TeamLog.SecondaryMailsPolicy` - New secondary mails policy.
+
 ### SecondaryMailsPolicyChangedType
 
-`class` 
+`class`
 
 Type for secondary mails policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SendForSignaturePolicy
 
-`enum` 
+`enum`
 
 Policy for controlling team access to send for signature feature
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### SendForSignaturePolicyChangedDetails
 
-`class` 
+`class`
 
 Changed send for signature policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.SendForSignaturePolicy` - New send for signature policy.
+- `previousValue`: `TeamLog.SendForSignaturePolicy` - Previous send for signature policy.
+
 ### SendForSignaturePolicyChangedType
 
-`class` 
+`class`
 
 Type for send for signature policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseChangeDownloadPolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled downloading files from Dropbox Showcase for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ShowcaseDownloadPolicy` - New Dropbox Showcase download policy.
+- `previousValue`: `TeamLog.ShowcaseDownloadPolicy` - Previous Dropbox Showcase download policy.
+
 ### ShowcaseChangeDownloadPolicyType
 
-`class` 
+`class`
 
 Type for showcase change download policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseChangeEnabledPolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled Dropbox Showcase for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ShowcaseEnabledPolicy` - New Dropbox Showcase policy.
+- `previousValue`: `TeamLog.ShowcaseEnabledPolicy` - Previous Dropbox Showcase policy.
+
 ### ShowcaseChangeEnabledPolicyType
 
-`class` 
+`class`
 
 Type for showcase change enabled policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseChangeExternalSharingPolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled sharing Dropbox Showcase externally for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ShowcaseExternalSharingPolicy` - New Dropbox Showcase external sharing policy.
+- `previousValue`: `TeamLog.ShowcaseExternalSharingPolicy` - Previous Dropbox Showcase external sharing policy.
+
 ### ShowcaseChangeExternalSharingPolicyType
 
-`class` 
+`class`
 
 Type for showcase change external sharing policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseDownloadPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling if files can be downloaded from Showcases by team members
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### ShowcaseEnabledPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling whether Showcase is enabled.
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### ShowcaseExternalSharingPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling if team members can share Showcases externally.
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### SmartSyncChangePolicyDetails
 
-`class` 
+`class`
 
 Changed default Smart Sync setting for team members.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.SmartSyncPolicy?` - New smart sync policy.
+- `previousValue`: `TeamPolicies.SmartSyncPolicy?` - Previous smart sync policy.
+
 ### SmartSyncChangePolicyType
 
-`class` 
+`class`
 
 Type for smart sync change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SmartSyncOptOutPolicy
 
-`enum` 
+`enum`
 
 Type for smart sync opt out policy.
 
+**Cases:**
+
+- `default_`
+- `optedOut`
+- `other`
+
 ### SmarterSmartSyncPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed automatic Smart Sync setting for team.
 
+**Properties:**
+
+- `previousValue`: `TeamPolicies.SmarterSmartSyncPolicyState` - Previous automatic Smart Sync setting.
+- `newValue`: `TeamPolicies.SmarterSmartSyncPolicyState` - New automatic Smart Sync setting.
+
 ### SmarterSmartSyncPolicyChangedType
 
-`class` 
+`class`
 
 Type for smarter smart sync policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoChangePolicyDetails
 
-`class` 
+`class`
 
 Changed single sign-on setting for team.
 
+**Properties:**
+
+- `newValue`: `TeamPolicies.SsoPolicy` - New single sign-on policy.
+- `previousValue`: `TeamPolicies.SsoPolicy?` - Previous single sign-on policy. Might be missing due to historical data gap.
+
 ### SsoChangePolicyType
 
-`class` 
+`class`
 
 Type for sso change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamBrandingPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling team access to setting up branding feature
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### TeamBrandingPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed team branding policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.TeamBrandingPolicy` - New team branding policy.
+- `previousValue`: `TeamLog.TeamBrandingPolicy` - Previous team branding policy.
+
 ### TeamBrandingPolicyChangedType
 
-`class` 
+`class`
 
 Type for team branding policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamExtensionsPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling whether App Integrations are enabled for the team.
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### TeamExtensionsPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed App Integrations setting for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.TeamExtensionsPolicy` - New Extensions policy.
+- `previousValue`: `TeamLog.TeamExtensionsPolicy` - Previous Extensions policy.
+
 ### TeamExtensionsPolicyChangedType
 
-`class` 
+`class`
 
 Type for team extensions policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamSelectiveSyncPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling whether team selective sync is enabled for team.
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### TeamSelectiveSyncPolicyChangedDetails
 
-`class` 
+`class`
 
 Enabled/disabled Team Selective Sync for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.TeamSelectiveSyncPolicy` - New Team Selective Sync policy.
+- `previousValue`: `TeamLog.TeamSelectiveSyncPolicy` - Previous Team Selective Sync policy.
+
 ### TeamSelectiveSyncPolicyChangedType
 
-`class` 
+`class`
 
 Type for team selective sync policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TwoAccountChangePolicyDetails
 
-`class` 
+`class`
 
 Enabled/disabled option for members to link personal Dropbox account and team account to same computer.
 
+**Properties:**
+
+- `newValue`: `TeamLog.TwoAccountPolicy` - New two account policy.
+- `previousValue`: `TeamLog.TwoAccountPolicy?` - Previous two account policy. Might be missing due to historical data gap.
+
 ### TwoAccountChangePolicyType
 
-`class` 
+`class`
 
 Type for two account change policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TwoAccountPolicy
 
-`enum` 
+`enum`
 
 Policy for pairing personal account to work account
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### ViewerInfoPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed team policy for viewer info.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.PassPolicy` - Previous Viewer Info policy.
+- `newValue`: `TeamLog.PassPolicy` - New Viewer Info policy.
+
 ### ViewerInfoPolicyChangedType
 
-`class` 
+`class`
 
 Type for viewer info policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### WatermarkingPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling team access to watermarking feature
 
+**Cases:**
+
+- `disabled`
+- `enabled`
+- `other`
+
 ### WatermarkingPolicyChangedDetails
 
-`class` 
+`class`
 
 Changed watermarking policy for team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.WatermarkingPolicy` - New watermarking policy.
+- `previousValue`: `TeamLog.WatermarkingPolicy` - Previous watermarking policy.
+
 ### WatermarkingPolicyChangedType
 
-`class` 
+`class`
 
 Type for watermarking policy changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### WebSessionsChangeFixedLengthPolicyDetails
 
-`class` 
+`class`
 
 Changed how long members can stay signed in to Dropbox.com.
 
+**Properties:**
+
+- `newValue`: `TeamLog.WebSessionsFixedLengthPolicy?` - New session length policy. Might be missing due to historical data gap.
+- `previousValue`: `TeamLog.WebSessionsFixedLengthPolicy?` - Previous session length policy. Might be missing due to historical data gap.
+
 ### WebSessionsChangeFixedLengthPolicyType
 
-`class` 
+`class`
 
 Type for web sessions change fixed length policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### WebSessionsChangeIdleLengthPolicyDetails
 
-`class` 
+`class`
 
 Changed how long team members can be idle while signed in to Dropbox.com.
 
+**Properties:**
+
+- `newValue`: `TeamLog.WebSessionsIdleLengthPolicy?` - New idle length policy. Might be missing due to historical data gap.
+- `previousValue`: `TeamLog.WebSessionsIdleLengthPolicy?` - Previous idle length policy. Might be missing due to historical data gap.
+
 ### WebSessionsChangeIdleLengthPolicyType
 
-`class` 
+`class`
 
 Type for web sessions change idle length policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### WebSessionsFixedLengthPolicy
 
-`enum` 
+`enum`
 
 Web sessions fixed length policy.
 
+**Cases:**
+
+- `defined` - Defined fixed session length.
+- `undefined` - Undefined fixed session length.
+- `other`
+
 ### WebSessionsIdleLengthPolicy
 
-`enum` 
+`enum`
 
 Web sessions idle length policy.
+
+**Cases:**
+
+- `defined` - Defined idle session length.
+- `undefined` - Undefined idle session length.
+- `other`
 
 ---
 
@@ -5105,51 +8778,81 @@ Web sessions idle length policy.
 
 ### RansomwareAlertCreateReportDetails
 
-`class` 
+`class`
 
 Created ransomware report.
 
 ### RansomwareAlertCreateReportFailedDetails
 
-`class` 
+`class`
 
 Couldn't generate ransomware report.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### RansomwareAlertCreateReportFailedType
 
-`class` 
+`class`
 
 Type for ransomware alert create report failed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### RansomwareAlertCreateReportType
 
-`class` 
+`class`
 
 Type for ransomware alert create report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### RansomwareRestoreProcessCompletedDetails
 
-`class` 
+`class`
 
 Completed ransomware restore process.
 
+**Properties:**
+
+- `status`: `String` - The status of the restore process.
+- `restoredFilesCount`: `Int64` - Restored files count.
+- `restoredFilesFailedCount`: `Int64` - Restored files failed count.
+
 ### RansomwareRestoreProcessCompletedType
 
-`class` 
+`class`
 
 Type for ransomware restore process completed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### RansomwareRestoreProcessStartedDetails
 
-`class` 
+`class`
 
 Started ransomware restore process.
 
+**Properties:**
+
+- `extension_`: `String` - Ransomware filename extension.
+
 ### RansomwareRestoreProcessStartedType
 
-`class` 
+`class`
 
 Type for ransomware restore process started type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -5157,199 +8860,403 @@ Type for ransomware restore process started type.
 
 ### ResellerLogInfo
 
-`class` 
+`class`
 
 Reseller information.
 
+**Properties:**
+
+- `resellerName`: `String` - Reseller name.
+- `resellerEmail`: `String` - Reseller email.
+
 ### ResellerRole
 
-`enum` 
+`enum`
 
 Type for reseller role.
 
+**Cases:**
+
+- `notReseller`
+- `resellerAdmin`
+- `other`
+
 ### ResellerSupportSessionEndDetails
 
-`class` 
+`class`
 
 Ended reseller support session.
 
 ### ResellerSupportSessionEndType
 
-`class` 
+`class`
 
 Type for reseller support session end type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ResellerSupportSessionStartDetails
 
-`class` 
+`class`
 
 Started reseller support session.
 
 ### ResellerSupportSessionStartType
 
-`class` 
+`class`
 
 Type for reseller support session start type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ---
 
-## Shared Folder Operations
+## Shared Folder & Link Model Operations
 
 ### SfAddGroupDetails
 
-`class` 
+`class`
 
 Added team to shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+- `sharingPermission`: `String?` - Sharing permission.
+- `teamName`: `String` - Team name.
+
 ### SfAddGroupType
 
-`class` 
+`class`
 
 Type for sf add group type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfAllowNonMembersToViewSharedLinksDetails
 
-`class` 
+`class`
 
 Allowed non-collaborators to view links to files in shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+- `sharedFolderType`: `String?` - Shared folder type.
+
 ### SfAllowNonMembersToViewSharedLinksType
 
-`class` 
+`class`
 
 Type for sf allow non members to view shared links type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfExternalInviteWarnDetails
 
-`class` 
+`class`
 
 Set team members to see warning before sharing folders outside team.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+- `newSharingPermission`: `String?` - New sharing permission.
+- `previousSharingPermission`: `String?` - Previous sharing permission.
+
 ### SfExternalInviteWarnType
 
-`class` 
+`class`
 
 Type for sf external invite warn type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfFbInviteChangeRoleDetails
 
-`class` 
+`class`
 
 Changed Facebook user's role in shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+- `previousSharingPermission`: `String?` - Previous sharing permission.
+- `newSharingPermission`: `String?` - New sharing permission.
+
 ### SfFbInviteChangeRoleType
 
-`class` 
+`class`
 
 Type for sf fb invite change role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfFbInviteDetails
 
-`class` 
+`class`
 
 Invited Facebook users to shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+- `sharingPermission`: `String?` - Sharing permission.
+
 ### SfFbInviteType
 
-`class` 
+`class`
 
 Type for sf fb invite type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfFbUninviteDetails
 
-`class` 
+`class`
 
 Uninvited Facebook user from shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+
 ### SfFbUninviteType
 
-`class` 
+`class`
 
 Type for sf fb uninvite type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfInviteGroupDetails
 
-`class` 
+`class`
 
 Invited group to shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+
 ### SfInviteGroupType
 
-`class` 
+`class`
 
 Type for sf invite group type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfTeamGrantAccessDetails
 
-`class` 
+`class`
 
 Granted access to shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+
 ### SfTeamGrantAccessType
 
-`class` 
+`class`
 
 Type for sf team grant access type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfTeamInviteChangeRoleDetails
 
-`class` 
+`class`
 
 Changed team member's role in shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+- `newSharingPermission`: `String?` - New sharing permission.
+- `previousSharingPermission`: `String?` - Previous sharing permission.
+
 ### SfTeamInviteChangeRoleType
 
-`class` 
+`class`
 
 Type for sf team invite change role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfTeamInviteDetails
 
-`class` 
+`class`
 
 Invited team members to shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+- `sharingPermission`: `String?` - Sharing permission.
+
 ### SfTeamInviteType
 
-`class` 
+`class`
 
 Type for sf team invite type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfTeamJoinDetails
 
-`class` 
+`class`
 
 Joined team member's shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+
 ### SfTeamJoinFromOobLinkDetails
 
-`class` 
+`class`
 
 Joined team member's shared folder from link.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+- `tokenKey`: `String?` - Shared link token key.
+- `sharingPermission`: `String?` - Sharing permission.
+
 ### SfTeamJoinFromOobLinkType
 
-`class` 
+`class`
 
 Type for sf team join from oob link type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfTeamJoinType
 
-`class` 
+`class`
 
 Type for sf team join type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SfTeamUninviteDetails
 
-`class` 
+`class`
 
 Unshared folder with team member.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+- `originalFolderName`: `String` - Original shared folder name.
+
 ### SfTeamUninviteType
 
-`class` 
+`class`
 
 Type for sf team uninvite type.
+
+**Properties:**
+
+- `description_`: `String`
+
+### ShmodelDisableDownloadsDetails
+
+`class`
+
+Disabled downloads for link.
+
+**Properties:**
+
+- `sharedLinkOwner`: `TeamLog.UserLogInfo?` - Shared link owner details. Might be missing due to historical data gap.
+
+### ShmodelDisableDownloadsType
+
+`class`
+
+Type for shmodel disable downloads type.
+
+**Properties:**
+
+- `description_`: `String`
+
+### ShmodelEnableDownloadsDetails
+
+`class`
+
+Enabled downloads for link.
+
+**Properties:**
+
+- `sharedLinkOwner`: `TeamLog.UserLogInfo?` - Shared link owner details. Might be missing due to historical data gap.
+
+### ShmodelEnableDownloadsType
+
+`class`
+
+Type for shmodel enable downloads type.
+
+**Properties:**
+
+- `description_`: `String`
+
+### ShmodelGroupShareDetails
+
+`class`
+
+Shared link with group.
+
+### ShmodelGroupShareType
+
+`class`
+
+Type for shmodel group share type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -5357,243 +9264,428 @@ Type for sf team uninvite type.
 
 ### SharedLinkAccessLevel
 
-`enum` 
+`enum`
 
 Shared link access level.
 
+**Cases:**
+
+- `none`
+- `reader`
+- `writer`
+- `other`
+
 ### SharedLinkAddExpiryDetails
 
-`class` 
+`class`
 
 Added shared link expiration date.
 
+**Properties:**
+
+- `newValue`: `Date` - New shared link expiration date.
+
 ### SharedLinkAddExpiryType
 
-`class` 
+`class`
 
 Type for shared link add expiry type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkChangeExpiryDetails
 
-`class` 
+`class`
 
 Changed shared link expiration date.
 
+**Properties:**
+
+- `newValue`: `Date?` - New shared link expiration date. Might be missing due to historical data gap.
+- `previousValue`: `Date?` - Previous shared link expiration date. Might be missing due to historical data gap.
+
 ### SharedLinkChangeExpiryType
 
-`class` 
+`class`
 
 Type for shared link change expiry type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkChangeVisibilityDetails
 
-`class` 
+`class`
 
 Changed visibility of shared link.
 
+**Properties:**
+
+- `newValue`: `TeamLog.SharedLinkVisibility` - New shared link visibility.
+- `previousValue`: `TeamLog.SharedLinkVisibility?` - Previous shared link visibility. Might be missing due to historical data gap.
+
 ### SharedLinkChangeVisibilityType
 
-`class` 
+`class`
 
 Type for shared link change visibility type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkCopyDetails
 
-`class` 
+`class`
 
 Added file/folder to Dropbox from shared link.
 
+**Properties:**
+
+- `sharedLinkOwner`: `TeamLog.UserLogInfo?` - Shared link owner details. Might be missing due to historical data gap.
+
 ### SharedLinkCopyType
 
-`class` 
+`class`
 
 Type for shared link copy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkCreateDetails
 
-`class` 
+`class`
 
 Created shared link.
 
+**Properties:**
+
+- `sharedLinkAccessLevel`: `TeamLog.SharedLinkAccessLevel?` - Defines who can access the shared link. Might be missing due to historical data gap.
+
 ### SharedLinkCreateType
 
-`class` 
+`class`
 
 Type for shared link create type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkDisableDetails
 
-`class` 
+`class`
 
 Removed shared link.
 
+**Properties:**
+
+- `sharedLinkOwner`: `TeamLog.UserLogInfo?` - Shared link owner details. Might be missing due to historical data gap.
+
 ### SharedLinkDisableType
 
-`class` 
+`class`
 
 Type for shared link disable type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkDownloadDetails
 
-`class` 
+`class`
 
 Downloaded file/folder from shared link.
 
+**Properties:**
+
+- `sharedLinkOwner`: `TeamLog.UserLogInfo?` - Shared link owner details. Might be missing due to historical data gap.
+
 ### SharedLinkDownloadType
 
-`class` 
+`class`
 
 Type for shared link download type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkRemoveExpiryDetails
 
-`class` 
+`class`
 
 Removed shared link expiration date.
 
+**Properties:**
+
+- `previousValue`: `Date?` - Previous shared link expiration date. Might be missing due to historical data gap.
+
 ### SharedLinkRemoveExpiryType
 
-`class` 
+`class`
 
 Type for shared link remove expiry type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsAddExpirationDetails
 
-`class` 
+`class`
 
 Added an expiration date to the shared link.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+- `newValue`: `Date?` - New shared content link expiration date. Might be missing due to historical data gap.
+
 ### SharedLinkSettingsAddExpirationType
 
-`class` 
+`class`
 
 Type for shared link settings add expiration type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsAddPasswordDetails
 
-`class` 
+`class`
 
 Added a password to the shared link.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+
 ### SharedLinkSettingsAddPasswordType
 
-`class` 
+`class`
 
 Type for shared link settings add password type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsAllowDownloadDisabledDetails
 
-`class` 
+`class`
 
 Disabled downloads.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+
 ### SharedLinkSettingsAllowDownloadDisabledType
 
-`class` 
+`class`
 
 Type for shared link settings allow download disabled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsAllowDownloadEnabledDetails
 
-`class` 
+`class`
 
 Enabled downloads.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+
 ### SharedLinkSettingsAllowDownloadEnabledType
 
-`class` 
+`class`
 
 Type for shared link settings allow download enabled type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsChangeAudienceDetails
 
-`class` 
+`class`
 
 Changed the audience of the shared link.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+- `newValue`: `Sharing.LinkAudience` - New link audience value.
+- `previousValue`: `Sharing.LinkAudience?` - Previous link audience value.
+
 ### SharedLinkSettingsChangeAudienceType
 
-`class` 
+`class`
 
 Type for shared link settings change audience type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsChangeExpirationDetails
 
-`class` 
+`class`
 
 Changed the expiration date of the shared link.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+- `newValue`: `Date?` - New shared content link expiration date. Might be missing due to historical data gap.
+- `previousValue`: `Date?` - Previous shared content link expiration date. Might be missing due to historical data gap.
+
 ### SharedLinkSettingsChangeExpirationType
 
-`class` 
+`class`
 
 Type for shared link settings change expiration type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsChangePasswordDetails
 
-`class` 
+`class`
 
 Changed the password of the shared link.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+
 ### SharedLinkSettingsChangePasswordType
 
-`class` 
+`class`
 
 Type for shared link settings change password type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsRemoveExpirationDetails
 
-`class` 
+`class`
 
 Removed the expiration date from the shared link.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+- `previousValue`: `Date?` - Previous shared link expiration date. Might be missing due to historical data gap.
+
 ### SharedLinkSettingsRemoveExpirationType
 
-`class` 
+`class`
 
 Type for shared link settings remove expiration type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkSettingsRemovePasswordDetails
 
-`class` 
+`class`
 
 Removed the password from the shared link.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `sharedContentLink`: `String?` - Shared content link.
+
 ### SharedLinkSettingsRemovePasswordType
 
-`class` 
+`class`
 
 Type for shared link settings remove password type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkShareDetails
 
-`class` 
+`class`
 
 Added members as audience of shared link.
 
+**Properties:**
+
+- `sharedLinkOwner`: `TeamLog.UserLogInfo?` - Shared link owner details. Might be missing due to historical data gap.
+- `externalUsers`: `[TeamLog.ExternalUserLogInfo]?` - Users without a Dropbox account that were added as shared link audience.
+
 ### SharedLinkShareType
 
-`class` 
+`class`
 
 Type for shared link share type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkViewDetails
 
-`class` 
+`class`
 
 Opened shared link.
 
+**Properties:**
+
+- `sharedLinkOwner`: `TeamLog.UserLogInfo?` - Shared link owner details. Might be missing due to historical data gap.
+
 ### SharedLinkViewType
 
-`class` 
+`class`
 
 Type for shared link view type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedLinkVisibility
 
-`enum` 
+`enum`
 
 Defines who has access to a shared link.
+
+**Cases:**
+
+- `noOne`
+- `password`
+- `public_`
+- `teamOnly`
+- `other`
 
 ---
 
@@ -5601,507 +9693,852 @@ Defines who has access to a shared link.
 
 ### SharedContentAddInviteesDetails
 
-`class` 
+`class`
 
 Invited user to Dropbox and added them to shared file/folder.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `invitees`: `[String]` - A list of invitees.
+
 ### SharedContentAddInviteesType
 
-`class` 
+`class`
 
 Type for shared content add invitees type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentAddLinkExpiryDetails
 
-`class` 
+`class`
 
 Added expiration date to link for shared file/folder.
 
+**Properties:**
+
+- `newValue`: `Date?` - New shared content link expiration date. Might be missing due to historical data gap.
+
 ### SharedContentAddLinkExpiryType
 
-`class` 
+`class`
 
 Type for shared content add link expiry type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentAddLinkPasswordDetails
 
-`class` 
+`class`
 
 Added password to link for shared file/folder.
 
 ### SharedContentAddLinkPasswordType
 
-`class` 
+`class`
 
 Type for shared content add link password type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentAddMemberDetails
 
-`class` 
+`class`
 
 Added users and/or groups to shared file/folder.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+
 ### SharedContentAddMemberType
 
-`class` 
+`class`
 
 Type for shared content add member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentChangeDownloadsPolicyDetails
 
-`class` 
+`class`
 
 Changed whether members can download shared file/folder.
 
+**Properties:**
+
+- `newValue`: `TeamLog.DownloadPolicyType` - New downloads policy.
+- `previousValue`: `TeamLog.DownloadPolicyType?` - Previous downloads policy. Might be missing due to historical data gap.
+
 ### SharedContentChangeDownloadsPolicyType
 
-`class` 
+`class`
 
 Type for shared content change downloads policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentChangeInviteeRoleDetails
 
-`class` 
+`class`
 
 Changed access type of invitee to shared file/folder before invite was accepted.
 
+**Properties:**
+
+- `previousAccessLevel`: `Sharing.AccessLevel?` - Previous access level. Might be missing due to historical data gap.
+- `newAccessLevel`: `Sharing.AccessLevel` - New access level.
+- `invitee`: `String` - The invitee whose role was changed.
+
 ### SharedContentChangeInviteeRoleType
 
-`class` 
+`class`
 
 Type for shared content change invitee role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentChangeLinkAudienceDetails
 
-`class` 
+`class`
 
 Changed link audience of shared file/folder.
 
+**Properties:**
+
+- `newValue`: `Sharing.LinkAudience` - New link audience value.
+- `previousValue`: `Sharing.LinkAudience?` - Previous link audience value.
+
 ### SharedContentChangeLinkAudienceType
 
-`class` 
+`class`
 
 Type for shared content change link audience type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentChangeLinkExpiryDetails
 
-`class` 
+`class`
 
 Changed link expiration of shared file/folder.
 
+**Properties:**
+
+- `newValue`: `Date?` - New shared content link expiration date. Might be missing due to historical data gap.
+- `previousValue`: `Date?` - Previous shared content link expiration date. Might be missing due to historical data gap.
+
 ### SharedContentChangeLinkExpiryType
 
-`class` 
+`class`
 
 Type for shared content change link expiry type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentChangeLinkPasswordDetails
 
-`class` 
+`class`
 
 Changed link password of shared file/folder.
 
 ### SharedContentChangeLinkPasswordType
 
-`class` 
+`class`
 
 Type for shared content change link password type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentChangeMemberRoleDetails
 
-`class` 
+`class`
 
 Changed access type of shared file/folder member.
 
+**Properties:**
+
+- `previousAccessLevel`: `Sharing.AccessLevel?` - Previous access level. Might be missing due to historical data gap.
+- `newAccessLevel`: `Sharing.AccessLevel` - New access level.
+
 ### SharedContentChangeMemberRoleType
 
-`class` 
+`class`
 
 Type for shared content change member role type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentChangeViewerInfoPolicyDetails
 
-`class` 
+`class`
 
 Changed whether members can see who viewed shared file/folder.
 
+**Properties:**
+
+- `newValue`: `Sharing.ViewerInfoPolicy` - New viewer info policy.
+- `previousValue`: `Sharing.ViewerInfoPolicy?` - Previous view info policy.
+
 ### SharedContentChangeViewerInfoPolicyType
 
-`class` 
+`class`
 
 Type for shared content change viewer info policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentClaimInvitationDetails
 
-`class` 
+`class`
 
 Acquired membership of shared file/folder by accepting invite.
 
+**Properties:**
+
+- `sharedContentLink`: `String?` - Shared content link.
+
 ### SharedContentClaimInvitationType
 
-`class` 
+`class`
 
 Type for shared content claim invitation type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentCopyDetails
 
-`class` 
+`class`
 
 Copied shared file/folder to own Dropbox.
 
+**Properties:**
+
+- `sharedContentLink`: `String` - Shared content link.
+- `sharedContentOwner`: `TeamLog.UserLogInfo?` - The shared content owner.
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `destinationPath`: `String` - The path where the member saved the content.
+
 ### SharedContentCopyType
 
-`class` 
+`class`
 
 Type for shared content copy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentDownloadDetails
 
-`class` 
+`class`
 
 Downloaded shared file/folder.
 
+**Properties:**
+
+- `sharedContentLink`: `String` - Shared content link.
+- `sharedContentOwner`: `TeamLog.UserLogInfo?` - The shared content owner.
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+
 ### SharedContentDownloadType
 
-`class` 
+`class`
 
 Type for shared content download type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentRelinquishMembershipDetails
 
-`class` 
+`class`
 
 Left shared file/folder.
 
 ### SharedContentRelinquishMembershipType
 
-`class` 
+`class`
 
 Type for shared content relinquish membership type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentRemoveInviteesDetails
 
-`class` 
+`class`
 
 Removed invitee from shared file/folder before invite was accepted.
 
+**Properties:**
+
+- `invitees`: `[String]` - A list of invitees.
+
 ### SharedContentRemoveInviteesType
 
-`class` 
+`class`
 
 Type for shared content remove invitees type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentRemoveLinkExpiryDetails
 
-`class` 
+`class`
 
 Removed link expiration date of shared file/folder.
 
+**Properties:**
+
+- `previousValue`: `Date?` - Previous shared content link expiration date. Might be missing due to historical data gap.
+
 ### SharedContentRemoveLinkExpiryType
 
-`class` 
+`class`
 
 Type for shared content remove link expiry type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentRemoveLinkPasswordDetails
 
-`class` 
+`class`
 
 Removed link password of shared file/folder.
 
 ### SharedContentRemoveLinkPasswordType
 
-`class` 
+`class`
 
 Type for shared content remove link password type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentRemoveMemberDetails
 
-`class` 
+`class`
 
 Removed user/group from shared file/folder.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel?` - Shared content access level.
+
 ### SharedContentRemoveMemberType
 
-`class` 
+`class`
 
 Type for shared content remove member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentRequestAccessDetails
 
-`class` 
+`class`
 
 Requested access to shared file/folder.
 
+**Properties:**
+
+- `sharedContentLink`: `String?` - Shared content link.
+
 ### SharedContentRequestAccessType
 
-`class` 
+`class`
 
 Type for shared content request access type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentRestoreInviteesDetails
 
-`class` 
+`class`
 
 Restored shared file/folder invitees.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+- `invitees`: `[String]` - A list of invitees.
+
 ### SharedContentRestoreInviteesType
 
-`class` 
+`class`
 
 Type for shared content restore invitees type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentRestoreMemberDetails
 
-`class` 
+`class`
 
 Restored users and/or groups to membership of shared file/folder.
 
+**Properties:**
+
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+
 ### SharedContentRestoreMemberType
 
-`class` 
+`class`
 
 Type for shared content restore member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentUnshareDetails
 
-`class` 
+`class`
 
 Unshared file/folder by clearing membership.
 
 ### SharedContentUnshareType
 
-`class` 
+`class`
 
 Type for shared content unshare type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedContentViewDetails
 
-`class` 
+`class`
 
 Previewed shared file/folder.
 
+**Properties:**
+
+- `sharedContentLink`: `String` - Shared content link.
+- `sharedContentOwner`: `TeamLog.UserLogInfo?` - The shared content owner.
+- `sharedContentAccessLevel`: `Sharing.AccessLevel` - Shared content access level.
+
 ### SharedContentViewType
 
-`class` 
+`class`
 
 Type for shared content view type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderChangeLinkPolicyDetails
 
-`class` 
+`class`
 
 Changed who can access shared folder via link.
 
+**Properties:**
+
+- `newValue`: `Sharing.SharedLinkPolicy` - New shared folder link policy.
+- `previousValue`: `Sharing.SharedLinkPolicy?` - Previous shared folder link policy. Might be missing due to historical data gap.
+
 ### SharedFolderChangeLinkPolicyType
 
-`class` 
+`class`
 
 Type for shared folder change link policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderChangeMembersInheritancePolicyDetails
 
-`class` 
+`class`
 
 Changed whether shared folder inherits members from parent folder.
 
+**Properties:**
+
+- `newValue`: `TeamLog.SharedFolderMembersInheritancePolicy` - New member inheritance policy.
+- `previousValue`: `TeamLog.SharedFolderMembersInheritancePolicy?` - Previous member inheritance policy. Might be missing due to historical data gap.
+
 ### SharedFolderChangeMembersInheritancePolicyType
 
-`class` 
+`class`
 
 Type for shared folder change members inheritance policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderChangeMembersManagementPolicyDetails
 
-`class` 
+`class`
 
 Changed who can add/remove members of shared folder.
 
+**Properties:**
+
+- `newValue`: `Sharing.AclUpdatePolicy` - New members management policy.
+- `previousValue`: `Sharing.AclUpdatePolicy?` - Previous members management policy. Might be missing due to historical data gap.
+
 ### SharedFolderChangeMembersManagementPolicyType
 
-`class` 
+`class`
 
 Type for shared folder change members management policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderChangeMembersPolicyDetails
 
-`class` 
+`class`
 
 Changed who can become member of shared folder.
 
+**Properties:**
+
+- `newValue`: `Sharing.MemberPolicy` - New external invite policy.
+- `previousValue`: `Sharing.MemberPolicy?` - Previous external invite policy. Might be missing due to historical data gap.
+
 ### SharedFolderChangeMembersPolicyType
 
-`class` 
+`class`
 
 Type for shared folder change members policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderCreateDetails
 
-`class` 
+`class`
 
 Created shared folder.
 
+**Properties:**
+
+- `targetNsId`: `String?` - Target namespace ID.
+
 ### SharedFolderCreateType
 
-`class` 
+`class`
 
 Type for shared folder create type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderDeclineInvitationDetails
 
-`class` 
+`class`
 
 Declined team member's invite to shared folder.
 
 ### SharedFolderDeclineInvitationType
 
-`class` 
+`class`
 
 Type for shared folder decline invitation type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderMembersInheritancePolicy
 
-`enum` 
+`enum`
 
 Specifies if a shared folder inherits its members from the parent folder.
 
+**Cases:**
+
+- `dontInheritMembers`
+- `inheritMembers`
+- `other`
+
 ### SharedFolderMountDetails
 
-`class` 
+`class`
 
 Added shared folder to own Dropbox.
 
 ### SharedFolderMountType
 
-`class` 
+`class`
 
 Type for shared folder mount type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderNestDetails
 
-`class` 
+`class`
 
 Changed parent of shared folder.
 
+**Properties:**
+
+- `previousParentNsId`: `String?` - Previous parent namespace ID.
+- `newParentNsId`: `String?` - New parent namespace ID.
+- `previousNsPath`: `String?` - Previous namespace path.
+- `newNsPath`: `String?` - New namespace path.
+
 ### SharedFolderNestType
 
-`class` 
+`class`
 
 Type for shared folder nest type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderTransferOwnershipDetails
 
-`class` 
+`class`
 
 Transferred ownership of shared folder to another member.
 
+**Properties:**
+
+- `previousOwnerEmail`: `String?` - The email address of the previous shared folder owner.
+- `newOwnerEmail`: `String` - The email address of the new shared folder owner.
+
 ### SharedFolderTransferOwnershipType
 
-`class` 
+`class`
 
 Type for shared folder transfer ownership type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharedFolderUnmountDetails
 
-`class` 
+`class`
 
 Deleted shared folder from Dropbox.
 
 ### SharedFolderUnmountType
 
-`class` 
+`class`
 
 Type for shared folder unmount type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharingChangeFolderJoinPolicyDetails
 
-`class` 
+`class`
 
 Changed whether team members can join shared folders owned outside team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.SharingFolderJoinPolicy` - New external join policy.
+- `previousValue`: `TeamLog.SharingFolderJoinPolicy?` - Previous external join policy. Might be missing due to historical data gap.
+
 ### SharingChangeFolderJoinPolicyType
 
-`class` 
+`class`
 
 Type for sharing change folder join policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharingChangeLinkAllowChangeExpirationPolicyDetails
 
-`class` 
+`class`
 
 Changed the allow remove or change expiration policy for the links shared outside of the team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.EnforceLinkPasswordPolicy` - To.
+- `previousValue`: `TeamLog.EnforceLinkPasswordPolicy?` - From.
+
 ### SharingChangeLinkAllowChangeExpirationPolicyType
 
-`class` 
+`class`
 
 Type for sharing change link allow change expiration policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharingChangeLinkDefaultExpirationPolicyDetails
 
-`class` 
+`class`
 
 Changed the default expiration for the links shared outside of the team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.DefaultLinkExpirationDaysPolicy` - To.
+- `previousValue`: `TeamLog.DefaultLinkExpirationDaysPolicy?` - From.
+
 ### SharingChangeLinkDefaultExpirationPolicyType
 
-`class` 
+`class`
 
 Type for sharing change link default expiration policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharingChangeLinkEnforcePasswordPolicyDetails
 
-`class` 
+`class`
 
 Changed the password requirement for the links shared outside of the team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.ChangeLinkExpirationPolicy` - To.
+- `previousValue`: `TeamLog.ChangeLinkExpirationPolicy?` - From.
+
 ### SharingChangeLinkEnforcePasswordPolicyType
 
-`class` 
+`class`
 
 Type for sharing change link enforce password policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharingChangeLinkPolicyDetails
 
-`class` 
+`class`
 
 by default.
 
+**Properties:**
+
+- `newValue`: `TeamLog.SharingLinkPolicy` - New external link accessibility policy.
+- `previousValue`: `TeamLog.SharingLinkPolicy?` - Previous external link accessibility policy. Might be missing due to historical data gap.
+
 ### SharingChangeLinkPolicyType
 
-`class` 
+`class`
 
 Type for sharing change link policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharingChangeMemberPolicyDetails
 
-`class` 
+`class`
 
 Changed whether members can share files/folders outside team.
 
+**Properties:**
+
+- `newValue`: `TeamLog.SharingMemberPolicy` - New external invite policy.
+- `previousValue`: `TeamLog.SharingMemberPolicy?` - Previous external invite policy. Might be missing due to historical data gap.
+
 ### SharingChangeMemberPolicyType
 
-`class` 
+`class`
 
 Type for sharing change member policy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SharingFolderJoinPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling if team members can join shared folders owned by non team members.
 
+**Cases:**
+
+- `fromAnyone`
+- `fromTeamOnly`
+- `other`
+
 ### SharingLinkPolicy
 
-`enum` 
+`enum`
 
 Policy for controlling if team members can share links externally
 
+**Cases:**
+
+- `defaultNoOne`
+- `defaultPrivate`
+- `defaultPublic`
+- `onlyPrivate`
+- `other`
+
 ### SharingMemberPolicy
 
-`enum` 
+`enum`
 
 External sharing policy
+
+**Cases:**
+
+- `allow`
+- `forbid`
+- `forbidWithExclusions`
+- `other`
 
 ---
 
@@ -6109,297 +10546,500 @@ External sharing policy
 
 ### ShowcaseAccessGrantedDetails
 
-`class` 
+`class`
 
 Granted access to showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseAccessGrantedType
 
-`class` 
+`class`
 
 Type for showcase access granted type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseAddMemberDetails
 
-`class` 
+`class`
 
 Added member to showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseAddMemberType
 
-`class` 
+`class`
 
 Type for showcase add member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseArchivedDetails
 
-`class` 
+`class`
 
 Archived showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseArchivedType
 
-`class` 
+`class`
 
 Type for showcase archived type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseCreatedDetails
 
-`class` 
+`class`
 
 Created showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseCreatedType
 
-`class` 
+`class`
 
 Type for showcase created type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseDeleteCommentDetails
 
-`class` 
+`class`
 
 Deleted showcase comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### ShowcaseDeleteCommentType
 
-`class` 
+`class`
 
 Type for showcase delete comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseDocumentLogInfo
 
-`class` 
+`class`
 
 Showcase document's logged information.
 
+**Properties:**
+
+- `showcaseId`: `String` - Showcase document Id.
+- `showcaseTitle`: `String` - Showcase document title.
+
 ### ShowcaseEditCommentDetails
 
-`class` 
+`class`
 
 Edited showcase comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### ShowcaseEditCommentType
 
-`class` 
+`class`
 
 Type for showcase edit comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseEditedDetails
 
-`class` 
+`class`
 
 Edited showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseEditedType
 
-`class` 
+`class`
 
 Type for showcase edited type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseFileAddedDetails
 
-`class` 
+`class`
 
 Added file to showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseFileAddedType
 
-`class` 
+`class`
 
 Type for showcase file added type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseFileDownloadDetails
 
-`class` 
+`class`
 
 Downloaded file from showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `downloadType`: `String` - Showcase download type.
+
 ### ShowcaseFileDownloadType
 
-`class` 
+`class`
 
 Type for showcase file download type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseFileRemovedDetails
 
-`class` 
+`class`
 
 Removed file from showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseFileRemovedType
 
-`class` 
+`class`
 
 Type for showcase file removed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseFileViewDetails
 
-`class` 
+`class`
 
 Viewed file in showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseFileViewType
 
-`class` 
+`class`
 
 Type for showcase file view type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcasePermanentlyDeletedDetails
 
-`class` 
+`class`
 
 Permanently deleted showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcasePermanentlyDeletedType
 
-`class` 
+`class`
 
 Type for showcase permanently deleted type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcasePostCommentDetails
 
-`class` 
+`class`
 
 Added showcase comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### ShowcasePostCommentType
 
-`class` 
+`class`
 
 Type for showcase post comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseRemoveMemberDetails
 
-`class` 
+`class`
 
 Removed member from showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseRemoveMemberType
 
-`class` 
+`class`
 
 Type for showcase remove member type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseRenamedDetails
 
-`class` 
+`class`
 
 Renamed showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseRenamedType
 
-`class` 
+`class`
 
 Type for showcase renamed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseRequestAccessDetails
 
-`class` 
+`class`
 
 Requested access to showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseRequestAccessType
 
-`class` 
+`class`
 
 Type for showcase request access type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseResolveCommentDetails
 
-`class` 
+`class`
 
 Resolved showcase comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### ShowcaseResolveCommentType
 
-`class` 
+`class`
 
 Type for showcase resolve comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseRestoredDetails
 
-`class` 
+`class`
 
 Unarchived showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseRestoredType
 
-`class` 
+`class`
 
 Type for showcase restored type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseTrashedDeprecatedDetails
 
-`class` 
+`class`
 
 Deleted showcase (old version).
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseTrashedDeprecatedType
 
-`class` 
+`class`
 
 Type for showcase trashed deprecated type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseTrashedDetails
 
-`class` 
+`class`
 
 Deleted showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseTrashedType
 
-`class` 
+`class`
 
 Type for showcase trashed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseUnresolveCommentDetails
 
-`class` 
+`class`
 
 Unresolved showcase comment.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+- `commentText`: `String?` - Comment text.
+
 ### ShowcaseUnresolveCommentType
 
-`class` 
+`class`
 
 Type for showcase unresolve comment type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseUntrashedDeprecatedDetails
 
-`class` 
+`class`
 
 Restored showcase (old version).
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseUntrashedDeprecatedType
 
-`class` 
+`class`
 
 Type for showcase untrashed deprecated type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseUntrashedDetails
 
-`class` 
+`class`
 
 Restored showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseUntrashedType
 
-`class` 
+`class`
 
 Type for showcase untrashed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ShowcaseViewDetails
 
-`class` 
+`class`
 
 Viewed showcase.
 
+**Properties:**
+
+- `eventUuid`: `String` - Event unique identifier.
+
 ### ShowcaseViewType
 
-`class` 
+`class`
 
 Type for showcase view type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -6407,39 +11047,61 @@ Type for showcase view type.
 
 ### SmartSyncCreateAdminPrivilegeReportDetails
 
-`class` 
+`class`
 
 Created Smart Sync non-admin devices report.
 
 ### SmartSyncCreateAdminPrivilegeReportType
 
-`class` 
+`class`
 
 Type for smart sync create admin privilege report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SmartSyncNotOptOutDetails
 
-`class` 
+`class`
 
 Opted team into Smart Sync.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.SmartSyncOptOutPolicy` - Previous Smart Sync opt out policy.
+- `newValue`: `TeamLog.SmartSyncOptOutPolicy` - New Smart Sync opt out policy.
+
 ### SmartSyncNotOptOutType
 
-`class` 
+`class`
 
 Type for smart sync not opt out type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SmartSyncOptOutDetails
 
-`class` 
+`class`
 
 Opted team out of Smart Sync.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.SmartSyncOptOutPolicy` - Previous Smart Sync opt out policy.
+- `newValue`: `TeamLog.SmartSyncOptOutPolicy` - New Smart Sync opt out policy.
+
 ### SmartSyncOptOutType
 
-`class` 
+`class`
 
 Type for smart sync opt out type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -6447,141 +11109,239 @@ Type for smart sync opt out type.
 
 ### Certificate
 
-`class` 
+`class`
 
 Certificate details.
 
+**Properties:**
+
+- `subject`: `String` - Certificate subject.
+- `issuer`: `String` - Certificate issuer.
+- `issueDate`: `String` - Certificate issue date.
+- `expirationDate`: `String` - Certificate expiration date.
+- `serialNumber`: `String` - Certificate serial number.
+- `sha1Fingerprint`: `String` - Certificate sha1 fingerprint.
+- `commonName`: `String?` - Certificate common name.
+
 ### SsoAddCertDetails
 
-`class` 
+`class`
 
 Added X.509 certificate for SSO.
 
+**Properties:**
+
+- `certificateDetails`: `TeamLog.Certificate` - SSO certificate details.
+
 ### SsoAddCertType
 
-`class` 
+`class`
 
 Type for sso add cert type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoAddLoginUrlDetails
 
-`class` 
+`class`
 
 Added sign-in URL for SSO.
 
+**Properties:**
+
+- `newValue`: `String` - New single sign-on login URL.
+
 ### SsoAddLoginUrlType
 
-`class` 
+`class`
 
 Type for sso add login url type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoAddLogoutUrlDetails
 
-`class` 
+`class`
 
 Added sign-out URL for SSO.
 
+**Properties:**
+
+- `newValue`: `String?` - New single sign-on logout URL.
+
 ### SsoAddLogoutUrlType
 
-`class` 
+`class`
 
 Type for sso add logout url type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoChangeCertDetails
 
-`class` 
+`class`
 
 Changed X.509 certificate for SSO.
 
+**Properties:**
+
+- `previousCertificateDetails`: `TeamLog.Certificate?` - Previous SSO certificate details. Might be missing due to historical data gap.
+- `newCertificateDetails`: `TeamLog.Certificate` - New SSO certificate details.
+
 ### SsoChangeCertType
 
-`class` 
+`class`
 
 Type for sso change cert type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoChangeLoginUrlDetails
 
-`class` 
+`class`
 
 Changed sign-in URL for SSO.
 
+**Properties:**
+
+- `previousValue`: `String` - Previous single sign-on login URL.
+- `newValue`: `String` - New single sign-on login URL.
+
 ### SsoChangeLoginUrlType
 
-`class` 
+`class`
 
 Type for sso change login url type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoChangeLogoutUrlDetails
 
-`class` 
+`class`
 
 Changed sign-out URL for SSO.
 
+**Properties:**
+
+- `previousValue`: `String?` - Previous single sign-on logout URL. Might be missing due to historical data gap.
+- `newValue`: `String?` - New single sign-on logout URL.
+
 ### SsoChangeLogoutUrlType
 
-`class` 
+`class`
 
 Type for sso change logout url type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoChangeSamlIdentityModeDetails
 
-`class` 
+`class`
 
 Changed SAML identity mode for SSO.
 
+**Properties:**
+
+- `previousValue`: `Int64` - Previous single sign-on identity mode.
+- `newValue`: `Int64` - New single sign-on identity mode.
+
 ### SsoChangeSamlIdentityModeType
 
-`class` 
+`class`
 
 Type for sso change saml identity mode type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoErrorDetails
 
-`class` 
+`class`
 
 Failed to sign in via SSO.
 
+**Properties:**
+
+- `errorDetails`: `TeamLog.FailureDetailsLogInfo` - Error details.
+
 ### SsoErrorType
 
-`class` 
+`class`
 
 Type for sso error type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoRemoveCertDetails
 
-`class` 
+`class`
 
 Removed X.509 certificate for SSO.
 
 ### SsoRemoveCertType
 
-`class` 
+`class`
 
 Type for sso remove cert type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoRemoveLoginUrlDetails
 
-`class` 
+`class`
 
 Removed sign-in URL for SSO.
 
+**Properties:**
+
+- `previousValue`: `String` - Previous single sign-on login URL.
+
 ### SsoRemoveLoginUrlType
 
-`class` 
+`class`
 
 Type for sso remove login url type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SsoRemoveLogoutUrlDetails
 
-`class` 
+`class`
 
 Removed sign-out URL for SSO.
 
+**Properties:**
+
+- `previousValue`: `String` - Previous single sign-on logout URL.
+
 ### SsoRemoveLogoutUrlType
 
-`class` 
+`class`
 
 Type for sso remove logout url type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -6589,27 +11349,44 @@ Type for sso remove logout url type.
 
 ### CreateTeamInviteLinkDetails
 
-`class` 
+`class`
 
 Created team invite link.
 
+**Properties:**
+
+- `linkUrl`: `String` - The invite link url that was created.
+- `expiryDate`: `String` - The expiration date of the invite link.
+
 ### CreateTeamInviteLinkType
 
-`class` 
+`class`
 
 Type for create team invite link type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### DeleteTeamInviteLinkDetails
 
-`class` 
+`class`
 
 Deleted team invite link.
 
+**Properties:**
+
+- `linkUrl`: `String` - The invite link url that was deleted.
+
 ### DeleteTeamInviteLinkType
 
-`class` 
+`class`
 
 Type for delete team invite link type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -6617,333 +11394,511 @@ Type for delete team invite link type.
 
 ### TeamActivityCreateReportDetails
 
-`class` 
+`class`
 
 Created team activity report.
 
+**Properties:**
+
+- `startDate`: `Date` - Report start date.
+- `endDate`: `Date` - Report end date.
+
 ### TeamActivityCreateReportFailDetails
 
-`class` 
+`class`
 
 Couldn't generate team activity report.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### TeamActivityCreateReportFailType
 
-`class` 
+`class`
 
 Type for team activity create report fail type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamActivityCreateReportType
 
-`class` 
+`class`
 
 Type for team activity create report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamDetails
 
-`class` 
+`class`
 
 More details about the team.
 
+**Properties:**
+
+- `team`: `String` - The name of the team.
+
 ### TeamEncryptionKeyCancelKeyDeletionDetails
 
-`class` 
+`class`
 
 Canceled team encryption key deletion.
 
 ### TeamEncryptionKeyCancelKeyDeletionType
 
-`class` 
+`class`
 
 Type for team encryption key cancel key deletion type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamEncryptionKeyCreateKeyDetails
 
-`class` 
+`class`
 
 Created team encryption key.
 
 ### TeamEncryptionKeyCreateKeyType
 
-`class` 
+`class`
 
 Type for team encryption key create key type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamEncryptionKeyDeleteKeyDetails
 
-`class` 
+`class`
 
 Deleted team encryption key.
 
 ### TeamEncryptionKeyDeleteKeyType
 
-`class` 
+`class`
 
 Type for team encryption key delete key type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamEncryptionKeyDisableKeyDetails
 
-`class` 
+`class`
 
 Disabled team encryption key.
 
 ### TeamEncryptionKeyDisableKeyType
 
-`class` 
+`class`
 
 Type for team encryption key disable key type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamEncryptionKeyEnableKeyDetails
 
-`class` 
+`class`
 
 Enabled team encryption key.
 
 ### TeamEncryptionKeyEnableKeyType
 
-`class` 
+`class`
 
 Type for team encryption key enable key type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamEncryptionKeyRotateKeyDetails
 
-`class` 
+`class`
 
 Rotated team encryption key.
 
 ### TeamEncryptionKeyRotateKeyType
 
-`class` 
+`class`
 
 Type for team encryption key rotate key type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamEncryptionKeyScheduleKeyDeletionDetails
 
-`class` 
+`class`
 
 Scheduled encryption key deletion.
 
 ### TeamEncryptionKeyScheduleKeyDeletionType
 
-`class` 
+`class`
 
 Type for team encryption key schedule key deletion type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamEvent
 
-`class` 
+`class`
 
 An audit log event.
 
+**Properties:**
+
+- `timestamp_`: `Date` - The Dropbox timestamp representing when the action was taken.
+- `eventCategory`: `TeamLog.EventCategory` - The category that this type of action belongs to.
+- `actor`: `TeamLog.ActorLogInfo?` - The entity who actually performed the action. Might be missing due to historical data gap.
+- `origin`: `TeamLog.OriginLogInfo?` - client.
+- `involveNonTeamMember`: `Bool?` - missing due to historical data gap.
+- `context`: `TeamLog.ContextLogInfo?` - gap.
+- `participants`: `[TeamLog.ParticipantLogInfo]?` - actors or users in context.
+- `assets`: `[TeamLog.AssetLogInfo]?` - the future we might add other asset types such as Paper documents, folders, projects, etc.
+- `eventType`: `TeamLog.EventType` - The particular type of action taken.
+- `details`: `TeamLog.EventDetails` - action.
+
 ### TeamFolderChangeStatusDetails
 
-`class` 
+`class`
 
 Changed archival status of team folder.
 
+**Properties:**
+
+- `newValue`: `Team.TeamFolderStatus` - New team folder status.
+- `previousValue`: `Team.TeamFolderStatus?` - Previous team folder status. Might be missing due to historical data gap.
+
 ### TeamFolderChangeStatusType
 
-`class` 
+`class`
 
 Type for team folder change status type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamFolderCreateDetails
 
-`class` 
+`class`
 
 Created team folder in active status.
 
 ### TeamFolderCreateType
 
-`class` 
+`class`
 
 Type for team folder create type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamFolderDowngradeDetails
 
-`class` 
+`class`
 
 Downgraded team folder to regular shared folder.
 
+**Properties:**
+
+- `targetAssetIndex`: `UInt64` - Target asset position in the Assets list.
+
 ### TeamFolderDowngradeType
 
-`class` 
+`class`
 
 Type for team folder downgrade type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamFolderPermanentlyDeleteDetails
 
-`class` 
+`class`
 
 Permanently deleted archived team folder.
 
 ### TeamFolderPermanentlyDeleteType
 
-`class` 
+`class`
 
 Type for team folder permanently delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamFolderRenameDetails
 
-`class` 
+`class`
 
 Renamed active/archived team folder.
 
+**Properties:**
+
+- `previousFolderName`: `String` - Previous folder name.
+- `newFolderName`: `String` - New folder name.
+
 ### TeamFolderRenameType
 
-`class` 
+`class`
 
 Type for team folder rename type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamLinkedAppLogInfo
 
-`class` 
+`class`
 
 Team linked app
 
 ### TeamLogInfo
 
-`class` 
+`class`
 
 Team's logged information.
 
+**Properties:**
+
+- `displayName`: `String` - Team display name.
+
 ### TeamMemberLogInfo
 
-`class` 
+`class`
 
 Team member's logged information.
 
+**Properties:**
+
+- `teamMemberId`: `String?` - Team member ID.
+- `memberExternalId`: `String?` - Team member external ID.
+- `team`: `TeamLog.TeamLogInfo?` - Details about this user&#x2019s team for enterprise event.
+
 ### TeamMembershipType
 
-`enum` 
+`enum`
 
 Type for team membership type.
 
+**Cases:**
+
+- `free`
+- `full`
+- `guest`
+- `other`
+
 ### TeamName
 
-`class` 
+`class`
 
 Team name details
 
+**Properties:**
+
+- `teamDisplayName`: `String` - Team's display name.
+- `teamLegalName`: `String` - Team's legal name.
+
 ### TeamProfileAddBackgroundDetails
 
-`class` 
+`class`
 
 Added team background to display on shared link headers.
 
 ### TeamProfileAddBackgroundType
 
-`class` 
+`class`
 
 Type for team profile add background type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamProfileAddLogoDetails
 
-`class` 
+`class`
 
 Added team logo to display on shared link headers.
 
 ### TeamProfileAddLogoType
 
-`class` 
+`class`
 
 Type for team profile add logo type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamProfileChangeBackgroundDetails
 
-`class` 
+`class`
 
 Changed team background displayed on shared link headers.
 
 ### TeamProfileChangeBackgroundType
 
-`class` 
+`class`
 
 Type for team profile change background type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamProfileChangeDefaultLanguageDetails
 
-`class` 
+`class`
 
 Changed default language for team.
 
+**Properties:**
+
+- `newValue`: `String` - New team's default language.
+- `previousValue`: `String` - Previous team's default language.
+
 ### TeamProfileChangeDefaultLanguageType
 
-`class` 
+`class`
 
 Type for team profile change default language type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamProfileChangeLogoDetails
 
-`class` 
+`class`
 
 Changed team logo displayed on shared link headers.
 
 ### TeamProfileChangeLogoType
 
-`class` 
+`class`
 
 Type for team profile change logo type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamProfileChangeNameDetails
 
-`class` 
+`class`
 
 Changed team name.
 
+**Properties:**
+
+- `previousValue`: `TeamLog.TeamName?` - Previous teams name. Might be missing due to historical data gap.
+- `newValue`: `TeamLog.TeamName` - New team name.
+
 ### TeamProfileChangeNameType
 
-`class` 
+`class`
 
 Type for team profile change name type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamProfileRemoveBackgroundDetails
 
-`class` 
+`class`
 
 Removed team background displayed on shared link headers.
 
 ### TeamProfileRemoveBackgroundType
 
-`class` 
+`class`
 
 Type for team profile remove background type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamProfileRemoveLogoDetails
 
-`class` 
+`class`
 
 Removed team logo displayed on shared link headers.
 
 ### TeamProfileRemoveLogoType
 
-`class` 
+`class`
 
 Type for team profile remove logo type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamSelectiveSyncSettingsChangedDetails
 
-`class` 
+`class`
 
 Changed sync default.
 
+**Properties:**
+
+- `previousValue`: `Files.SyncSetting` - Previous value.
+- `newValue`: `Files.SyncSetting` - New value.
+
 ### TeamSelectiveSyncSettingsChangedType
 
-`class` 
+`class`
 
 Type for team selective sync settings changed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### TeamSharingWhitelistSubjectsChangedDetails
 
-`class` 
+`class`
 
 Edited the approved list for sharing externally.
 
+**Properties:**
+
+- `addedWhitelistSubjects`: `[String]` - Domains or emails added to the approved list for sharing externally.
+- `removedWhitelistSubjects`: `[String]` - Domains or emails removed from the approved list for sharing externally.
+
 ### TeamSharingWhitelistSubjectsChangedType
 
-`class` 
+`class`
 
 Type for team sharing whitelist subjects changed type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -6951,27 +11906,54 @@ Type for team sharing whitelist subjects changed type.
 
 ### TrustedNonTeamMemberLogInfo
 
-`class` 
+`class`
 
 User that is not a member of the team but considered trusted.
 
+**Properties:**
+
+- `trustedNonTeamMemberType`: `TeamLog.TrustedNonTeamMemberType` - Indicates the type of the member of a trusted team.
+- `team`: `TeamLog.TeamLogInfo?` - Details about this user's trusted team.
+
 ### TrustedNonTeamMemberType
 
-`enum` 
+`enum`
 
 Type for trusted non team member type.
 
+**Cases:**
+
+- `enterpriseAdmin`
+- `multiInstanceAdmin`
+- `other`
+
 ### TrustedTeamsRequestAction
 
-`enum` 
+`enum`
 
 Type for trusted teams request action.
 
+**Cases:**
+
+- `accepted`
+- `declined`
+- `expired`
+- `invited`
+- `revoked`
+- `other`
+
 ### TrustedTeamsRequestState
 
-`enum` 
+`enum`
 
 Type for trusted teams request state.
+
+**Cases:**
+
+- `invited`
+- `linked`
+- `unlinked`
+- `other`
 
 ---
 
@@ -6979,21 +11961,85 @@ Type for trusted teams request state.
 
 ### UserLogInfo
 
-`class` 
+`class`
 
 User's logged information.
 
+**Properties:**
+
+- `accountId`: `String?` - User unique ID.
+- `displayName`: `String?` - User display name.
+- `email`: `String?` - User email address.
+
 ### NonTeamMemberLogInfo
 
-`class` 
+`class`
 
 Non team member's logged information.
 
+### UserLinkedAppLogInfo
+
+`class`
+
+User linked app
+
 ### UserNameLogInfo
 
-`class` 
+`class`
 
 User's name logged information
+
+**Properties:**
+
+- `givenName`: `String` - Given name.
+- `surname`: `String` - Surname.
+- `locale`: `String?` - Locale. Might be missing due to historical data gap.
+
+### UserOrTeamLinkedAppLogInfo
+
+`class`
+
+User or team linked app. Used when linked type is missing due to historical data gap.
+
+### UserTagsAddedDetails
+
+`class`
+
+Tagged a file.
+
+**Properties:**
+
+- `values`: `[String]` - values.
+
+### UserTagsAddedType
+
+`class`
+
+Type for user tags added type.
+
+**Properties:**
+
+- `description_`: `String`
+
+### UserTagsRemovedDetails
+
+`class`
+
+Removed tags.
+
+**Properties:**
+
+- `values`: `[String]` - values.
+
+### UserTagsRemovedType
+
+`class`
+
+Type for user tags removed type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -7001,15 +12047,24 @@ User's name logged information
 
 ### WebSessionsChangeActiveSessionLimitDetails
 
-`class` 
+`class`
 
 Changed limit on active sessions per member.
 
+**Properties:**
+
+- `previousValue`: `String` - Previous max number of concurrent active sessions policy.
+- `newValue`: `String` - New max number of concurrent active sessions policy.
+
 ### WebSessionsChangeActiveSessionLimitType
 
-`class` 
+`class`
 
 Type for web sessions change active session limit type.
+
+**Properties:**
+
+- `description_`: `String`
 
 ---
 
@@ -7017,356 +12072,434 @@ Type for web sessions change active session limit type.
 
 ### IdentifierType
 
-`enum` 
+`enum`
 
 Type for identifier type.
 
+**Cases:**
+
+- `email`
+- `facebookProfileName`
+- `other`
+
 ### LabelType
 
-`enum` 
+`enum`
 
 Label type
 
+**Cases:**
+
+- `personalInformation`
+- `testOnly`
+- `userDefinedTag`
+- `other`
+
 ### LockStatus
 
-`enum` 
+`enum`
 
 File lock status
 
+**Cases:**
+
+- `locked`
+- `unlocked`
+- `other`
+
 ### MissingDetails
 
-`class` 
+`class`
 
 a result.
 
+**Properties:**
+
+- `sourceEventFields`: `String?` - All the data that could be retrieved and converted from the source event.
+
 ### NoExpirationLinkGenCreateReportDetails
 
-`class` 
+`class`
 
 Report created: Links created with no expiration.
 
+**Properties:**
+
+- `startDate`: `Date` - Report start date.
+- `endDate`: `Date` - Report end date.
+
 ### NoExpirationLinkGenCreateReportType
 
-`class` 
+`class`
 
 Type for no expiration link gen create report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NoExpirationLinkGenReportFailedDetails
 
-`class` 
+`class`
 
 Couldn't create report: Links created with no expiration.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### NoExpirationLinkGenReportFailedType
 
-`class` 
+`class`
 
 Type for no expiration link gen report failed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### NonTrustedTeamDetails
 
-`class` 
+`class`
 
 The email to which the request was sent
 
+**Properties:**
+
+- `team`: `String` - The email to which the request was sent.
+
 ### OpenNoteSharedDetails
 
-`class` 
+`class`
 
 Opened shared Paper doc.
 
 ### OpenNoteSharedType
 
-`class` 
+`class`
 
 Type for open note shared type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### OrganizationDetails
 
-`class` 
+`class`
 
 More details about the organization.
 
+**Properties:**
+
+- `organization`: `String` - The name of the organization.
+
 ### OrganizationName
 
-`class` 
+`class`
 
 The name of the organization
 
+**Properties:**
+
+- `organization`: `String` - The name of the organization.
+
 ### OrganizeFolderWithTidyDetails
 
-`class` 
+`class`
 
 Organized a folder with multi-file organize.
 
 ### OrganizeFolderWithTidyType
 
-`class` 
+`class`
 
 Type for organize folder with tidy type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### OutdatedLinkViewCreateReportDetails
 
-`class` 
+`class`
 
 Report created: Views of old links.
 
+**Properties:**
+
+- `startDate`: `Date` - Report start date.
+- `endDate`: `Date` - Report end date.
+
 ### OutdatedLinkViewCreateReportType
 
-`class` 
+`class`
 
 Type for outdated link view create report type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### OutdatedLinkViewReportFailedDetails
 
-`class` 
+`class`
 
 Couldn't create report: Views of old links.
 
+**Properties:**
+
+- `failureReason`: `Team.TeamReportFailureReason` - Failure reason.
+
 ### OutdatedLinkViewReportFailedType
 
-`class` 
+`class`
 
 Type for outdated link view report failed type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ParticipantLogInfo
 
-`enum` 
+`enum`
 
 A user or group
 
+**Cases:**
+
+- `group` - Group details.
+- `user` - A user with a Dropbox account.
+- `other`
+
 ### PendingSecondaryEmailAddedDetails
 
-`class` 
+`class`
 
 Added pending secondary email.
 
+**Properties:**
+
+- `secondaryEmail`: `String` - New pending secondary email.
+
 ### PendingSecondaryEmailAddedType
 
-`class` 
+`class`
 
 Type for pending secondary email added type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### PrimaryTeamRequestAcceptedDetails
 
-`class` 
+`class`
 
 Team merge request acceptance details shown to the primary team
 
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
+
 ### PrimaryTeamRequestCanceledDetails
 
-`class` 
+`class`
 
 Team merge request cancellation details shown to the primary team
 
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
+
 ### PrimaryTeamRequestExpiredDetails
 
-`class` 
+`class`
 
 Team merge request expiration details shown to the primary team
 
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
+
 ### PrimaryTeamRequestReminderDetails
 
-`class` 
+`class`
 
 Team merge request reminder details shown to the primary team
 
+**Properties:**
+
+- `secondaryTeam`: `String` - The secondary team name.
+- `sentTo`: `String` - The name of the primary team admin the request was sent to.
+
 ### QuickActionType
 
-`enum` 
+`enum`
 
 Quick action type.
 
+**Cases:**
+
+- `deleteSharedLink`
+- `resetPassword`
+- `restoreFileOrFolder`
+- `unlinkApp`
+- `unlinkDevice`
+- `unlinkSession`
+- `other`
+
 ### RelocateAssetReferencesLogInfo
 
-`class` 
+`class`
 
 Provides the indices of the source asset and the destination asset for a relocate action.
 
+**Properties:**
+
+- `srcAssetIndex`: `UInt64` - Source asset position in the Assets list.
+- `destAssetIndex`: `UInt64` - Destination asset position in the Assets list.
+
 ### ReplayFileDeleteDetails
 
-`class` 
+`class`
 
 Deleted files in Replay.
 
 ### ReplayFileDeleteType
 
-`class` 
+`class`
 
 Type for replay file delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ReplayFileSharedLinkCreatedDetails
 
-`class` 
+`class`
 
 Created shared link in Replay.
 
 ### ReplayFileSharedLinkCreatedType
 
-`class` 
+`class`
 
 Type for replay file shared link created type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ReplayFileSharedLinkModifiedDetails
 
-`class` 
+`class`
 
 Modified shared link in Replay.
 
 ### ReplayFileSharedLinkModifiedType
 
-`class` 
+`class`
 
 Type for replay file shared link modified type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ReplayProjectTeamAddDetails
 
-`class` 
+`class`
 
 Added member to Replay Project.
 
 ### ReplayProjectTeamAddType
 
-`class` 
+`class`
 
 Type for replay project team add type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### ReplayProjectTeamDeleteDetails
 
-`class` 
+`class`
 
 Removed member from Replay Project.
 
 ### ReplayProjectTeamDeleteType
 
-`class` 
+`class`
 
 Type for replay project team delete type.
 
+**Properties:**
+
+- `description_`: `String`
+
 ### SecondaryTeamRequestAcceptedDetails
 
-`class` 
+`class`
 
 Team merge request acceptance details shown to the secondary team
 
+**Properties:**
+
+- `primaryTeam`: `String` - The primary team name.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
+
 ### SecondaryTeamRequestCanceledDetails
 
-`class` 
+`class`
 
 Team merge request cancellation details shown to the secondary team
 
+**Properties:**
+
+- `sentTo`: `String` - The email of the primary team admin that the request was sent to.
+- `sentBy`: `String` - The name of the secondary team admin who sent the request originally.
+
 ### SecondaryTeamRequestExpiredDetails
 
-`class` 
+`class`
 
 Team merge request expiration details shown to the secondary team
 
+**Properties:**
+
+- `sentTo`: `String` - The email of the primary team admin the request was sent to.
+
 ### SecondaryTeamRequestReminderDetails
 
-`class` 
+`class`
 
 Team merge request reminder details shown to the secondary team
 
+**Properties:**
+
+- `sentTo`: `String` - The email of the primary team admin the request was sent to.
+
 ### SharedNoteOpenedDetails
 
-`class` 
+`class`
 
 Opened shared Paper doc.
 
 ### SharedNoteOpenedType
 
-`class` 
+`class`
 
 Type for shared note opened type.
 
-### ShmodelDisableDownloadsDetails
+**Properties:**
 
-`class` 
-
-Disabled downloads for link.
-
-### ShmodelDisableDownloadsType
-
-`class` 
-
-Type for shmodel disable downloads type.
-
-### ShmodelEnableDownloadsDetails
-
-`class` 
-
-Enabled downloads for link.
-
-### ShmodelEnableDownloadsType
-
-`class` 
-
-Type for shmodel enable downloads type.
-
-### ShmodelGroupShareDetails
-
-`class` 
-
-Shared link with group.
-
-### ShmodelGroupShareType
-
-`class` 
-
-Type for shmodel group share type.
-
-### SpaceCapsType
-
-`enum` 
-
-Space limit alert policy
-
-### SpaceLimitsStatus
-
-`enum` 
-
-Type for space limits status.
-
-### TimeUnit
-
-`enum` 
-
-Type for time unit.
-
-### UserLinkedAppLogInfo
-
-`class` 
-
-User linked app
-
-### UserOrTeamLinkedAppLogInfo
-
-`class` 
-
-User or team linked app. Used when linked type is missing due to historical data gap.
-
-### UserTagsAddedDetails
-
-`class` 
-
-Tagged a file.
-
-### UserTagsAddedType
-
-`class` 
-
-Type for user tags added type.
-
-### UserTagsRemovedDetails
-
-`class` 
-
-Removed tags.
-
-### UserTagsRemovedType
-
-`class` 
-
-Type for user tags removed type.
+- `description_`: `String`
 
 ---

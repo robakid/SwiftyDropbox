@@ -17,7 +17,7 @@ The AddPropertiesArg struct.
 The TemplateError union.
 
 **Cases:**
-- `templateNotFound` - String - Template does not exist for the given identifier.
+- `templateNotFound` - String. Template does not exist for the given identifier.
 - `restrictedContent` - You do not have permission to modify this template.
 - `other` - An unspecified error.
 
@@ -28,7 +28,7 @@ The TemplateError union.
 The PropertiesError union.
 
 **Cases:**
-- `templateNotFound` - String - Template does not exist for the given identifier.
+- `templateNotFound` - String. Template does not exist for the given identifier.
 - `restrictedContent` - You do not have permission to modify this template.
 - `other` - An unspecified error.
 - `path` - FileProperties.LookupError
@@ -41,7 +41,7 @@ The PropertiesError union.
 The InvalidPropertyGroupError union.
 
 **Cases:**
-- `templateNotFound` - String - Template does not exist for the given identifier.
+- `templateNotFound` - String. Template does not exist for the given identifier.
 - `restrictedContent` - You do not have permission to modify this template.
 - `other` - An unspecified error.
 - `path` - FileProperties.LookupError
@@ -57,7 +57,7 @@ The InvalidPropertyGroupError union.
 The AddPropertiesError union.
 
 **Cases:**
-- `templateNotFound` - String - Template does not exist for the given identifier.
+- `templateNotFound` - String. Template does not exist for the given identifier.
 - `restrictedContent` - You do not have permission to modify this template.
 - `other` - An unspecified error.
 - `path` - FileProperties.LookupError
@@ -154,7 +154,7 @@ The LookupError union.
 - `notFound` - There is nothing at the given path.
 - `notFile` - We were expecting a file, but the given path refers to something that isn't a file.
 - `notFolder` - We were expecting a folder, but the given path refers to something that isn't a folder.
-- `restrictedContent` - The file cannot be transferred because the content is restricted. For example, we might restrict a file due to legal requirements.
+- `restrictedContent` - The file cannot be transferred because the content is restricted.
 - `other` - An unspecified error.
 
 ---
@@ -164,7 +164,7 @@ The LookupError union.
 The ModifyTemplateError union.
 
 **Cases:**
-- `templateNotFound` - String - Template does not exist for the given identifier.
+- `templateNotFound` - String. Template does not exist for the given identifier.
 - `restrictedContent` - You do not have permission to modify this template.
 - `other` - An unspecified error.
 - `conflictingPropertyNames` - A property field key with that name already exists in the template.
@@ -240,7 +240,7 @@ The PropertiesSearchMatch struct.
 The PropertiesSearchMode union.
 
 **Cases:**
-- `fieldName` - String - Search for a value associated with this field name.
+- `fieldName` - String. Search for a value associated with this field name.
 - `other` - An unspecified error.
 
 ---
@@ -333,7 +333,7 @@ The RemovePropertiesArg struct.
 The RemovePropertiesError union.
 
 **Cases:**
-- `templateNotFound` - String - Template does not exist for the given identifier.
+- `templateNotFound` - String. Template does not exist for the given identifier.
 - `restrictedContent` - You do not have permission to modify this template.
 - `other` - An unspecified error.
 - `path` - FileProperties.LookupError
@@ -356,7 +356,7 @@ The RemoveTemplateArg struct.
 The TemplateFilterBase union.
 
 **Cases:**
-- `filterSome` - [String] - Only templates with an ID in the supplied list will be returned (a subset of templates will be returned).
+- `filterSome` - [String]. Only templates with an ID in the supplied list will be returned (a subset of templates will be returned).
 - `other` - An unspecified error.
 
 ---
@@ -366,7 +366,7 @@ The TemplateFilterBase union.
 The TemplateFilter union.
 
 **Cases:**
-- `filterSome` - [String] - Only templates with an ID in the supplied list will be returned (a subset of templates will be returned).
+- `filterSome` - [String]. Only templates with an ID in the supplied list will be returned (a subset of templates will be returned).
 - `other` - An unspecified error.
 - `filterNone` - No templates will be filtered from the result (all templates will be returned).
 
@@ -398,7 +398,7 @@ The UpdatePropertiesArg struct.
 The UpdatePropertiesError union.
 
 **Cases:**
-- `templateNotFound` - String - Template does not exist for the given identifier.
+- `templateNotFound` - String. Template does not exist for the given identifier.
 - `restrictedContent` - You do not have permission to modify this template.
 - `other` - An unspecified error.
 - `path` - FileProperties.LookupError

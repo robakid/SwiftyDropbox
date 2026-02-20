@@ -55,7 +55,7 @@ There is an error with the file request.
 - `notAFolder` - The specified path is not a folder.
 - `appLacksAccess` - This file request is not accessible to this app. Apps with the app folder permission can only access file requests in their app folder.
 - `noPermission` - This user doesn't have permission to access or modify this file request.
-- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address. Users can verify their email address here https://www.dropbox.com/help/317.
+- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address.
 - `validationError` - There was an error validating the request. For example, the title was invalid, or there were disallowed characters in the destination path.
 
 ---
@@ -71,7 +71,7 @@ There was an error creating the file request.
 - `notAFolder` - The specified path is not a folder.
 - `appLacksAccess` - This file request is not accessible to this app. Apps with the app folder permission can only access file requests in their app folder.
 - `noPermission` - This user doesn't have permission to access or modify this file request.
-- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address. Users can verify their email address here https://www.dropbox.com/help/317.
+- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address.
 - `validationError` - There was an error validating the request. For example, the title was invalid, or there were disallowed characters in the destination path.
 - `invalidLocation` - File requests are not available on the specified folder.
 - `rateLimit` - The user has reached the rate limit for creating file requests. The limit is currently 4000 file requests total.
@@ -89,7 +89,7 @@ There was an error deleting all closed file requests.
 - `notAFolder` - The specified path is not a folder.
 - `appLacksAccess` - This file request is not accessible to this app. Apps with the app folder permission can only access file requests in their app folder.
 - `noPermission` - This user doesn't have permission to access or modify this file request.
-- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address. Users can verify their email address here https://www.dropbox.com/help/317.
+- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address.
 - `validationError` - There was an error validating the request. For example, the title was invalid, or there were disallowed characters in the destination path.
 
 ---
@@ -123,7 +123,7 @@ There was an error deleting these file requests.
 - `notAFolder` - The specified path is not a folder.
 - `appLacksAccess` - This file request is not accessible to this app. Apps with the app folder permission can only access file requests in their app folder.
 - `noPermission` - This user doesn't have permission to access or modify this file request.
-- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address. Users can verify their email address here https://www.dropbox.com/help/317.
+- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address.
 - `validationError` - There was an error validating the request. For example, the title was invalid, or there were disallowed characters in the destination path.
 - `fileRequestOpen` - One or more file requests currently open.
 
@@ -185,7 +185,7 @@ There was an error retrieving the specified file request.
 - `notAFolder` - The specified path is not a folder.
 - `appLacksAccess` - This file request is not accessible to this app. Apps with the app folder permission can only access file requests in their app folder.
 - `noPermission` - This user doesn't have permission to access or modify this file request.
-- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address. Users can verify their email address here https://www.dropbox.com/help/317.
+- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address.
 - `validationError` - There was an error validating the request. For example, the title was invalid, or there were disallowed characters in the destination path.
 
 ---
@@ -195,12 +195,12 @@ There was an error retrieving the specified file request.
 The GracePeriod union.
 
 **Cases:**
-- `oneDay`
-- `twoDays`
-- `sevenDays`
-- `thirtyDays`
-- `always`
-- `other`
+- `oneDay` - One day grace period.
+- `twoDays` - Two days grace period.
+- `sevenDays` - Seven days grace period.
+- `thirtyDays` - Thirty days grace period.
+- `always` - Always allow late uploads.
+- `other` - An unspecified error.
 
 ---
 
@@ -283,7 +283,7 @@ The UpdateFileRequestDeadline union.
 
 **Cases:**
 - `noUpdate` - Do not change the file request's deadline.
-- `update` - FileRequests.FileRequestDeadline? - If null, the file request's deadline is cleared.
+- `update` - FileRequests.FileRequestDeadline?. If null, the file request's deadline is cleared.
 - `other` - An unspecified error.
 
 ---
@@ -299,5 +299,5 @@ There is an error updating the file request.
 - `notAFolder` - The specified path is not a folder.
 - `appLacksAccess` - This file request is not accessible to this app. Apps with the app folder permission can only access file requests in their app folder.
 - `noPermission` - This user doesn't have permission to access or modify this file request.
-- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address. Users can verify their email address here https://www.dropbox.com/help/317.
+- `emailUnverified` - This user's email address is not verified. File requests are only available on accounts with a verified email address.
 - `validationError` - There was an error validating the request. For example, the title was invalid, or there were disallowed characters in the destination path.
