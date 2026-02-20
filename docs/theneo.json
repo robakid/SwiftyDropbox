@@ -1,0 +1,75 @@
+{
+  "id": "699885bacb20928b7c826acb",
+  "name": "sdks",
+  "lastExport": "2026-02-20T16:13:48.400Z",
+  "baseUrl": "http://example.io",
+  "sections": [
+    {
+      "name": "Overview",
+      "slug": "introduction-overview",
+      "children": [],
+      "isHeader": false,
+      "externalPageLink": "",
+      "isNewTab": false
+    },
+    {
+      "name": "Swift",
+      "slug": "swift",
+      "children": [
+        {
+          "name": "Here is where the github content will go",
+          "slug": "swift/here-is-where-the-github-content-will-go",
+          "children": [],
+          "isHeader": false,
+          "externalPageLink": "",
+          "isNewTab": false
+        }
+      ],
+      "isHeader": false,
+      "externalPageLink": "",
+      "isNewTab": false
+    },
+    {
+      "name": "Objective-C",
+      "slug": "objective-c",
+      "children": [],
+      "isHeader": false,
+      "externalPageLink": "",
+      "isNewTab": false
+    },
+    {
+      "name": "Python",
+      "slug": "python",
+      "children": [],
+      "isHeader": false,
+      "externalPageLink": "",
+      "isNewTab": false
+    },
+    {
+      "name": ".Net",
+      "slug": "net",
+      "children": [],
+      "isHeader": false,
+      "externalPageLink": "",
+      "isNewTab": false
+    },
+    {
+      "name": "Java",
+      "slug": "java",
+      "children": [],
+      "isHeader": false,
+      "externalPageLink": "",
+      "isNewTab": false
+    },
+    {
+      "name": "Javascript",
+      "slug": "javascript",
+      "children": [],
+      "isHeader": false,
+      "externalPageLink": "",
+      "isNewTab": false
+    }
+  ],
+  "tabs": [],
+  "isSinglePage": true
+}
