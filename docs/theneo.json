@@ -1,12 +1,12 @@
 {
-  "id": "699885bacb20928b7c826acb",
+  "id": "6998923bcb20928b7c8279c1",
   "name": "sdks",
-  "lastExport": "2026-02-20T16:13:48.400Z",
+  "lastExport": "2026-02-20T17:08:42.345Z",
   "baseUrl": "http://example.io",
   "sections": [
     {
       "name": "Overview",
-      "slug": "introduction-overview",
+      "slug": "overview",
       "children": [],
       "isHeader": false,
       "externalPageLink": "",
@@ -98,7 +98,7 @@
         },
         {
           "name": "Version 10.0.0 Changes",
-          "slug": "swift/version-10-changes",
+          "slug": "swift/version-10-0-0-changes",
           "children": [],
           "isHeader": false,
           "externalPageLink": "",
@@ -137,14 +137,16 @@
           "isNewTab": false
         }
       ],
+      "icon": "https://d24lr4zqs1tgqh.cloudfront.net/6499968e-d520-4d21-ba49-ded05d91e720.png",
       "isHeader": false,
       "externalPageLink": "",
       "isNewTab": false
     },
     {
       "name": "Objective-C",
-      "slug": "objective-c",
+      "slug": "objective-c-1",
       "children": [],
+      "icon": "https://d24lr4zqs1tgqh.cloudfront.net/f0726b6b-e574-49a7-a335-da66abf4fcd6.webp",
       "isHeader": false,
       "externalPageLink": "",
       "isNewTab": false
@@ -153,6 +155,7 @@
       "name": "Python",
       "slug": "python",
       "children": [],
+      "icon": "https://d24lr4zqs1tgqh.cloudfront.net/8fd840d1-26c4-4d30-8fb2-b65548f55a88.png",
       "isHeader": false,
       "externalPageLink": "",
       "isNewTab": false
@@ -161,6 +164,7 @@
       "name": ".Net",
       "slug": "net",
       "children": [],
+      "icon": "https://d24lr4zqs1tgqh.cloudfront.net/06466df1-ee57-4944-9e10-a31c70efc09e.png",
       "isHeader": false,
       "externalPageLink": "",
       "isNewTab": false
@@ -169,6 +173,7 @@
       "name": "Java",
       "slug": "java",
       "children": [],
+      "icon": "https://d24lr4zqs1tgqh.cloudfront.net/32357065-4815-4b9c-a8f2-5dfefbc0b348.png",
       "isHeader": false,
       "externalPageLink": "",
       "isNewTab": false
@@ -177,6 +182,7 @@
       "name": "Javascript",
       "slug": "javascript",
       "children": [],
+      "icon": "https://d24lr4zqs1tgqh.cloudfront.net/7f00583c-348c-4877-bee8-6f0493960360.png",
       "isHeader": false,
       "externalPageLink": "",
       "isNewTab": false
